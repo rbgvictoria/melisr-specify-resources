@@ -1,0 +1,9 @@
+<queries>
+<query  name="New Non-MEL loan Query" contextName="Loan" contextTableId="52" isFavorite="true" named="true" ordinal="32767">
+<fields><field  position="0" fieldName="loanNumber" isNot="false" isDisplay="true" isPrompt="true" isRelFld="false" alwaysFilter="false" stringId="52.loan.loanNumber" operStart="0" operEnd="" startValue="" endValue="" sortType="0" tableList="52" contextTableIdent="52" columnAlias="loanNumber" />
+<field  position="1" fieldName="srcTaxonomy" isNot="false" isDisplay="true" isPrompt="true" isRelFld="false" alwaysFilter="false" stringId="52.loan.srcTaxonomy" operStart="0" operEnd="" startValue="" endValue="" sortType="0" tableList="52" contextTableIdent="52" columnAlias="srcTaxonomy" />
+<field  position="2" fieldName="insuredForAmount" isNot="false" isDisplay="true" isPrompt="true" isRelFld="false" alwaysFilter="false" stringId="52,71-shipments.shipment.insuredForAmount" operStart="0" operEnd="" startValue="" endValue="" sortType="0" tableList="52,71-shipments" contextTableIdent="71" columnAlias="Shipments/insuredForAmount" />
+<field  position="3" fieldName="dateClosed" isNot="false" isDisplay="true" isPrompt="true" isRelFld="false" alwaysFilter="false" stringId="52.loan.dateClosed" operStart="0" operEnd="" startValue="" endValue="" sortType="0" tableList="52" contextTableIdent="52" columnAlias="Non-MEL loan/dateClosed" />
+</fields>
+</query>
+</queries>

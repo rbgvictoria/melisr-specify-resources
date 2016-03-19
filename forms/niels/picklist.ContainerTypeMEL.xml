@@ -1,0 +1,9 @@
+<list>
+  <picklist name="ContainerTypeMEL" type="0" tablename="none" readonly="true" sizelimit="0" issystem="false" sort="1" timestampCreated="2014-09-27 02:16:28.0" timestampModified="2014-09-27 02:29:12.0" version="2">
+    <items>
+      <picklistitem title="Multisheet" value="1" ordinal="0" timestampCreated="2014-09-27 02:15:18.0" timestampModified="2014-09-27 02:15:18.0" version="1"/>
+      <picklistitem title="Sheet" value="2" ordinal="1" timestampCreated="2014-09-27 02:15:58.0" timestampModified="2014-09-27 02:15:58.0" version="1"/>
+      <picklistitem title="Mixed collection" value="3" ordinal="2" timestampCreated="2014-09-27 02:16:28.0" timestampModified="2014-09-27 02:29:12.0" version="1"/>
+    </items>
+  </picklist>
+</list>

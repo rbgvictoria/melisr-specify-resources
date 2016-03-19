@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewset name="Botany Views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <views>
+
+        <view name="CollectionObject" 
+            class="edu.ku.brc.specify.datamodel.CollectionObject" 
+            busrules="edu.ku.brc.specify.datamodel.busrules.CollectionObjectBusRules" 
+            isinternal="false" resourcelabels="false">
+                <desc><![CDATA[The Collection Object form.]]></desc>
+                <altviews>
+                    <altview name="Collection Object View" viewdef="CollectionObject" mode="view"/>
+                    <altview name="Collection Object Edit" viewdef="CollectionObject" mode="edit" default="true"/>
+                </altviews>
+        </view>
+
+    </views>
+
+    <viewdefs>
+        <viewdef name="CollectionObject" 
+            type="form" 
+            class="edu.ku.brc.specify.datamodel.CollectionObject" 
+            gettable="edu.ku.brc.af.ui.forms.DataGetterForObj" 
+            settable="edu.ku.brc.af.ui.forms.DataSetterForObj">
+            <desc><![CDATA[The Collection Object form.]]></desc>
+            <enableRules/>
+            <!--columnDef>100px,2px,195px,5px,96px,2px,210px,5px,94px,2px,101px,0px,15px,p:g</columnDef-->
+            <columnDef>100px,2px,100px,5px,63px,2px,65px,5px,56px,2px,68px,5px,68px,2px,114px,5px,67px,2px,96px,0px,15px,p:g</columnDef>
+            <!--columnDef os="lnx">115px,2px,195px,5px,125px,2px,210px,5px,125px,2px,131px,0px,15px,p:g</columnDef>
+            <columnDef os="mac">130px,2px,215px,5px,138px,2px,255px,5px,138px,2px,155px,0px,15px,p:g</columnDef>
+            <columnDef os="exp">p,2px,min(p;220px),5px:g,p,2px,p,5px:g,p,2px,200px,p,p:g</columnDef-->
+            <rowDef auto="true" cell="p" sep="2px"/>
+            <rows>
+                <row>
+                    <cell type="label" labelfor="1"/>
+                    <cell type="field" id="1" name="catalogNumber" uitype="formattedtext" colspan="5"/>
+                    <cell type="field" id="avh" name="text3" uitype="plugin" initialize="name=WebLinkButton;"/>
+                    <cell type="panel" id="2" name="CollBranchInfoPanel" coldef="55px,2px,55px,2px,55px,5px,85px,5px,40px,2px,20px,2px,99px" rowdef="p,2px" colspan="11" initialize="align=right;">
+                        <rows>
+                            <row>
+                                <cell type="label" label=""/>
+                                <cell type="field" id="types" name="yesNo1" uitype="checkbox" readonly="true"/>
+                                <cell type="field" id="gpi" name="yesNo5" uitype="checkbox" />
+                                <cell type="field" id="multisheets" name="yesNo2" uitype="checkbox" readonly="true"/>
+                                <cell type="label" labelfor="parts"/>
+                                <cell type="field" id="parts" name="notifications" uitype="text" readonly="true"/>
+                                <cell type="subview" id="otheridentifiers" viewname="OtherIdentifiersSub" name="otherIdentifiers" initialize="align=right;btn=true"/>
+                            </row>
+                        </rows>
+                    </cell>
+                </row>
+                <row>
+                    <cell type="label" labelfor="acc"/>
+                    <cell type="field" id="acc" name="accession" uitype="querycbx" initialize="name=AccessionCO;title=AccessionCO" isrequired="false" colspan="18" />
+
+                </row>
+                <row>
+                        <cell type="subview" viewname="Determination" id="3" name="determinations" colspan="21" rows="5"/>
+                </row>
+                <row>
+                        <cell type="subview" viewname="Preparation" id="14" name="preparations" colspan="21" rows="3"/>
+                </row>
+                <row>
+                        <cell type="subview" viewname="CollectingEventSub" id="4" label="Collecting event" name="collectingEvent" colspan="21"/>
+                </row>
+                <row>
+                        <cell type="label" labelfor="5"/>
+                        <cell type="field" id="5" name="text1" uitype="textareabrief" rows="2" colspan="18"/>
+                </row>
+                <row>
+                        <cell type="label" labelfor="7" label="Misc. notes"/>
+                        <cell type="field" id="7" name="remarks" uitype="textareabrief" rows="2" colspan="18"/>
+                </row>
+                <row>
+                    <cell type="label" label=""/>
+                    <cell type="panel" id="pluginPanel" name="pluginPanel" coldef="218px,2px,99px,2px,99px,2px,99px,2px,99px,2px,99px,2px" rowdef="p" colspan="18">
+                        <rows>
+                            <row>
+                                <cell type="subview" id="exsiccataitem" viewname="ExsiccataItem" name="exsiccataItems" initialize="align=right;btn=true" colspan="1"/>
+                                <cell type="subview" id="collectionobjectattribute" viewname="CollectionObjectAttribute" name="collectionObjectAttribute" initialize="align=right;btn=true"/>
+                                <cell type="subview" id="conservdescriptions" viewname="ConservDescriptionSub" name="conservDescriptions" initialize="align=right;btn=true"/>
+                                <cell type="subview" id="dnasequences" viewname="DNASequenceSubView" name="dnaSequences" initialize="align=right;btn=true" colspan="1"/>
+                                <cell type="subview" id="projects" viewname="ProjectSub" name="projects" initialize="align=right;btn=true" colspan="1"/>
+                                <cell type="subview" id="attachments" viewname="CollectionObjectAttachmentMEL" name="collectionObjectAttachments" initialize="align=right;btn=true"/>
+                            </row>
+                        </rows>
+                    </cell>
+                </row>
+                <row>
+                        <cell type="separator" label="Label printing information" colspan="21"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="46"/>
+                    <cell type="field" id="46" name="restrictions" uitype="text"/>
+                    <cell type="label" labelfor="48" colspan="5"/>
+                    <cell type="field" id="48" name="objectCondition" uitype="text" colspan="7"/>
+                </row>
+                <!--row>
+                    <cell type="panel" id="116" name="outerPanel" coldef="p,6px,p,f:p:g" rowdef="p,4px,p" colspan="5">
+                        <rows>
+                            <row>
+                                <cell type="field" id="113" uitype="checkbox" name="generateLabelChk" label="Generate Label on Save" ignore="true" default="true" initialize="visible=true"/>
+                                <cell type="command" id="114" name="generateLabelBtn" label="Generate Label" ignore="true" default="true" initialize="visible=true"/>
+                            </row>
+                        </rows>
+                    </cell>
+                </row-->
+                <row>
+                    <cell type="separator" label="" colspan="21"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="16"/>
+                    <cell type="field" id="16" name="createdByAgent" uitype="label" readonly="true" uifieldformatter="Agent"/>
+                    <cell type="label" label="" colspan="3"/>
+                    <cell type="label" labelfor="17"/>
+                    <cell type="field" id="17" name="timestampCreated" uitype="label" readonly="true" colspan="1"/>
+                    <cell type="label" label=""/>
+                    <cell type="field" id="20" name="yesNo3" uitype="checkbox" initialize="align=right" colspan="3"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="18"/>
+                    <cell type="field" id="18" name="modifiedByAgent" uitype="label" readonly="true" uifieldformatter="Agent"/>
+                    <cell type="label" label="" colspan="1"/>
+                    <cell type="label" labelfor="19" colspan="3"/>
+                    <cell type="field" id="19" name="timestampModified" uitype="label" readonly="true" colspan="3"/>
+                    <cell type="label" labelfor="22"/>
+                    <cell type="field" id="22" name="text2" uitype="text" colspan="3"/>
+                </row>
+            </rows>
+        </viewdef>
+    </viewdefs>
+</viewset>
