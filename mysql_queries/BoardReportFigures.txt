@@ -1,0 +1,66 @@
+USE melisr;
+
+//Number of specimens databased;
+SELECT COUNT(*) FROM collectionobject co
+WHERE DATE(co.TimestampCreated) BETWEEN '2012-12-31' AND '2013-07-01';
+
+//Number of Australian specimens databased;
+SELECT COUNT(*) FROM collectionobject co
+LEFT JOIN collectingevent ce ON co.CollectingEventID=ce.CollectingEventID
+LEFT JOIN locality l ON ce.LocalityID=l.LocalityID
+LEFT JOIN geography g ON l.GeographyID=g.GeographyID
+WHERE (DATE(co.TimestampCreated) BETWEEN '2012-12-31' AND '2013-07-01')
+AND g.FullName LIKE '%Australia%';
+
+//Number of foreign specimens databased;
+SELECT COUNT(*) FROM collectionobject co
+LEFT JOIN collectingevent ce ON co.CollectingEventID=ce.CollectingEventID
+LEFT JOIN locality l ON ce.LocalityID=l.LocalityID
+LEFT JOIN geography g ON l.GeographyID=g.GeographyID
+WHERE (DATE(co.TimestampCreated) BETWEEN '2012-12-31' AND '2013-07-01')
+AND (g.FullName NOT LIKE '%Australia%' OR l.GeographyID IS NULL);
+
+//Total number of specimens edited;
+SELECT COUNT(*) FROM collectionobject co
+WHERE DATE(co.TimestampCreated) < '2012-01-01' AND (DATE(co.TimestampModified) BETWEEN '2012-12-31' AND '2013-07-01');
+
+//Number of Australian specimens edited;
+SELECT COUNT(*) FROM collectionobject co
+LEFT JOIN collectingevent ce ON co.CollectingEventID=ce.CollectingEventID
+LEFT JOIN locality l ON ce.LocalityID=l.LocalityID
+LEFT JOIN geography g ON l.GeographyID=g.GeographyID
+WHERE DATE(co.TimestampCreated) < '2012-01-01' AND (DATE(co.TimestampModified) BETWEEN '2012-12-31' AND '2013-07-01')
+AND g.FullName LIKE '%Australia%';
+
+//Number of foreign specimens edited;
+SELECT COUNT(*) FROM collectionobject co
+LEFT JOIN collectingevent ce ON co.CollectingEventID=ce.CollectingEventID
+LEFT JOIN locality l ON ce.LocalityID=l.LocalityID
+LEFT JOIN geography g ON l.GeographyID=g.GeographyID
+WHERE DATE(co.TimestampCreated) < '2012-01-01' AND (DATE(co.TimestampModified) BETWEEN '2012-12-31' AND '2013-07-01')
+AND (g.FullName NOT LIKE '%Australia%' OR l.GeographyID IS NULL);
+
+//Number of specimens databased by CIO;
+SELECT COUNT(*) FROM collectionobject co
+WHERE DATE(co.TimestampCreated) BETWEEN '2012-12-31' AND '2013-07-01'
+AND co.CreatedByAgentID=2
+AND co.Text2 IS NULL;
+
+//Total number of specimens edited by CIO;
+SELECT COUNT(*) FROM collectionobject co
+WHERE DATE(co.TimestampCreated) < '2013-01-01' AND (DATE(co.TimestampModified) BETWEEN '2012-12-31' AND '2013-07-01')
+AND co.ModifiedByAgentID=2;
+
+//Number of specimens uploaded via the Workbench by CIO;
+SELECT COUNT(*) FROM workbenchrow wr
+JOIN workbench w ON wr.WorkbenchID=w.WorkbenchID
+WHERE w.CreatedByAgentID = 2;
+
+//Number of specimens databased by Collections volunteers;
+SELECT COUNT(*) FROM collectionobject co
+WHERE DATE(co.TimestampCreated) BETWEEN '2012-12-31' AND '2013-07-01'
+AND co.CreatedByAgentID=19905;
+
+//Total number of specimens in MELISR;
+SELECT COUNT(*) FROM collectionobject co
+WHERE DATE(co.TimestampCreated) < '2013-07-01';

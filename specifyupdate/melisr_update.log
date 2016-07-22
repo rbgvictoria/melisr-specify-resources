@@ -1,0 +1,323 @@
+
+# 2011-04-14 16:04:42
+
+# 2011-04-27 12:55:30
+
+# 2011-05-05 12:40:50
+
+# 2011-05-24 12:19:33
+-- 2344193A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=838420;
+
+
+# 2011-05-24 18:30:59
+
+# 2011-05-27 18:01:56
+-- 2338309A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=856235;
+
+
+# 2011-05-27 18:56:46
+
+# 2011-08-19 12:07:42
+-- 0577648A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=856609;
+
+-- 0525667A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=856611;
+
+-- 2353997A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=858030;
+
+-- 2353997A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=858031;
+
+
+# 2011-08-19 13:02:10
+-- 0577648A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=856609;
+
+-- 0525667A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=856611;
+
+-- 2353997A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=858030;
+
+-- 2353997A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=858031;
+
+
+# 2011-08-25 12:46:49
+
+# 2011-09-06 14:39:01
+
+# 2011-09-12 11:07:43
+
+# 2011-09-12 11:43:55
+-- 0283317A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=177770;
+
+
+# 2011-09-12 11:45:49
+-- 0283317A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=177770;
+
+
+# 2011-09-14 19:17:10
+-- 2183496A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=479054;
+
+
+# 2011-09-20 9:46:47
+
+# 2011-09-20 18:39:46
+-- 2183496A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=479054;
+
+-- 2271885A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=706905;
+
+-- 0306741B
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=862650;
+
+-- 0306741C
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=862651;
+
+-- 2352924A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=863491;
+
+
+# 2011-09-26 11:19:57
+
+# 2011-10-05 12:44:39
+
+# 2011-10-28 14:39:04
+
+# 2011-11-02 15:38:31
+
+# 2011-12-14 14:48:08
+-- 2353495A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905656;
+
+
+# 2011-12-16 9:06:26
+-- 2356083A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905731;
+
+-- 2353864A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905748;
+
+-- 2353865A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905749;
+
+-- 2353863A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905751;
+
+-- 2353841A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905752;
+
+-- 2353842A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905761;
+
+
+# 2011-12-20 15:47:35
+-- 2356101A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905798;
+
+-- 2356103A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905805;
+
+-- 2352556A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905965;
+
+-- 2352556A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905966;
+
+-- 2353839A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905986;
+
+-- 2353725A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905992;
+
+
+# 2011-12-20 17:13:16
+-- 2356101A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905798;
+
+-- 2356103A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905805;
+
+-- 2352556A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905965;
+
+-- 2352556A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905966;
+
+-- 2353839A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905986;
+
+-- 2353725A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905992;
+
+-- 2353724A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=905999;
+
+-- 2353726A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=906000;
+
+-- 2353727A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=906009;
+
+
+# 2012-01-09 14:43:16
+
+# 2012-01-17 17:21:53
+-- 2353553A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=907116;
+
+-- 9999999D
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=907196;
+
+
+# 2012-01-18 14:47:57
+-- 2346429A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=906597;
+
+-- 2346429A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=906598;
+
+-- 2355883A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=907276;
+
+-- 2355883A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=907277;
+
+-- 2355883A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=907278;
+
+
+# 2012-07-10 11:44:58
+-- 0255330A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=130690;
+
+-- 9999999A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=909911;
+
+-- 9999999A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=910226;
+
+-- 0672923A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=912950;
+
+-- 0672922A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=912951;
+
+-- 2361043A
+UPDATE preparation
+            SET StorageID=
+            WHERE PreparationID=913354;
+

@@ -1,0 +1,33 @@
+﻿USE melisr;
+SELECT co.CatalogNumber, highertaxon(t.TaxonID, 'family') AS Family, d.TypeStatusName, t.FullName AS TypifiedName, t.Author, t.CommonName AS Protologue,
+  t.Number2 AS PublicationYear, t.EsaStatus AS NomenclaturalNote, g.BatchNo AS GpiBatch, co.YesNo5=1 AS MarkedInMelisr
+FROM collectionobject co
+JOIN determination d ON co.CollectionObjectID=d.CollectionObjectID
+JOIN taxon t ON d.TaxonID=t.TaxonID
+JOIN collectingevent ce ON co.CollectingEventID=ce.CollectingEventID
+JOIN locality l ON ce.LocalityID=l.LocalityID
+JOIN geography g ON l.GeographyID=g.GeographyID
+LEFT JOIN gpi.unit u ON co.CollectionObjectID=u.SpCollectionObjectID
+LEFT JOIN gpi.dataset as g ON u.dataSetID=g.DataSetID
+WHERE d.YesNo1=1 AND ((t.NodeNumber>(SELECT NodeNumber FROM taxon WHERE Name='Magnoliidae' AND TaxonTreeDefItemID=7) AND
+  t.NodeNumber<=(SELECT HighestChildNodeNumber FROM taxon WHERE Name='Magnoliidae' AND TaxonTreeDefItemID=7)) OR
+(t.NodeNumber>(SELECT NodeNumber FROM taxon WHERE Name='Cycadidae' AND TaxonTreeDefItemID=7) AND
+  t.NodeNumber<=(SELECT HighestChildNodeNumber FROM taxon WHERE Name='Cycadidae' AND TaxonTreeDefItemID=7)) OR
+(t.NodeNumber>(SELECT NodeNumber FROM taxon WHERE Name='Equisetidae' AND TaxonTreeDefItemID=7) AND
+  t.NodeNumber<=(SELECT HighestChildNodeNumber FROM taxon WHERE Name='Equisetidae' AND TaxonTreeDefItemID=7)) OR
+(t.NodeNumber>(SELECT NodeNumber FROM taxon WHERE Name='Ginkgooidae' AND TaxonTreeDefItemID=7) AND
+  t.NodeNumber<=(SELECT HighestChildNodeNumber FROM taxon WHERE Name='Ginkgooidae' AND TaxonTreeDefItemID=7)) OR
+(t.NodeNumber>(SELECT NodeNumber FROM taxon WHERE Name='Gnetidae' AND TaxonTreeDefItemID=7) AND
+  t.NodeNumber<=(SELECT HighestChildNodeNumber FROM taxon WHERE Name='Gnetidae' AND TaxonTreeDefItemID=7)) OR
+(t.NodeNumber>(SELECT NodeNumber FROM taxon WHERE Name='Lycopodiidae' AND TaxonTreeDefItemID=7) AND
+  t.NodeNumber<=(SELECT HighestChildNodeNumber FROM taxon WHERE Name='Lycopodiidae' AND TaxonTreeDefItemID=7)) OR
+(t.NodeNumber>(SELECT NodeNumber FROM taxon WHERE Name='Marattiidae' AND TaxonTreeDefItemID=7) AND
+  t.NodeNumber<=(SELECT HighestChildNodeNumber FROM taxon WHERE Name='Marattiidae' AND TaxonTreeDefItemID=7)) OR
+(t.NodeNumber>(SELECT NodeNumber FROM taxon WHERE Name='Pinidae' AND TaxonTreeDefItemID=7) AND
+  t.NodeNumber<=(SELECT HighestChildNodeNumber FROM taxon WHERE Name='Pinidae' AND TaxonTreeDefItemID=7)) OR
+(t.NodeNumber>(SELECT NodeNumber FROM taxon WHERE Name='Polypodiidae' AND TaxonTreeDefItemID=7) AND
+  t.NodeNumber<=(SELECT HighestChildNodeNumber FROM taxon WHERE Name='Polypodiidae' AND TaxonTreeDefItemID=7)) OR
+(t.NodeNumber>(SELECT NodeNumber FROM taxon WHERE Name='Psilotidae' AND TaxonTreeDefItemID=7) AND
+  t.NodeNumber<=(SELECT HighestChildNodeNumber FROM taxon WHERE Name='Psilotidae' AND TaxonTreeDefItemID=7))) AND
+(g.NodeNumber>=(SELECT NodeNumber FROM geography WHERE Name='Australia' AND GeographyTreeDefItemID=3) AND
+  g.NodeNumber<=(SELECT HighestChildNodeNumber FROM geography WHERE Name='Australia' AND GeographyTreeDefItemID=3));
