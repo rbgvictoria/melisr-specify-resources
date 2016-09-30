@@ -13,7 +13,7 @@ BEGIN
     DECLARE var_genusname VARCHAR(64);
 
     IF p_rankid>=220 THEN   -- infraspecific taxon
-        SELECT highertaxon(p_taxonid, 'Species')
+        SELECT higher_taxon(p_taxonid, 'Species')
         INTO var_speciesname;
     END IF;
 
@@ -24,7 +24,7 @@ BEGIN
             FROM taxon
             WHERE TaxonID=p_taxonid;
         WHEN p_rankid=150 THEN -- subfamily
-            SELECT highertaxon(p_taxonid, 'Family') INTO var_familyname;
+            SELECT higher_taxon(p_taxonid, 'Family') INTO var_familyname;
             SELECT IF(!isnull(Author),
                 IF(Name=var_familyname,
                     CONCAT_WS(' ', var_familyname, Author, 'subfam.', Name),
@@ -35,7 +35,7 @@ BEGIN
             FROM taxon
             WHERE TaxonID=p_taxonid;
         WHEN p_rankid=160 THEN   -- tribe
-            SELECT highertaxon(p_taxonid, 'Family') INTO var_familyname;
+            SELECT higher_taxon(p_taxonid, 'Family') INTO var_familyname;
             SELECT IF(!isnull(Author),
                 IF(Name=var_familyname,
                     CONCAT_WS(' ', var_familyname, Author, 'tr.', Name),
@@ -46,7 +46,7 @@ BEGIN
             FROM taxon
             WHERE TaxonID=p_taxonid;
         WHEN p_rankid=190 THEN   -- subgenus
-            SELECT highertaxon(p_taxonid, 'Genus') INTO var_genusname;
+            SELECT higher_taxon(p_taxonid, 'Genus') INTO var_genusname;
             SELECT IF(!isnull(Author),
                 IF(Name=var_genusname,
                     CONCAT_WS(' ', var_genusname, Author, 'subgen.', Name),
@@ -57,7 +57,7 @@ BEGIN
             FROM taxon
             WHERE TaxonID=p_taxonid;
         WHEN p_rankid=200 THEN   -- section
-            SELECT highertaxon(p_taxonid, 'Genus') INTO var_genusname;
+            SELECT higher_taxon(p_taxonid, 'Genus') INTO var_genusname;
             SELECT IF(!isnull(Author),
                 IF(Name=var_genusname,
                     CONCAT_WS(' ', var_genusname, Author, 'sect.', Name),
