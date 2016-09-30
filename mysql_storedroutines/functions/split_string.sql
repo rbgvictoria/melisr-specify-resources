@@ -10,7 +10,7 @@ CREATE FUNCTION `split_string`(str VARCHAR(1024) , del VARCHAR(1) , i INT)
     RETURNS VARCHAR(1024) CHARSET utf8
 BEGIN
     DECLARE n INT ;
-    SET n = LENGTH(s) - LENGTH(REPLACE(str, del, '')) + 1;
+    SET n = LENGTH(str) - LENGTH(REPLACE(str, del, '')) + 1;
     IF i > n THEN
         RETURN NULL;
     ELSE
