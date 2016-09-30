@@ -161,6 +161,12 @@
                     </cell>
                 </row>
                 <row>
+                    <cell type="label" labelfor="accessionCO"/>
+                    <cell type="field" id="accessionCO" name="accession" uitype="querycbx" initialize="name=AccessionCO;title=AccessionCO" isrequired="false" colspan="11"/>
+                    <cell type="label" label="" colspan="3"/>
+                    <cell type="field" id="deaccessioned" name="deaccessioned" uitype="checkbox" readonly="false"/>
+                </row>
+                <row>
                     <cell type="subview" viewname="Determination" id="3" name="determinations" colspan="21" rows="5"/>
                 </row>
                 <row>

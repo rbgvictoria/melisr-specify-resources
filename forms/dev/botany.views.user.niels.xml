@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewset name="Botany Views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<viewset name="User Views Niels" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <views>
-
         <view name="CollectionObject" 
             class="edu.ku.brc.specify.datamodel.CollectionObject" 
             busrules="edu.ku.brc.specify.datamodel.busrules.CollectionObjectBusRules" 
@@ -174,7 +173,7 @@
             <desc><![CDATA[The Collection Object form.]]></desc>
             <enableRules/>
             <!--columnDef>100px,2px,195px,5px,96px,2px,210px,5px,94px,2px,101px,0px,15px,p:g</columnDef-->
-            <columnDef>100px,2px,100px,5px,63px,2px,65px,5px,56px,2px,68px,5px,68px,2px,114px,5px,67px,2px,96px,0px,15px,p:g</columnDef>
+            <columnDef>100px,2px,100px,5px,63px,2px,65px,5px,56px,2px,68px,5px,68px,2px,114px,5px,57px,2px,106px,0px,15px,p:g</columnDef>
             <!--columnDef os="lnx">115px,2px,195px,5px,125px,2px,210px,5px,125px,2px,131px,0px,15px,p:g</columnDef>
             <columnDef os="mac">130px,2px,215px,5px,138px,2px,255px,5px,138px,2px,155px,0px,15px,p:g</columnDef>
             <columnDef os="exp">p,2px,min(p;220px),5px:g,p,2px,p,5px:g,p,2px,200px,p,p:g</columnDef-->
@@ -197,6 +196,12 @@
                             </row>
                         </rows>
                     </cell>
+                </row>
+                <row>
+                    <cell type="label" labelfor="accessionCO"/>
+                    <cell type="field" id="accessionCO" name="accession" uitype="querycbx" initialize="name=AccessionCO;title=AccessionCO" isrequired="false" colspan="11"/>
+                    <cell type="label" label="" colspan="3"/>
+                    <cell type="field" id="deaccessioned" name="deaccessioned" uitype="checkbox" readonly="false"/>
                 </row>
                 <row>
                         <cell type="subview" viewname="Determination" id="3" name="determinations" colspan="21" rows="5"/>
