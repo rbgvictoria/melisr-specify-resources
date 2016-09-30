@@ -20,17 +20,17 @@ FOR EACH ROW
         DECLARE var_genus VARCHAR(128);
 
         IF isnull(@DISABLE_TRIGGER) THEN
-        -- Names of families or higher taxa, or names of genera
-        IF NEW.RankID<=140 OR NEW.RankID=180 THEN
-            IF NEW.Author IS NOT NULL THEN
-                    SET var_scientificname = CONCAT(NEW.Name, ' ', NEW.Author);
-            ELSE
-                    SET var_scientificname = NEW.Name;
-            END IF;
+            -- Names of families or higher taxa, or names of genera
+            IF NEW.RankID<=140 OR NEW.RankID=180 THEN
+                IF NEW.Author IS NOT NULL THEN
+                        SET var_scientificname = CONCAT(NEW.Name, ' ', NEW.Author);
+                ELSE
+                        SET var_scientificname = NEW.Name;
+                END IF;
 
-            IF NEW.RankID=180 THEN
-                SET NEW.UnitName2=NEW.Name;
-            END IF;
+                IF NEW.RankID=180 THEN
+                    SET NEW.UnitName2=NEW.Name;
+                END IF;
 
             -- Names of infrafamilial taxa
             ELSEIF NEW.RankID IN (150, 160) THEN
