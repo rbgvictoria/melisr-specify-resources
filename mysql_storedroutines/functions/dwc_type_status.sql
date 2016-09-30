@@ -1,7 +1,13 @@
 DELIMITER $$
 
+/*
+* Function checks if a collection object is a type and, if so, concatenates the
+* Darwin Core typeStatus string from values of fields in the Determination and 
+* Taxon tables. 
+*/
 DROP FUNCTION IF EXISTS `dwc_type_status` $$
-CREATE FUNCTION `dwc_type_status` (colobjid INT) RETURNS VARCHAR(1024) CHARSET utf8
+CREATE FUNCTION `dwc_type_status` (colobjid INT) 
+    RETURNS VARCHAR(1024) CHARSET utf8
 BEGIN
     DECLARE var_typeOfType VARCHAR(32);
     DECLARE var_scientificName VARCHAR(128);
@@ -16,6 +22,8 @@ BEGIN
     FROM determination d
     JOIN taxon t ON d.TaxonID=t.TaxonID
     WHERE d.CollectionObjectID=colobjid AND d.TypeStatusName IS NOT NULL AND d.YesNo1=1
+        -- exclude type status designations with qualifiers and authentic specimens
+        -- for invalid names
         AND d.SubspQualifier IS NULL AND d.TypeStatusName!='Authentic specimen'
     LIMIT 1;
 
