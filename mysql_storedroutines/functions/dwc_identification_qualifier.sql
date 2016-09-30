@@ -3,6 +3,7 @@ DELIMITER $$
 /*
 * Function splits the input string (str) on a delimiter (del) and returns the
 * bit indicated by the third parameter (i).
+* http://stackoverflow.com/questions/14950466/how-to-split-the-name-string-in-mysql#answer-26491403
 */
 DROP FUNCTION IF EXISTS `split_string` $$
 CREATE FUNCTION `split_string`(str VARCHAR(1024) , del VARCHAR(1) , i INT) 
