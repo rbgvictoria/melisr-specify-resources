@@ -7,13 +7,6 @@ catalogue number of a record that is not made on the same day is changed. (These
 will have been delivered to AVH with the old catalog number and need to be deleted 
 from AVH.) -- NK 2013-03-18
 
-Added calling of script that adds a record to the VRS collection when a Vic. Ref. Set 
-preparation is inserted or a preparation type has changed from Vic. Ref. Set (old) to 
-Vic. Ref. Set. The script is called for every Collection Object record that has
-Vic. Ref. Set Preparation, but the script checks if there isn't already a record in
-the VRS collection. If there is, the script exits without doing anything. 
--- NK 3013-11-08
-
 ***************************************************************************************/
 
 DROP TRIGGER IF EXISTS collectionobject_before_update;
@@ -33,8 +26,12 @@ FOR EACH ROW
               SET NEW.AltCatalogNumber=CAST(SUBSTRING(NEW.CatalogNumber, 1, 7) AS unsigned);
               SET NEW.Name=CONCAT('MEL ', CAST(SUBSTRING(NEW.CatalogNumber, 1, 7) AS unsigned));
               SET NEW.Modifier=UPPER(SUBSTRING(NEW.CatalogNumber, 8));
+
+              -- dwc:typeStatus
+              SET NEW.Description = dwc_type_status(NEW.CollectionObjectID);
             END IF;
         END IF;
+
     END IF;
   END $$
 

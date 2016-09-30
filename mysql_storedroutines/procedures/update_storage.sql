@@ -40,7 +40,7 @@ BEGIN
 		FROM taxon
 		WHERE NodeNumber<var_nodenumber AND HighestChildNodeNumber>=var_nodenumber
 			AND RankID=180
-    LIMIT 1;
+                LIMIT 1;
 	END IF;
 
 	IF var_type=1 THEN
