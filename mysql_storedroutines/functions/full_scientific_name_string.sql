@@ -23,7 +23,7 @@ BEGIN
             INTO out_sciname
             FROM taxon
             WHERE TaxonID=p_taxonid;
-        WHEN p_rankid=150 THEN -- subfamily
+        WHEN p_rankid=150 THEN   -- subfamily
             SELECT higher_taxon(p_taxonid, 'Family') INTO var_familyname;
             SELECT IF(!isnull(Author),
                 IF(Name=var_familyname,
