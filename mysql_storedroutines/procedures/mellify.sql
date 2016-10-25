@@ -20,13 +20,14 @@ BEGIN
     LEFT JOIN otheridentifier oi ON co.CollectionObjectID=oi.CollectionObjectID
     SET co.AltCatalogNumber=CAST(SUBSTR(co.CatalogNumber, 5) AS UNSIGNED),
       co.Modifier='A',
-      co.Name=CONCAT('MEL ', CAST(SUBSTR(co.CatalogNumber, 5) AS UNSIGNED)),
+      co.`Name`=CONCAT('MEL ', CAST(SUBSTR(co.CatalogNumber, 5) AS UNSIGNED)),
       co.CatalogNumber=CONCAT(SUBSTR(co.CatalogNumber, 5), 'A'),
       co.CollectionID=4,
       co.CollectionMemberID=4,
       coa.CollectionMemberID=4,
       d.CollectionMemberID=4,
       p.CollectionMemberID=4,
+      p.PrepTypeID=1,
       oi.CollectionMemberID=4,
       co.TimestampModified=NOW()
     WHERE co.CollectionID=131072 AND co.CatalogNumber IS NOT NULL;
