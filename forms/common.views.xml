@@ -4211,12 +4211,8 @@
                     <cell type="field" id="10" name="maxElevation" uitype="text"/>
                     <cell type="label" labelfor="11"/>
                     <cell type="field" id="11" name="elevationMethod" uitype="text"/>
-                    <cell type="label" labelfor="elevationAccuracy"/>
-                    <cell type="field" id="elevationAccuracy" name="elevationAccuracy" uitype="text"/>
-                </row>
-                <row>
-                    <cell type="label" labelfor="verbatimElevation"/>
-                    <cell type="field" id="verbatimElevation" name="verbatimElevation" uitype="text"/>
+                    <cell type="label" labelfor="1"/>
+                    <cell type="field" id="1" name="verbatimElevation" uitype="text"/>
                 </row>
                 <row>
                     <cell type="separator" label="Plugins" colspan="17"/>

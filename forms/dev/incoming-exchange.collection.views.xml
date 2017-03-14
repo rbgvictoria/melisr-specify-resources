@@ -144,27 +144,9 @@
             <rows>
                 <row>
                     <cell type="label" labelfor="1"/>
-                    <cell type="field" id="1" name="catalogNumber" uitype="formattedtext" colspan="5"/>
-                    <cell type="field" id="avh" name="this" uitype="plugin" initialize="name=WebLinkButton;weblink=AVHLink"/>
-					<cell type="panel" id="2" name="CollBranchInfoPanel" coldef="55px,2px,70px,2px,45px,5px,80px,5px,40px,2px,20px,2px,99px" rowdef="p,2px" colspan="11" initialize="align=right;">
-                        <rows>
-                            <row>
-                                <cell type="field" id="types" name="yesNo1" uitype="checkbox" readonly="true"/>
-                                <cell type="field" id="imaged" name="yesNo4" uitype="checkbox" readonly="true"/>
-                                <cell type="field" id="gpi" name="yesNo5" uitype="checkbox" readonly="true"/>
-                                <cell type="field" id="multisheets" name="yesNo2" uitype="checkbox" readonly="true"/>
-                                <cell type="label" labelfor="parts"/>
-                                <cell type="field" id="parts" name="notifications" uitype="text" readonly="true"/>
-                                <cell type="subview" id="otheridentifiers" viewname="OtherIdentifiersSub" name="otherIdentifiers" initialize="align=right;btn=true"/>
-                            </row>
-                        </rows>
-                    </cell>
-                </row>
-                <row>
-                    <cell type="label" labelfor="accession"/>
-                    <cell type="field" id="accession" name="accession" uitype="querycbx" initialize="name=AccessionCO;title=Accession" isrequired="false" colspan="5"/>
-                    <cell type="label" label=""/>
-                    <cell type="field" id="deaccessioned" name="deaccessioned" uitype="checkbox" readonly="false" colspan="3"/>
+                    <cell type="field" id="1" name="altCatalogNumber" uitype="formattedtext" colspan="5"/>
+                    <cell type="label" label="" colspan="9"/>
+                    <cell type="subview" id="otheridentifiers" viewname="OtherIdentifiersSub" name="otherIdentifiers" initialize="align=right;btn=true"/>
                 </row>
                 <row>
                         <cell type="subview" viewname="Determination" id="3" name="determinations" colspan="21" rows="5"/>
@@ -227,7 +209,7 @@
                     <cell type="label" labelfor="17"/>
                     <cell type="field" id="17" name="timestampCreated" uitype="label" readonly="true" colspan="1"/>
                     <cell type="label" label=""/>
-                    <cell type="field" id="20" name="yesNo3" uitype="checkbox" initialize="align=right" colspan="3"/>
+                    <!--cell type="field" id="20" name="yesNo3" uitype="checkbox" initialize="align=right" colspan="3"/-->
 				</row>
                 <row>
                     <cell type="label" labelfor="18"/>

@@ -1,18 +1,10 @@
-/*
-*
-* Mellify procedure
-*
-* Moves records from the staging collection to the National Herbarium of Victoria
-* collection and correctly formats the catalogue number and barcode. [2016-10-11]
-*
-*/
 DELIMITER $$
 
-DROP PROCEDURE IF EXISTS `mellify` $$
-CREATE DEFINER=`admin`@`%` PROCEDURE `mellify`()
+DROP PROCEDURE IF EXISTS `incoming` $$
+CREATE DEFINER=`admin`@`%` PROCEDURE `incoming`()
 BEGIN
     DECLARE var_collectionID INT;
-    SET var_collectionID = 131072;
+    SET var_collectionID = 163840;
     SET @DISABLE_TRIGGER=1;
 
     START TRANSACTION;

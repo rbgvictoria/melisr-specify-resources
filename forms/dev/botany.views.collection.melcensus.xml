@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewset name="Botany Views" i18nresname="views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <views>
+        <view name="CollectionObject"
+            class="edu.ku.brc.specify.datamodel.CollectionObject"
+            busrules="edu.ku.brc.specify.datamodel.busrules.CollectionObjectBusRules"
+            isinternal="false"
+            resourcelabels="false"
+            >
+            <desc><![CDATA[The Collection Object form.]]></desc>
+            <altviews>
+                <altview name="Collection Object View" viewdef="Collection Object" mode="view"/>
+                <altview name="Collection Object Edit" viewdef="Collection Object" mode="edit" default="true"/>
+            </altviews>
+        </view>
+        
+        <view name="Determination"
+            class="edu.ku.brc.specify.datamodel.Determination"
+            busrules="edu.ku.brc.specify.datamodel.busrules.DeterminationBusRules" 
+            isexternal="true"
+            resourcelabels="false">
+            <desc><![CDATA[Subform within the Collection Object form.]]></desc>
+            <altviews>
+                <altview name="Determination View"       viewdef="Determination" mode="view"/>
+                <altview name="Determination Edit"       viewdef="Determination" mode="edit" default="true"/>
+                <altview name="Determination Table View" viewdef="Determination Table" mode="view"/>
+                <altview name="Determination Table Edit" viewdef="Determination Table" mode="edit"/>
+            </altviews>
+        </view>
+        
+        <view name="Preparation"
+              class="edu.ku.brc.specify.datamodel.Preparation"
+              busrules="edu.ku.brc.specify.datamodel.busrules.PreparationBusRules"
+               resourcelabels="false">
+            <desc><![CDATA[Subform within the Preparation form.]]></desc>
+            <altviews>
+                <altview name="Preparation Table View" viewdef="Preparation Table" mode="view"/>
+                <altview name="Preparation Table Edit" viewdef="Preparation Table" mode="edit"/>
+                <altview name="Preparation View" viewdef="Preparation" mode="view"/>
+                <altview name="Preparation Edit" viewdef="Preparation" mode="edit" default="true"/>
+            </altviews>
+        </view>
+    </views>
+
+    <viewdefs>
+        <viewdef
+            type="form"
+            name="Collection Object"
+            class="edu.ku.brc.specify.datamodel.CollectionObject"
+            gettable="edu.ku.brc.af.ui.forms.DataGetterForObj"
+            settable="edu.ku.brc.af.ui.forms.DataSetterForObj">
+            <desc><![CDATA[The Collection Object form.]]></desc>
+            <enableRules/>
+            
+            <columnDef>100px,2px,195px,5px,96px,2px,210px,5px,94px,2px,116px,0px,15px,p:g</columnDef>
+            <columnDef os="lnx">115px,2px,195px,5px,125px,2px,210px,5px,125px,2px,131px,0px,15px,p:g</columnDef>
+            <columnDef os="mac">130px,2px,215px,5px,128px,2px,260px,5px,138px,2px,145px,0px,15px,p:g</columnDef>
+            <columnDef os="exp">p,2px,min(p;250px),5px:g,p,2px,p:g,5px:g,p,2px,p:g(2),0px,p,p:g</columnDef>
+            <rowDef auto="true" cell="p" sep="2px"/>
+
+            <rows>
+                <row>
+                    <cell type="label" labelfor="1"/>
+                    <cell type="field" id="1" name="catalogNumber" uitype="formattedtext"/>
+                </row>
+                <row>
+                    <cell type="subview" viewname="Determination" id="6" name="determinations" colspan="13" rows="5"/>
+                </row>
+                <row>
+                    <cell type="subview" viewname="Preparation" id="8" name="preparations" defaulttype="table" colspan="13" rows="3"/>
+                </row>
+                <row>
+                    <cell type="label" label="Reference"/>
+                    <cell type="field" id="text1" name="text1" uitype="text" colspan="11"/>
+                </row>
+                <row>
+                    <cell type="label" label="Notes"/>
+                    <cell type="field" id="remarks" name="remarks" uitype="text" colspan="11"/>
+                </row>
+            </rows>
+        </viewdef>
+        
+        
+        <viewdef
+            type="formtable"
+            name="Determination Table"
+            class="edu.ku.brc.specify.datamodel.Determination"
+            gettable="edu.ku.brc.af.ui.forms.DataGetterForObj"
+            settable="edu.ku.brc.af.ui.forms.DataSetterForObj">
+            <desc><![CDATA[Determination subform table for Collection Object form.]]></desc>
+            <definition>Determination</definition>
+        </viewdef>
+        
+        <viewdef
+            name="Determination"
+            type="form"
+            class="edu.ku.brc.specify.datamodel.Determination"
+            gettable="edu.ku.brc.af.ui.forms.DataGetterForObj"
+            settable="edu.ku.brc.af.ui.forms.DataSetterForObj">
+            <desc><![CDATA[Determination subform for Collection Object form.]]></desc>
+            <enableRules/>
+            
+            <columnDef>100px,2px,210px,5px,80px,2px,195px,5px,86px,2px,140px,0px,p:g</columnDef>
+            <columnDef os="lnx">115px,2px,210px,5px,110px,2px,205px,5px,105px,2px,156px,0px,p:g</columnDef>
+            <columnDef os="mac">130px,2px,260px,5px,100px,2px,238px,5px,108px,2px,180px,0px,p:g</columnDef>
+            <columnDef os="exp">p,2px,p:g,5px:g,p,2px,p:g,5px:g,p,2px,p:g(2),0px</columnDef>
+            <rowDef auto="true" cell="p" sep="2px"/>
+
+            <rows>
+                <row>
+                    <cell type="label" labelfor="1"/>
+                    <cell type="field" id="1" name="taxon" uitype="querycbx" initialize="name=Taxon" uifieldformatter="TaxonAuthor" colspan="7"/>
+                    <cell type="field" id="3" name="isCurrent" uitype="checkbox"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="an"/>
+                    <cell type="field" id="an" name="alternateName" uitype="text" colspan="5"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="13"/>
+                    <cell type="field" id="13" name="text1" uitype="text" colspan="5"/>
+                    <cell type="label" labelfor="14"/>
+                    <cell type="field" id="14" name="nameUsage" uitype="text" readonly="true"/>
+                </row>
+            </rows>
+        </viewdef>
+        
+        <viewdef
+            type="formtable"
+            name="Preparation Table"
+            class="edu.ku.brc.specify.datamodel.Preparation"
+            gettable="edu.ku.brc.af.ui.forms.DataGetterForObj"
+            settable="edu.ku.brc.af.ui.forms.DataSetterForObj">
+            <desc><![CDATA[Preparation subform table for Collection Object form.]]></desc>
+            <definition>Preparation</definition>
+        </viewdef>
+                
+        <viewdef
+            type="form"
+            name="Preparation"
+            class="edu.ku.brc.specify.datamodel.Preparation"
+            gettable="edu.ku.brc.af.ui.forms.DataGetterForObj"
+            settable="edu.ku.brc.af.ui.forms.DataSetterForObj"
+            useresourcelabels="true">
+            <desc><![CDATA[Preparation for Collection Object form.]]></desc>
+            <enableRules/>
+
+            <columnDef>100px,2px,133px,5px,91px,2px,60px,5px,87px,2px,273px,2px,70px,p:g</columnDef>
+            <columnDef os="lnx">115px,2px,150px,5px,110px,2px,223px,5px,100px,2px,126px,2px,75px,p:g</columnDef>
+            <columnDef os="mac">130px,2px,165px,5px,110px,2px,260px,5px,105px,2px,174px,2px,70px,p:g</columnDef>
+            <columnDef os="exp">p,2px,p:g(2),5px:g,p,2px,p:g,5px:g,p,2px,p:g,10px,p:g</columnDef>
+            <rowDef auto="true" cell="p" sep="2dlu"/>
+
+            <rows>
+                <row>
+                    <cell type="label" labelfor="7"/>
+                    <cell type="field" id="7" name="prepType" uitype="combobox" picklist="PrepType"/>
+                    <cell type="label" labelfor="3"/>
+                    <cell type="field" id="3" name="countAmt" uitype="text"/>
+                    <cell type="label" labelfor="4"/>
+                    <cell type="field" id="4" name="storage" uitype="querycbx" initialize="name=Storage" colspan="3"/>
+                </row>
+            </rows>
+        </viewdef>
+    </viewdefs>    
+</viewset>
