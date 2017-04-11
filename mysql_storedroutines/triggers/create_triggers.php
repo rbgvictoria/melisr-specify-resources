@@ -1,7 +1,7 @@
 <?php
 
-$host = '203.55.15.78';
-$db = 'specify_development';
+$host = '10.15.15.121';
+$db = 'melisr';
 
 $triggers = array(
     'attachment_before_insert.sql',

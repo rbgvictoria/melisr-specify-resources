@@ -29,6 +29,7 @@ FOR EACH ROW
 
               -- dwc:typeStatus
               SET NEW.Description = dwc_type_status(NEW.CollectionObjectID);
+              SET NEW.YesNo1 = isType(NEW.CollectionObjectID);
             END IF;
         END IF;
 
