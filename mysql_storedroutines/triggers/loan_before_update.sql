@@ -52,7 +52,7 @@ FOR EACH ROW
                     SET NEW.SrcGeography = 'Current';
                 END IF;
             END IF;
-            IF OLD.DisciplineID=32768 THEN
+            /*IF OLD.DisciplineID=32768 THEN
                 SELECT a.Abbreviation
                 INTO var_lending_inst
                 FROM loan l
@@ -73,7 +73,7 @@ FOR EACH ROW
 
                 SET NEW.Number2 = var_qty_out;
 
-            END IF;
+            END IF;*/
         END IF;
   END $$
 
