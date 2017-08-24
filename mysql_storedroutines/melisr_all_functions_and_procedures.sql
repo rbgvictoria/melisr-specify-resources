@@ -1,6 +1,8 @@
 /**
 * classification procedure
 */
+USE specify_development;
+
 DELIMITER $$
 
 DROP PROCEDURE IF EXISTS `classification` $$
@@ -79,8 +81,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP FUNCTION IF EXISTS `melisr`.`collectorstring`$$
-CREATE DEFINER=`admin`@`%` FUNCTION  `melisr`.`collectorstring`(p_collectingeventid int, p_primary bit) RETURNS varchar(128) CHARSET latin1
+DROP FUNCTION IF EXISTS `collectorstring`$$
+CREATE DEFINER=`admin`@`%` FUNCTION  `collectorstring`(p_collectingeventid int, p_primary bit) RETURNS varchar(128) CHARSET latin1
     READS SQL DATA
 BEGIN
 RETURN (
@@ -103,8 +105,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP FUNCTION IF EXISTS `melisr`.`dwc_identification_qualifier`$$
-CREATE DEFINER=`admin`@`%` FUNCTION  `melisr`.`dwc_identification_qualifier`(in_qualifier VARCHAR(8), in_rank VARCHAR(16), in_taxonID INT) RETURNS varchar(255) CHARSET utf8
+DROP FUNCTION IF EXISTS `dwc_identification_qualifier`$$
+CREATE DEFINER=`admin`@`%` FUNCTION  `dwc_identification_qualifier`(in_qualifier VARCHAR(8), in_rank VARCHAR(16), in_taxonID INT) RETURNS varchar(255) CHARSET utf8
 BEGIN
     DECLARE var_name VARCHAR(255);
     DECLARE var_rank_id INT;
@@ -177,8 +179,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP FUNCTION IF EXISTS `melisr`.`dwc_type_status`$$
-CREATE DEFINER=`admin`@`%` FUNCTION  `melisr`.`dwc_type_status`(colobjid INT) RETURNS varchar(1024) CHARSET utf8
+DROP FUNCTION IF EXISTS `dwc_type_status`$$
+CREATE DEFINER=`admin`@`%` FUNCTION  `dwc_type_status`(colobjid INT) RETURNS varchar(1024) CHARSET utf8
 BEGIN
     DECLARE var_typeOfType VARCHAR(32);
     DECLARE var_scientificName VARCHAR(128);
@@ -219,8 +221,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP FUNCTION IF EXISTS `melisr`.`highergeography`$$
-CREATE DEFINER=`admin`@`%` FUNCTION  `melisr`.`highergeography`(p_geographyid int, p_rank varchar(64)) RETURNS varchar(128) CHARSET utf8
+DROP FUNCTION IF EXISTS `highergeography`$$
+CREATE DEFINER=`admin`@`%` FUNCTION  `highergeography`(p_geographyid int, p_rank varchar(64)) RETURNS varchar(128) CHARSET utf8
     READS SQL DATA
 BEGIN
 
@@ -258,8 +260,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP FUNCTION IF EXISTS `melisr`.`highertaxon`$$
-CREATE DEFINER=`admin`@`%` FUNCTION  `melisr`.`highertaxon`(p_taxonid int, p_rank varchar(64)) RETURNS varchar(128) CHARSET latin1
+DROP FUNCTION IF EXISTS `highertaxon`$$
+CREATE DEFINER=`admin`@`%` FUNCTION  `highertaxon`(p_taxonid int, p_rank varchar(64)) RETURNS varchar(128) CHARSET latin1
     READS SQL DATA
 BEGIN
 
@@ -304,8 +306,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP PROCEDURE IF EXISTS `melisr`.`incoming`$$
-CREATE DEFINER=`admin`@`%` PROCEDURE  `melisr`.`incoming`()
+DROP PROCEDURE IF EXISTS `incoming`$$
+CREATE DEFINER=`admin`@`%` PROCEDURE  `incoming`()
 BEGIN
     DECLARE var_collectionID INT;
     SET var_collectionID = 163840;
@@ -346,8 +348,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP FUNCTION IF EXISTS `melisr`.`isType`$$
-CREATE DEFINER=`admin`@`%` FUNCTION  `melisr`.`isType`(p_collectionobjectid int) RETURNS tinyint(4)
+DROP FUNCTION IF EXISTS `isType`$$
+CREATE DEFINER=`admin`@`%` FUNCTION  `isType`(p_collectionobjectid int) RETURNS tinyint(4)
 BEGIN
     DECLARE out_isType INT;
     SELECT count(*)
@@ -368,8 +370,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP PROCEDURE IF EXISTS `melisr`.`mellify`$$
-CREATE DEFINER=`admin`@`%` PROCEDURE  `melisr`.`mellify`()
+DROP PROCEDURE IF EXISTS `mellify`$$
+CREATE DEFINER=`admin`@`%` PROCEDURE  `mellify`()
 BEGIN
     DECLARE var_collectionID INT;
     SET var_collectionID = 131072;
@@ -410,8 +412,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP FUNCTION IF EXISTS `melisr`.`quantity_outstanding_nonmel`$$
-CREATE DEFINER=`admin`@`%` FUNCTION  `melisr`.`quantity_outstanding_nonmel`(p_loanid int) RETURNS int(11)
+DROP FUNCTION IF EXISTS `quantity_outstanding_nonmel`$$
+CREATE DEFINER=`admin`@`%` FUNCTION  `quantity_outstanding_nonmel`(p_loanid int) RETURNS int(11)
     READS SQL DATA
 BEGIN
 RETURN (
@@ -434,8 +436,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP FUNCTION IF EXISTS `melisr`.`scientificname`$$
-CREATE DEFINER=`admin`@`%` FUNCTION  `melisr`.`scientificname`(p_taxonid int, p_rankid int) RETURNS varchar(255) CHARSET latin1
+DROP FUNCTION IF EXISTS `scientificname`$$
+CREATE DEFINER=`admin`@`%` FUNCTION  `scientificname`(p_taxonid int, p_rankid int) RETURNS varchar(255) CHARSET latin1
     READS SQL DATA
 BEGIN
 
@@ -570,8 +572,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP FUNCTION IF EXISTS `melisr`.`split_string`$$
-CREATE DEFINER=`admin`@`%` FUNCTION  `melisr`.`split_string`(str VARCHAR(1024) , del VARCHAR(1) , i INT) RETURNS varchar(1024) CHARSET utf8
+DROP FUNCTION IF EXISTS `split_string`$$
+CREATE DEFINER=`admin`@`%` FUNCTION  `split_string`(str VARCHAR(1024) , del VARCHAR(1) , i INT) RETURNS varchar(1024) CHARSET utf8
 BEGIN
     DECLARE n INT ;
     SET n = LENGTH(str) - LENGTH(REPLACE(str, del, '')) + 1;
@@ -592,8 +594,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP PROCEDURE IF EXISTS `melisr`.`update_dwc_identification_qualifier`$$
-CREATE DEFINER=`admin`@`%` PROCEDURE  `melisr`.`update_dwc_identification_qualifier`()
+DROP PROCEDURE IF EXISTS `update_dwc_identification_qualifier`$$
+CREATE DEFINER=`admin`@`%` PROCEDURE  `update_dwc_identification_qualifier`()
 BEGIN
     UPDATE determination
     SET Text1=dwc_identification_qualifier(Qualifier, VarQualifier, TaxonID)
@@ -608,8 +610,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP PROCEDURE IF EXISTS `melisr`.`update_dwc_type_status`$$
-CREATE DEFINER=`admin`@`%` PROCEDURE  `melisr`.`update_dwc_type_status`()
+DROP PROCEDURE IF EXISTS `update_dwc_type_status`$$
+CREATE DEFINER=`admin`@`%` PROCEDURE  `update_dwc_type_status`()
 BEGIN
     UPDATE collectionobject
     SET Description=dwc_type_status(CollectionObjectID)
@@ -629,8 +631,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP PROCEDURE IF EXISTS `melisr`.`update_storage`$$
-CREATE DEFINER=`admin`@`%` PROCEDURE  `melisr`.`update_storage`(in_collectionobjectid INTEGER(11))
+DROP PROCEDURE IF EXISTS `update_storage`$$
+CREATE DEFINER=`admin`@`%` PROCEDURE  `update_storage`(in_collectionobjectid INTEGER(11))
 BEGIN
 
 	DECLARE var_taxonid INTEGER(11);
@@ -701,8 +703,8 @@ DELIMITER ;
 */
 DELIMITER $$
 
-DROP PROCEDURE IF EXISTS `melisr`.`vrs_collection`$$
-CREATE DEFINER=`admin`@`%` PROCEDURE  `melisr`.`vrs_collection`(in_collectionobjectid INTEGER, in_agentid INTEGER)
+DROP PROCEDURE IF EXISTS `vrs_collection`$$
+CREATE DEFINER=`admin`@`%` PROCEDURE  `vrs_collection`(in_collectionobjectid INTEGER, in_agentid INTEGER)
 BEGIN
     DECLARE _output TEXT DEFAULT '';
     DECLARE var_vrs_collectionid INTEGER;

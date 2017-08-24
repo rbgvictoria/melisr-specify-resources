@@ -7,11 +7,11 @@
             class="edu.ku.brc.specify.datamodel.CollectionObject" 
             busrules="edu.ku.brc.specify.datamodel.busrules.CollectionObjectBusRules" 
             isinternal="false" resourcelabels="false">
-            <desc><![CDATA[The Collection Object form.]]></desc>
-            <altviews>
-                <altview name="Collection Object View" viewdef="Collection Object" mode="view"/>
-                <altview name="Collection Object Edit" viewdef="Collection Object" mode="edit" default="true"/>
-            </altviews>
+                <desc><![CDATA[The Collection Object form.]]></desc>
+                <altviews>
+                    <altview name="Collection Object View" viewdef="Collection Object" mode="view"/>
+                    <altview name="Collection Object Edit" viewdef="Collection Object" mode="edit" default="true"/>
+                </altviews>
         </view>
 
         <view name="CollectionObjectAttachmentMEL"
@@ -146,11 +146,11 @@
                     <cell type="label" labelfor="1"/>
                     <cell type="field" id="1" name="catalogNumber" uitype="formattedtext" colspan="5"/>
                     <cell type="field" id="avh" name="this" uitype="plugin" initialize="name=WebLinkButton;weblink=AVHLink"/>
-                    <cell type="panel" id="2" name="CollBranchInfoPanel" coldef="55px,2px,55px,2px,55px,5px,85px,5px,40px,2px,20px,2px,99px" rowdef="p,2px" colspan="11" initialize="align=right;">
+					<cell type="panel" id="2" name="CollBranchInfoPanel" coldef="55px,2px,70px,2px,45px,5px,80px,5px,40px,2px,20px,2px,99px" rowdef="p,2px" colspan="11" initialize="align=right;">
                         <rows>
                             <row>
-                                <cell type="label" label=""/>
                                 <cell type="field" id="types" name="yesNo1" uitype="checkbox" readonly="true"/>
+                                <cell type="field" id="imaged" name="yesNo4" uitype="checkbox" readonly="true"/>
                                 <cell type="field" id="gpi" name="yesNo5" uitype="checkbox" readonly="true"/>
                                 <cell type="field" id="multisheets" name="yesNo2" uitype="checkbox" readonly="true"/>
                                 <cell type="label" labelfor="parts"/>
@@ -161,27 +161,21 @@
                     </cell>
                 </row>
                 <row>
-                    <cell type="label" labelfor="accessionCO"/>
-                    <cell type="field" id="accessionCO" name="accession" uitype="querycbx" initialize="name=AccessionCO;title=AccessionCO" isrequired="false" colspan="11"/>
-                    <cell type="label" label="" colspan="3"/>
-                    <cell type="field" id="deaccessioned" name="deaccessioned" uitype="checkbox" readonly="false"/>
+                        <cell type="subview" viewname="Determination" id="3" name="determinations" colspan="21" rows="5"/>
                 </row>
                 <row>
-                    <cell type="subview" viewname="Determination" id="3" name="determinations" colspan="21" rows="5"/>
+                        <cell type="subview" viewname="Preparation" id="14" name="preparations" colspan="21" rows="3"/>
                 </row>
                 <row>
-                    <cell type="subview" viewname="Preparation" id="14" name="preparations" colspan="21" rows="3"/>
+                        <cell type="subview" viewname="CollectingEventSub" id="4" label="Collecting information" name="collectingEvent" colspan="21"/>
                 </row>
                 <row>
-                    <cell type="subview" viewname="CollectingEventSub" id="4" label="Collecting information" name="collectingEvent" colspan="21"/>
+                        <cell type="label" labelfor="5"/>
+                        <cell type="field" id="5" name="text1" uitype="textareabrief" rows="2" colspan="18"/>
                 </row>
                 <row>
-                    <cell type="label" labelfor="5"/>
-                    <cell type="field" id="5" name="text1" uitype="textareabrief" rows="2" colspan="18"/>
-                </row>
-                <row>
-                    <cell type="label" labelfor="7" label="Misc. notes"/>
-                    <cell type="field" id="7" name="remarks" uitype="textareabrief" rows="2" colspan="18"/>
+                        <cell type="label" labelfor="7" label="Misc. notes"/>
+                        <cell type="field" id="7" name="remarks" uitype="textareabrief" rows="2" colspan="18"/>
                 </row>
                 <row>
                     <cell type="label" label=""/>
@@ -199,7 +193,7 @@
                     </cell>
                 </row>
                 <row>
-                    <cell type="separator" label="Label printing information" colspan="21"/>
+                        <cell type="separator" label="Label printing information" colspan="21"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="46"/>
@@ -228,7 +222,7 @@
                     <cell type="field" id="17" name="timestampCreated" uitype="label" readonly="true" colspan="1"/>
                     <cell type="label" label=""/>
                     <cell type="field" id="20" name="yesNo3" uitype="checkbox" initialize="align=right" colspan="3"/>
-                </row>
+				</row>
                 <row>
                     <cell type="label" labelfor="18"/>
                     <cell type="field" id="18" name="modifiedByAgent" uitype="label" readonly="true" uifieldformatter="Agent"/>
@@ -237,7 +231,7 @@
                     <cell type="field" id="19" name="timestampModified" uitype="label" readonly="true" colspan="3"/>
                     <cell type="label" labelfor="22"/>
                     <cell type="field" id="22" name="text2" uitype="text" colspan="3"/>
-                </row>
+				</row>
             </rows>
         </viewdef>
 
@@ -329,10 +323,10 @@
                     <cell type="label" label="Comments"/>
                     <cell type="field" id="comments" name="remarks" uitype="textareabrief" rows="3"/>
                 </row>
-                <!--row>
-                    <cell type="label" labelfor="morphBankView" label="MorphBank View"/>
-                    <cell type="field" id="morphBankView" name="morphBankView" uitype="querycbx" initialize="name=MorphBankView"/>
-                </row-->
+    		    <!--row>
+    		       	<cell type="label" labelfor="morphBankView" label="MorphBank View"/>
+    		       	<cell type="field" id="morphBankView" name="morphBankView" uitype="querycbx" initialize="name=MorphBankView"/>
+    		    </row-->
             </rows>
         </viewdef>
                         

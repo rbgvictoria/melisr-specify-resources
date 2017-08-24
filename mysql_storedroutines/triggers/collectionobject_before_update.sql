@@ -20,17 +20,17 @@ FOR EACH ROW
         IF DATE(NEW.TimestampCreated)<DATE(NOW()) AND NEW.CatalogNumber!=OLD.CatalogNumber THEN
             INSERT INTO mel_recataloguenumbered (TimestampCreated, CollectionObjectID, PreviousCatalogNumber, CreatedByAgentID)
             VALUES (NOW(), NEW.CollectionObjectID, OLD.CatalogNumber, NEW.ModifiedByAgentID);
+        END IF;
 
-            IF NEW.CollectionID=4 THEN
-              SET NEW.CatalogNumber=CONCAT(SUBSTRING(NEW.CatalogNumber, 1, 7), UPPER(SUBSTRING(NEW.CatalogNumber, 8)));
-              SET NEW.AltCatalogNumber=CAST(SUBSTRING(NEW.CatalogNumber, 1, 7) AS unsigned);
-              SET NEW.Name=CONCAT('MEL ', CAST(SUBSTRING(NEW.CatalogNumber, 1, 7) AS unsigned));
-              SET NEW.Modifier=UPPER(SUBSTRING(NEW.CatalogNumber, 8));
+        IF NEW.CollectionID=4 THEN
+          SET NEW.CatalogNumber=CONCAT(SUBSTRING(NEW.CatalogNumber, 1, 7), UPPER(SUBSTRING(NEW.CatalogNumber, 8)));
+          SET NEW.AltCatalogNumber=CAST(SUBSTRING(NEW.CatalogNumber, 1, 7) AS unsigned);
+          SET NEW.Name=CONCAT('MEL ', CAST(SUBSTRING(NEW.CatalogNumber, 1, 7) AS unsigned));
+          SET NEW.Modifier=UPPER(SUBSTRING(NEW.CatalogNumber, 8));
 
-              -- dwc:typeStatus
-              SET NEW.Description = dwc_type_status(NEW.CollectionObjectID);
-              SET NEW.YesNo1 = isType(NEW.CollectionObjectID);
-            END IF;
+          -- dwc:typeStatus
+          SET NEW.Description = dwc_type_status(NEW.CollectionObjectID);
+          SET NEW.YesNo1 = isType(NEW.CollectionObjectID);
         END IF;
 
     END IF;

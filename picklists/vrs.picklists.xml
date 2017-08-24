@@ -1,0 +1,388 @@
+<list>
+  <picklist name="AccessionRole" type="0" readonly="true" sizelimit="5" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="Donor" value="donor" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Reviewer" value="reviewer" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Staff" value="staff" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Collector" value="collector" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Receiver" value="receiver" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="AccessionStatus" type="0" readonly="true" sizelimit="3" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="Complete" value="complete" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="In Process" value="inprocess" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="No Data" value="nodata" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="AccessionType" type="0" readonly="true" sizelimit="2" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="Field Work" value="field_work" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Collection" value="cln" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Gift" value="gift" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="agent" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="AgentTitles" type="0" readonly="true" sizelimit="6" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="Ms." value="ms" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Curator" value="curator" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Mrs." value="mrs" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Asst. Director" value="asstdir" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Dr." value="dr" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Mr." value="mr" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="AgentVariant" type="0" readonly="true" sizelimit="-1" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="Variant" value="0" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Author" value="2" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Label Name" value="4" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Vernacular" value="1" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Author Abbrev." value="3" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="AltitudeMethod" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="AltitudeUnit" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:07:24.0" timestampModified="2013-11-12 10:07:24.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="attachment" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:36.0" timestampModified="2013-11-12 10:05:36.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="BorrowRole" type="0" readonly="true" sizelimit="12" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="Borrower" value="borrower" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Contributor" value="contributor" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Student" value="student" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Receiver" value="receiver" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Benefactor" value="benefactor" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Donor" value="donor" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Guest" value="guest" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Sponsor" value="sponsor" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Staff" value="staff" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Preparer" value="preparer" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Other" value="other" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="Cause of damage" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2015-03-25 11:57:27.0" timestampModified="2015-03-25 11:57:27.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="collectingeventattachment" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:36.0" timestampModified="2013-11-12 10:05:36.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="collectingeventattribute" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:35.0" timestampModified="2013-11-12 10:05:35.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="CollectingMethod" type="0" readonly="true" sizelimit="5" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0">
+    <items>
+      <picklistitem title="cut" value="cut" ordinal="0" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="collectingtrip" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="collectionobjectattachment" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:36.0" timestampModified="2013-11-12 10:05:36.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="collectionobjectattribute" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 11:15:19.0" timestampModified="2013-11-12 11:15:19.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="collector" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:02:17.0" timestampModified="2013-11-12 10:02:17.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="CollObjPrepMeth" type="0" readonly="true" sizelimit="5" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0">
+    <items>
+      <picklistitem title="Sheet" value="sheet" ordinal="0" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="conservdescription" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:36.0" timestampModified="2013-11-12 10:05:36.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="conservevent" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:36.0" timestampModified="2013-11-12 10:05:36.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Consrvator preparation" type="0" tablename="none" readonly="true" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:36.0" timestampModified="2013-11-13 12:36:19.0" version="1">
+    <items>
+      <picklistitem title="Sheet" value="Sheet" ordinal="0" timestampCreated="2013-11-13 12:36:19.0" timestampModified="2013-11-13 12:36:19.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="ContainerType" type="0" readonly="true" sizelimit="5" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="Folder" value="1" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="None" value="0" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Specimen" value="3" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Sheet" value="2" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="Context" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-19 11:02:42.0" timestampModified="2013-11-19 11:02:42.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Cultivar" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2014-04-08 15:45:58.0" timestampModified="2014-04-08 15:45:58.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="CultivatedSource" type="0" tablename="none" readonly="true" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:36.0" timestampModified="2013-11-13 12:28:05.0" version="1">
+    <items>
+      <picklistitem title="Other" value="Other" ordinal="3" timestampCreated="2013-11-13 12:28:05.0" timestampModified="2013-11-13 12:28:05.0" version="0"/>
+      <picklistitem title="Collector" value="Collector" ordinal="0" timestampCreated="2013-11-13 12:27:12.0" timestampModified="2013-11-13 12:27:12.0" version="0"/>
+      <picklistitem title="Exchange data" value="Exchange data" ordinal="2" timestampCreated="2013-11-13 12:27:56.0" timestampModified="2013-11-13 12:27:56.0" version="0"/>
+      <picklistitem title="Data entry person" value="Data entry person" ordinal="1" timestampCreated="2013-11-13 12:27:47.0" timestampModified="2013-11-13 12:27:47.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="CultivatedStatus" type="0" tablename="none" readonly="true" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:36.0" timestampModified="2013-11-13 12:28:52.0" version="1">
+    <items>
+      <picklistitem title="Cultivated" value="Cultivated" ordinal="0" timestampCreated="2013-11-13 12:28:10.0" timestampModified="2013-11-13 12:28:10.0" version="0"/>
+      <picklistitem title="Unknown" value="Unknown" ordinal="4" timestampCreated="2013-11-13 12:28:52.0" timestampModified="2013-11-13 12:28:52.0" version="0"/>
+      <picklistitem title="Not cultivated" value="Not cultivated" ordinal="3" timestampCreated="2013-11-13 12:28:35.0" timestampModified="2013-11-13 12:28:35.0" version="0"/>
+      <picklistitem title="Probably cultivated" value="Probably cultivated" ordinal="2" timestampCreated="2013-11-13 12:28:27.0" timestampModified="2013-11-13 12:28:27.0" version="0"/>
+      <picklistitem title="Possibly cultivated" value="Possibly cultivated" ordinal="1" timestampCreated="2013-11-13 12:28:19.0" timestampModified="2013-11-13 12:28:19.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="Datum" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Department" type="2" tablename="accession" fieldname="text1" readonly="true" sizelimit="-1" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Depth unit" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2014-05-06 12:21:54.0" timestampModified="2014-05-06 12:21:54.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="determination" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Determination type" type="0" tablename="none" readonly="true" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:07:28.0" timestampModified="2013-11-13 12:04:11.0" version="1">
+    <items>
+      <picklistitem title="Annot." value="Annot." ordinal="2" timestampCreated="2013-11-13 12:03:39.0" timestampModified="2013-11-13 12:03:39.0" version="0"/>
+      <picklistitem title="Det." value="Det." ordinal="0" timestampCreated="2013-11-13 11:59:02.0" timestampModified="2013-11-13 11:59:02.0" version="0"/>
+      <picklistitem title="Acc. name change" value="Acc. name change" ordinal="4" timestampCreated="2013-11-13 12:04:11.0" timestampModified="2013-11-13 12:04:11.0" version="0"/>
+      <picklistitem title="AVH annot." value="AVH annot." ordinal="3" timestampCreated="2013-11-13 12:03:45.0" timestampModified="2013-11-13 12:03:45.0" version="0"/>
+      <picklistitem title="Conf." value="Conf." ordinal="1" timestampCreated="2013-11-13 12:03:34.0" timestampModified="2013-11-13 12:03:34.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="DeterminationAddendum" type="0" tablename="none" readonly="true" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-13 12:08:27.0" version="1">
+    <items>
+      <picklistitem title="s.l." value="s.l." ordinal="1" timestampCreated="2013-11-13 12:07:38.0" timestampModified="2013-11-13 12:07:38.0" version="0"/>
+      <picklistitem title="vel. aff." value="vel. aff." ordinal="6" timestampCreated="2013-11-13 12:08:27.0" timestampModified="2013-11-13 12:08:27.0" version="0"/>
+      <picklistitem title="complex" value="complex" ordinal="3" timestampCreated="2013-11-13 12:07:56.0" timestampModified="2013-11-13 12:07:56.0" version="0"/>
+      <picklistitem title="group" value="group" ordinal="4" timestampCreated="2013-11-13 12:08:02.0" timestampModified="2013-11-13 12:08:02.0" version="0"/>
+      <picklistitem title="s. str." value="s. str." ordinal="0" timestampCreated="2013-11-13 12:07:32.0" timestampModified="2013-11-13 12:07:32.0" version="0"/>
+      <picklistitem title="intergrade" value="intergrade" ordinal="5" timestampCreated="2013-11-13 12:08:06.0" timestampModified="2013-11-13 12:08:06.0" version="0"/>
+      <picklistitem title="intermediate" value="intermediate" ordinal="2" timestampCreated="2013-11-13 12:07:47.0" timestampModified="2013-11-13 12:07:47.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="DeterminationBasis" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Discipline" type="1" tablename="discipline" formatter="Discipline" readonly="true" sizelimit="-1" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Division" type="1" tablename="division" formatter="Division" readonly="true" sizelimit="-1" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="ExpressSearch" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-08 17:21:57.0" timestampModified="2013-11-08 17:21:57.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Flora" type="0" tablename="none" readonly="true" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:07:28.0" timestampModified="2013-11-13 12:10:18.0" version="1">
+    <items>
+      <picklistitem title="Flora Malesiana" value="Flora Malesiana" ordinal="1" timestampCreated="2013-11-13 12:10:18.0" timestampModified="2013-11-13 12:10:18.0" version="0"/>
+      <picklistitem title="Flora of Australia" value="Flora of Australia" ordinal="0" timestampCreated="2013-11-13 12:10:03.0" timestampModified="2013-11-13 12:10:03.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="GeocodePrecision" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="GeocodeSource" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="geocoorddetail" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:35.0" timestampModified="2013-11-12 10:05:35.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="geography" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="GeoreferencedByPickList" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:07:24.0" timestampModified="2013-11-12 10:07:24.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Hybrid category" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-12-10 10:05:18.0" timestampModified="2013-12-10 10:05:18.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Hybrid rank" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2014-04-08 15:45:58.0" timestampModified="2014-04-08 15:45:58.0" version="1">
+    <items>
+      <picklistitem title="nom. superfl." value="nom. superfl." ordinal="0" timestampCreated="2014-05-27 15:24:59.0" timestampModified="2014-05-27 15:24:59.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="IntroducedSource" type="0" tablename="none" readonly="true" sizelimit="0" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:35.0" timestampModified="2013-11-13 12:26:50.0" version="2">
+    <items>
+      <picklistitem title="Collector" value="Collector" ordinal="0" timestampCreated="2013-11-13 12:23:52.0" timestampModified="2013-11-13 12:23:52.0" version="1"/>
+      <picklistitem title="VS" value="VS" ordinal="3" timestampCreated="2013-11-13 12:26:43.0" timestampModified="2013-11-13 12:26:43.0" version="0"/>
+      <picklistitem title="Unknown" value="Unknown" ordinal="2" timestampCreated="2013-11-13 12:25:45.0" timestampModified="2013-11-13 12:25:45.0" version="0"/>
+      <picklistitem title="Exchange data" value="Exchange data" ordinal="1" timestampCreated="2013-11-13 12:25:36.0" timestampModified="2013-11-13 12:25:36.0" version="1"/>
+      <picklistitem title="NGW" value="NGW" ordinal="4" timestampCreated="2013-11-13 12:26:50.0" timestampModified="2013-11-13 12:26:50.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="IntroducedStatus" type="0" tablename="none" readonly="true" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:35.0" timestampModified="2013-11-13 12:27:06.0" version="1">
+    <items>
+      <picklistitem title="Native" value="Native" ordinal="0" timestampCreated="2013-11-13 12:26:54.0" timestampModified="2013-11-13 12:26:54.0" version="0"/>
+      <picklistitem title="Unknown" value="Unknown" ordinal="2" timestampCreated="2013-11-13 12:27:06.0" timestampModified="2013-11-13 12:27:06.0" version="0"/>
+      <picklistitem title="Not native" value="Not native" ordinal="1" timestampCreated="2013-11-13 12:26:58.0" timestampModified="2013-11-13 12:26:58.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="JarSize" type="0" tablename="none" readonly="true" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:07:28.0" timestampModified="2013-11-13 12:23:28.0" version="1">
+    <items>
+      <picklistitem title="C" value="C" ordinal="2" timestampCreated="2013-11-13 12:23:23.0" timestampModified="2013-11-13 12:23:23.0" version="0"/>
+      <picklistitem title="A" value="A" ordinal="0" timestampCreated="2013-11-13 12:23:14.0" timestampModified="2013-11-13 12:23:14.0" version="0"/>
+      <picklistitem title="D" value="D" ordinal="3" timestampCreated="2013-11-13 12:23:28.0" timestampModified="2013-11-13 12:23:28.0" version="0"/>
+      <picklistitem title="B" value="B" ordinal="1" timestampCreated="2013-11-13 12:23:19.0" timestampModified="2013-11-13 12:23:19.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="Licence" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-19 11:02:42.0" timestampModified="2013-11-19 11:02:42.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="LoanAgentRole" type="0" readonly="true" sizelimit="12" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="Benefactor" value="benefactor" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Contributor" value="contributor" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Preparer" value="preparer" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Donor" value="donor" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Guest" value="guest" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Student" value="student" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Other" value="other" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Borrower" value="borrower" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Receiver" value="receiver" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Sponsor" value="sponsor" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Staff" value="staff" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="LoanStatus" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2017-07-04 10:08:35.0" timestampModified="2017-07-04 10:08:35.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="locality" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="localitydetail" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:35.0" timestampModified="2013-11-12 10:05:35.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="NameUsages" type="0" readonly="true" sizelimit="100" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="Shelved By" value="shelved by" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Flora of Kansas" value="flora of kansas" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="NotGeocodedBecause" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:35.0" timestampModified="2013-11-12 10:05:35.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="NumberingScheme" type="1" tablename="autonumberingscheme" formatter="AutoNumberingScheme" readonly="true" sizelimit="-1" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Other identifier type" type="0" tablename="none" readonly="true" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-13 12:17:57.0" timestampModified="2013-11-13 12:17:57.0" version="1">
+    <items>
+      <picklistitem title="Ex herbarium" value="Ex herbarium" ordinal="0" timestampCreated="2013-11-13 12:12:58.0" timestampModified="2013-11-13 12:12:58.0" version="0"/>
+      <picklistitem title="MEL catalogue number" value="MEL catalogue number" ordinal="1" timestampCreated="2013-11-13 12:17:57.0" timestampModified="2013-11-13 12:17:57.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="PermitType" type="0" readonly="true" sizelimit="5" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="International" value="int" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="State" value="state" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="US Dept Wildlife" value="udw" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Federal" value="fed" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="no data" value="no data" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="Phenology" type="0" readonly="true" sizelimit="6" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0">
+    <items>
+      <picklistitem title="senescent" value="senescent" ordinal="0" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0"/>
+      <picklistitem title="seed" value="seed" ordinal="0" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0"/>
+      <picklistitem title="No Data" value="No Data" ordinal="0" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0"/>
+      <picklistitem title="flowering and fruiting" value="flowering and fruiting" ordinal="0" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0"/>
+      <picklistitem title="fruiting" value="fruiting" ordinal="0" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0"/>
+      <picklistitem title="seedling" value="seedling" ordinal="0" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0"/>
+      <picklistitem title="mature" value="mature" ordinal="0" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0"/>
+      <picklistitem title="flowering" value="flowering" ordinal="0" timestampCreated="2013-11-08 17:17:15.0" timestampModified="2013-11-08 17:17:15.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="preparation" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="PrepType" type="1" tablename="preptype" formatter="PrepType" readonly="true" sizelimit="-1" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="Qualifier" type="0" tablename="none" readonly="true" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-13 12:05:08.0" version="1">
+    <items>
+      <picklistitem title="aff." value="aff." ordinal="1" timestampCreated="2013-11-13 12:05:00.0" timestampModified="2013-11-13 12:05:00.0" version="0"/>
+      <picklistitem title="cf." value="cf." ordinal="2" timestampCreated="2013-11-13 12:05:08.0" timestampModified="2013-11-13 12:05:08.0" version="0"/>
+      <picklistitem title="?" value="?" ordinal="0" timestampCreated="2013-11-13 12:04:40.0" timestampModified="2013-11-13 12:04:40.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="QualifierRank" type="0" tablename="none" readonly="true" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-13 12:22:08.0" version="2">
+    <items>
+      <picklistitem title="variety" value="Variety" ordinal="4" timestampCreated="2013-11-13 12:06:22.0" timestampModified="2013-11-13 12:06:22.0" version="0"/>
+      <picklistitem title="species" value="Species" ordinal="1" timestampCreated="2013-11-13 12:05:34.0" timestampModified="2013-11-13 12:05:34.0" version="0"/>
+      <picklistitem title="subspecies" value="Subspecies" ordinal="5" timestampCreated="2013-11-13 12:06:37.0" timestampModified="2013-11-13 12:06:37.0" version="0"/>
+      <picklistitem title="genus" value="Genus" ordinal="0" timestampCreated="2013-11-13 12:05:29.0" timestampModified="2013-11-13 12:05:29.0" version="0"/>
+      <picklistitem title="forma" value="Forma" ordinal="3" timestampCreated="2013-11-13 12:06:05.0" timestampModified="2013-11-13 12:06:05.0" version="0"/>
+      <picklistitem title="family" value="Family" ordinal="2" timestampCreated="2013-11-13 12:05:38.0" timestampModified="2013-11-13 12:05:38.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="ReferenceWorkType" type="0" tablename="referencework" fieldname="referenceWorkType" readonly="true" sizelimit="6" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="Technical Report" value="3" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Paper" value="2" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Electronic Media" value="1" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Book" value="0" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Section in Book" value="5" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Thesis" value="4" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="Severity" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2015-03-25 11:57:27.0" timestampModified="2015-03-25 11:57:27.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="ShipmentMethod" type="0" readonly="true" sizelimit="5" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="UPS" value="ups" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="DHL" value="dhl" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="USPS" value="usps" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Fed Ex" value="fedex" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="By Hand" value="hand" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="storage" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="taxon" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-11 09:44:38.0" timestampModified="2013-11-11 09:44:38.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="TaxonLabelFormatter" type="0" readonly="false" sizelimit="500" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="%G %S (%A1 ex. %A2)" value="%G %S (%A1 ex. %A2)" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="%G %S" value="%G %S" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="TranslationConfidence" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:36.0" timestampModified="2013-11-12 10:05:36.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="TreatmentType" type="0" readonly="true" sizelimit="10" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="CO2" value="co2" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Bug Room" value="bugroom" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="TypeOfAddr" type="0" tablename="address" readonly="true" sizelimit="2" issystem="true" sort="1" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0">
+    <items>
+      <picklistitem title="Home" value="home" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+      <picklistitem title="Work" value="work" ordinal="0" timestampCreated="2013-11-08 17:17:14.0" timestampModified="2013-11-08 17:17:14.0" version="0"/>
+    </items>
+  </picklist>
+  <picklist name="TypeStatus" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2017-07-04 10:08:35.0" timestampModified="2017-07-04 10:08:35.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="TypeStatusQual" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:33.0" timestampModified="2013-11-12 10:05:33.0" version="0">
+    <items/>
+  </picklist>
+  <picklist name="UTMGrid" type="0" readonly="false" sizelimit="50" issystem="false" sort="1" timestampCreated="2013-11-12 10:05:35.0" timestampModified="2013-11-12 10:05:35.0" version="0">
+    <items/>
+  </picklist>
+</list>

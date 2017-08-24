@@ -48,6 +48,25 @@ FOR EACH ROW
 
         SET new_number=LPAD(new_number, 6, '0');
 
+      ELSEIF NEW.PrepTypeID=14 THEN -- VCSB
+        SELECT IF(max(SampleNumber) IS NOT NULL, max(SampleNumber)+1, 1)
+        INTO new_number
+        FROM preparation
+        WHERE PrepTypeID=14;
+
+        SELECT IF(max(CatalogNumber)>new_number, max(CatalogNumber)+1, new_number)
+        INTO new_number
+        FROM collectionobject
+        WHERE CollectionID=294912;
+
+        SET new_number=lpad(new_number, 7, '0');
+
+      ELSEIF NEW.PrepTypeID=155 THEN -- Seedling
+        SELECT IF(max(SampleNumber) IS NOT NULL, MAX(CAST(SampleNumber AS unsigned))+1, 1)
+        INTO new_number
+        FROM preparation
+        WHERE PrepTypeID=155;
+
       ELSE
         SET new_number=NEW.SampleNumber;
 
