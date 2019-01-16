@@ -1090,7 +1090,7 @@
                 </row>
                 <row>
                     <cell type="label" labelfor="text1"/>
-                    <cell type="field" id="text1" name="text1" uitype="combobox" picklist="MELAuthorizationType" colspan="5"/>
+                    <cell type="field" id="text1" name="text1" uitype="combobox" picklist="PermitStatus" colspan="5"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="permitQualifier"/>

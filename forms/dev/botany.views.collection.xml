@@ -144,7 +144,7 @@
             <rows>
                 <row>
                     <cell type="label" labelfor="1"/>
-                    <cell type="field" id="1" name="catalogNumber" uitype="formattedtext" colspan="5"/>
+                    <cell type="field" id="1" name="catalogNumber" uitype="formattedtext" isrequired="true" colspan="5"/>
                     <cell type="field" id="avh" name="this" uitype="plugin" initialize="name=WebLinkButton;weblink=AVHLink"/>
 					<cell type="panel" id="2" name="CollBranchInfoPanel" coldef="55px,2px,70px,2px,45px,5px,80px,5px,40px,2px,20px,2px,99px" rowdef="p,2px" colspan="11" initialize="align=right;">
                         <rows>
@@ -408,6 +408,13 @@
                 <row>
                     <cell type="label" labelfor="36"/>
                     <cell type="field" id="36" name="text4" uitype="text" colspan="15"/>
+                </row>
+                <row>
+                    <cell type="separator" label="RBG" colspan="24" />
+                </row>
+                <row>
+                    <cell type="label" labelfor="text11" label="RBG Accession No."/>
+                    <cell type="field" id="text11" name="text11" uitype="text" colspan="5"/>
                 </row>
                 <row>
                     <cell type="separator" label="Other" colspan="24"/>

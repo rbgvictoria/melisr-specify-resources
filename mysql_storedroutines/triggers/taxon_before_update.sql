@@ -21,7 +21,7 @@ FOR EACH ROW
 
         DECLARE var_fullname VARCHAR(255);
 
-        IF isnull(@DISABLE_TRIGGER) THEN
+        IF isnull(@DISABLE_TRIGGER) AND (NEW.FullName != OLD.FullName OR NEW.Author != OLD.Author) THEN
             CASE 
                 WHEN NEW.RankID<=140 OR NEW.RankID=180 THEN   -- genus or monomial
                     IF NEW.Author IS NOT NULL THEN
