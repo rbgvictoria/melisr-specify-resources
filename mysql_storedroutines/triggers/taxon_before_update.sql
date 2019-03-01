@@ -18,10 +18,10 @@ FOR EACH ROW
         DECLARE var_rank VARCHAR(8);
         DECLARE var_scientificname VARCHAR(255);
         DECLARE var_genus VARCHAR(128);
-
         DECLARE var_fullname VARCHAR(255);
 
-        IF isnull(@DISABLE_TRIGGER) AND (NEW.FullName != OLD.FullName OR NEW.Author != OLD.Author) THEN
+        IF isnull(@DISABLE_TRIGGER) THEN 
+          IF NEW.FullName != OLD.FullName OR NEW.Author != OLD.Author THEN
             CASE 
                 WHEN NEW.RankID<=140 OR NEW.RankID=180 THEN   -- genus or monomial
                     IF NEW.Author IS NOT NULL THEN
@@ -163,6 +163,13 @@ FOR EACH ROW
                 SET NEW.FullName = CONCAT(var_fullname, ' [', NEW.EsaStatus, ']');
             END IF;
 
+          END IF;
+
+          IF NEW.TaxonTreeDefItemID=12 
+              AND ((NEW.Text3 IS NOT NULL AND (NEW.Text3<>OLD.Text3 OR OLD.Text3 IS NULL)) 
+              OR  (NEW.Text4 IS NOT NULL AND (NEW.Text4<>OLD.Text4 OR OLD.Text4 IS NULL))) THEN
+            SET NEW.YesNo1=true;
+          END IF;
         END IF;    
     END $$
 

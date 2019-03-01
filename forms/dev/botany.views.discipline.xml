@@ -2978,6 +2978,14 @@
                 	<cell type="field" id="definitionItem" uitype="combobox" name="definitionItem" colspan="6"/>
                 </row>
                 <row>
+                    <cell type="label" labelfor="text1"/>
+                    <cell type="field" id="text1" uitype="text" name="text1" colspan="6"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="text2"/>
+                    <cell type="field" id="text2" uitype="text" name="text2" colspan="6"/>
+                </row>
+                <row>
                     <cell type="label" labelfor="remarks"/>
                     <cell type="field" id="remarks" uitype="textareabrief" rows="2" name="remarks" colspan="6"/>
                 </row>
@@ -3086,7 +3094,13 @@
                     <cell type="separator" label="Attachments" colspan="17"/>
                 </row>
                 <row>
-                    <cell type="subview" id="attachments" viewname="TaxonAttachmentMEL" name="taxonAttachments" colspan="12" initialize="btn=true;icon=TaxonAttachment"/>
+                    <cell 
+                        type="subview" 
+                        id="attachments" 
+                        viewname="TaxonAttachmentMEL" 
+                        name="taxonAttachments" 
+                        colspan="12" 
+                        initialize="btn=true;icon=TaxonAttachment"/>
                 </row>
                 <!-- 
                 <row>

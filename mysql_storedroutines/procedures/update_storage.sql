@@ -8,6 +8,8 @@ BEGIN
 	DECLARE var_type BIT(1);
 	DECLARE var_rankid INTEGER(11);
 	DECLARE var_nodenumber INTEGER(11);
+        DECLARE var_main_storage VARCHAR(128);
+        DECLARE var_type_storage VARCHAR(128);
 	DECLARE var_storageid INTEGER(11);
 
 	SELECT TaxonID
@@ -35,8 +37,8 @@ BEGIN
 	WHERE TaxonID=var_taxonid;
 
 	If var_rankid > 180 THEN
-		SELECT TaxonID
-		INTO var_taxonid
+		SELECT TaxonID, Text3, Text4
+		INTO var_taxonid, var_main_storage, var_type_storage
 		FROM taxon
 		WHERE NodeNumber<var_nodenumber AND HighestChildNodeNumber>=var_nodenumber
 			AND RankID=180
@@ -44,16 +46,16 @@ BEGIN
 	END IF;
 
 	IF var_type=1 THEN
-		SELECT StorageIDTypes
+		SELECT StorageID
 		INTO var_storageid
-		FROM genusstorage
-		WHERE TaxonID=var_taxonid
+		FROM `storage`
+		WHERE FullName=var_type_storage
                 LIMIT 1;
 	ELSE
 		SELECT StorageID
 		INTO var_storageid
-		FROM genusstorage
-		WHERE TaxonID=var_taxonid
+		FROM `storage`
+		WHERE FullName=var_main_storage
                 LIMIT 1;
 	END IF;
 
