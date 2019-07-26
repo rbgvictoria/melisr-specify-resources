@@ -58,9 +58,9 @@
               <desc><![CDATA[The Collection Object Subform for Accessions.]]></desc>
               <altviews>
                   <altview name="COS View"       viewdef="AccessionItems" mode="view"/>
-                  <altview name="COS Edit"       viewdef="AccessionItems" mode="edit" default="true"/>
+                  <altview name="COS Edit"       viewdef="AccessionItems" mode="edit"/>
                   <altview name="COS Table Edit" viewdef="AccessionItems Table" mode="edit"/>
-                  <altview name="COS Table View" viewdef="AccessionItems Table" mode="view"/>
+                  <altview name="COS Table View" viewdef="AccessionItems Table" mode="view" default="true"/>
               </altviews>      
          </view>
 
@@ -1061,7 +1061,7 @@
             <desc><![CDATA[The Accession form.]]></desc>
             <enableRules/>
 
-            <columnDef>p,0px,190px,5px,130px,2px,141px,5px,110px,2px,140px,0px,15px,p:g</columnDef>
+            <columnDef>120px,2px,190px,5px,130px,2px,141px,5px,110px,2px,140px,0px,15px,p:g</columnDef>
             <columnDef os="lnx">135px,2px,200px,5px,135px,2px,153px,5px,125px,2px,153px,0px,15px,p:g</columnDef>
             <columnDef os="mac">130px,2px,220px,5px,153px,2px,189px,5px,133px,2px,189px,0px,15px,p:g</columnDef>
             <columnDef os="exp">p,2px,p:g,5px:g,p,2px,p:g(2),5px:g,p,2px,p:g(2),0px,p,p:g</columnDef>
@@ -1071,40 +1071,52 @@
                 <row>
                     <cell type="label" labelfor="1"/>
                     <cell type="field" id="1" name="accessionNumber" uitype="formattedtext"/>
+                    <cell type="label" id="divLabel" label=" " initialize="align=right"/>
+                    <cell type="field" id="4" name="divisionCBX" uitype="combobox" ignore="true" colspan="5"/>
+                </row>
+                <row>
                     <cell type="label" labelfor="3"/>
                     <cell type="field" id="3" name="type" uitype="combobox"/>
                     <cell type="label" labelfor="2"/>
                     <cell type="field" id="2" name="status" uitype="combobox"/>
-                </row>
-                <row>
-                    <cell type="label" id="divLabel" label=" " initialize="align=right"/>
-                    <cell type="field" id="4" name="divisionCBX" uitype="combobox" ignore="true"/>
                     <cell type="label" labelfor="5"/>
                     <cell type="field" id="5" name="dateAccessioned" uitype="formattedtext" uifieldformatter="Date" default="today"/>
-                    <cell type="label" labelfor="6"/>
-                    <cell type="field" id="6" name="dateReceived" uitype="formattedtext" uifieldformatter="Date" default="today"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="exchangeIn"/>
+                    <cell type="field" id="exchangeIn" name="text2" uitype="combobox" picklist="ExchangeInNumberPickList" colspan="3"/>
+                    <cell type="label" labelfor="repositoryAgreement"/>
+                    <cell type="field" id="repositoryAgreement" name="repositoryAgreement" uitype="querycbx" initialize="name=RepositoryAgreement" colspan="3"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="text1"/>
+                    <cell type="field" id="text1" name="text1" uitype="combobox" picklist="PermitStatus" colspan="5"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="permitQualifier"/>
+                    <cell type="field" id="permitQualifier" name="text3" uitype="textareabrief" rows="2" colspan="10"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="7"/>
                     <cell type="field" id="7" name="remarks" uitype="textareabrief" rows="2" colspan="10"/>
                 </row>
                 <row>
-                    <cell type="subview" viewname="AccessionAgent" id="8" name="accessionAgents" desc="Agents" colspan="13" rows="3"/>
+                    <cell type="subview" viewname="AccessionAgent" id="8" name="accessionAgents" desc="Agents" colspan="13" rows="2"/>
                 </row>
                 <row>
-                    <cell type="subview" viewname="AccessionAuthorization" id="9" desc="Authorization" name="accessionAuthorizations" colspan="13"/>
+                    <cell type="subview" viewname="AccessionAuthorization" id="9" desc="Permits" name="accessionAuthorizations" colspan="13"/>
                 </row>
                 <row> 
-                    <cell type="subview" viewname="AccessionItems" id="25" desc="Collection Object" name="collectionObjects" colspan="13" rows="2" initialize="addsearch=true"/>
-                </row>
-                <row>
-                    <cell type="separator" label="Attachments" colspan="13"/>
-                </row>
-                <row>
-                    <cell type="subview" id="attachments" viewname="ObjectAttachment" name="accessionAttachments" colspan="13" initialize="btn=true;icon=AccessionAttachment;hc=xxx"/>
+                    <cell type="subview" viewname="AccessionItems" id="25" desc="Collection Object" name="collectionObjects" colspan="13" rows="10" initialize="addsearch=true"/>
                 </row>
                 <row>
                     <cell type="separator" label="" colspan="13"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="cbAgent"/>
+                    <cell type="field" id="cbAgent" name="createdByAgent" uitype="label" readonly="true"  uifieldformatter="Agent"/>
+                    <cell type="label" labelfor="created"/>
+                    <cell type="field" id="created" name="timestampCreated" uitype="label" readonly="true"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="10"/>
@@ -1174,28 +1186,40 @@
             <desc><![CDATA[The Accession form.]]></desc>
             <enableRules/>
             
-            <columnDef>p,0px,190px,5px,130px,2px,141px,5px,110px,2px,140px,0px,15px,p:g</columnDef>
-            <columnDef os="lnx">135px,2px,200px,5px,135px,2px,156px,5px,125px,2px,150px,0px,15px,p:g</columnDef>
+            <columnDef>120px,2px,190px,5px,130px,2px,141px,5px,110px,2px,140px,0px,15px,p:g</columnDef>
+            <columnDef os="lnx">135px,2px,200px,5px,135px,2px,153px,5px,125px,2px,153px,0px,15px,p:g</columnDef>
             <columnDef os="mac">130px,2px,220px,5px,153px,2px,189px,5px,133px,2px,189px,0px,15px,p:g</columnDef>
-            <columnDef os="exp">p,0px,p:g,5px:g,p,2px,p:g(2),5px:g,p,2px,p:g(2),0px,p,p:g</columnDef>
+            <columnDef os="exp">p,2px,p:g,5px:g,p,2px,p:g(2),5px:g,p,2px,p:g(2),0px,p,p:g</columnDef>
             <rowDef auto="true" cell="p" sep="1px"/>
-            
+
             <rows>
                 <row>
                     <cell type="label" labelfor="1"/>
                     <cell type="field" id="1" name="accessionNumber" uitype="formattedtext"/>
+                    <cell type="label" id="divLabel" label=" " initialize="align=right"/>
+                    <cell type="field" id="4" name="divisionCBX" uitype="combobox" ignore="true" colspan="5"/>
+                </row>
+                <row>
                     <cell type="label" labelfor="3"/>
                     <cell type="field" id="3" name="type" uitype="combobox"/>
                     <cell type="label" labelfor="2"/>
-                    <cell type="field" id="2" name="status"  uitype="combobox"/>
-                </row>
-                <row>
-                    <cell type="label" id="divLabel" label=" " initialize="align=right"/>
-                    <cell type="field" id="4" name="divisionCBX" uitype="combobox" ignore="true"/>
+                    <cell type="field" id="2" name="status" uitype="combobox"/>
                     <cell type="label" labelfor="5"/>
                     <cell type="field" id="5" name="dateAccessioned" uitype="formattedtext" uifieldformatter="Date" default="today"/>
-                    <cell type="label" labelfor="6"/>
-                    <cell type="field" id="6" name="dateReceived" uitype="formattedtext" uifieldformatter="Date" default="today"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="exchangeIn"/>
+                    <cell type="field" id="exchangeIn" name="text2" uitype="combobox" picklist="ExchangeInNumberPickList" colspan="3"/>
+                    <cell type="label" labelfor="repositoryAgreement"/>
+                    <cell type="field" id="repositoryAgreement" name="repositoryAgreement" uitype="querycbx" initialize="name=RepositoryAgreement" colspan="3"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="text1"/>
+                    <cell type="field" id="text1" name="text1" uitype="combobox" picklist="MELAuthorizationType" colspan="5"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="permitQualifier"/>
+                    <cell type="field" id="permitQualifier" name="text3" uitype="textareabrief" rows="2" colspan="10"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="7"/>
@@ -1205,20 +1229,14 @@
                     <cell type="subview" viewname="AccessionAgent" id="8" name="accessionAgents" desc="Agents" colspan="13"/>
                 </row>
                 <row>
-                    <cell type="subview" viewname="AccessionAuthorization" id="9" desc="Authorization" name="accessionAuthorizations" colspan="13"/>
-                </row>
-                <row>
-                    <cell type="separator" label="Attachments" colspan="13"/>
-                </row>
-                <row>
-                    <cell type="subview" id="attachments" viewname="ObjectAttachment" name="accessionAttachments" colspan="13" initialize=";btn=true;icon=AccessionAttachment;hc=xxx"/>
+                    <cell type="subview" viewname="AccessionAuthorization" id="9" desc="Permits" name="accessionAuthorizations" colspan="13"/>
                 </row>
                 <row>
                     <cell type="separator" label="" colspan="13"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="10"/>
-                    <cell type="field" id="10" name="modifiedByAgent" uitype="label" readonly="true" uifieldformatter="Agent"/>
+                    <cell type="field" id="10" name="modifiedByAgent" uitype="label" readonly="true"  uifieldformatter="Agent"/>
                     <cell type="label" labelfor="11"/>
                     <cell type="field" id="11" name="timestampModified" uitype="label" readonly="true"/>
                 </row>
@@ -1244,7 +1262,7 @@
             <desc><![CDATA[The Accession form.]]></desc>
             <enableRules/>
 
-            <columnDef>105px,2px,210px,5px,110px,2px,155px,243px,p:g</columnDef>
+            <columnDef>120px,2px,210px,5px,110px,2px,155px,243px,p:g</columnDef>
             <columnDef os="lnx">135px,2px,230px,5px,98px,2px,155px,290px,p:g</columnDef>
             <columnDef os="mac">130px,2px,215px,5px,153px,2px,189px,336px,p:g</columnDef>
             <columnDef os="exp">p,2px,p,5px,85px,2px,p:g(2),p:g</columnDef>
@@ -1257,11 +1275,11 @@
                     <cell type="label" labelfor="2"/>
                     <cell type="field" id="2" name="role" uitype="combobox"/>
                 </row>
-                <row>
+                <!--<row>
                     <cell type="label" labelfor="3"/>
                     <cell type="field" id="3" name="remarks" uitype="textareabrief" rows="2" colspan="6"/>
-                </row>
-                <!--<row>
+                </row
+                <row>
                     <cell type="label" labelfor="9"/>
                     <cell type="field" id="9" name="createdByAgent" uitype="label" readonly="true"  uifieldformatter="Agent"/>
                     <cell type="label" labelfor="10"/>
@@ -1286,7 +1304,7 @@
             <desc><![CDATA[Permit subform for AccessionAuthorization.]]></desc>
             <enableRules/>
 
-            <columnDef>105px,2px,210px,515px,p:g</columnDef>
+            <columnDef>120px,2px,210px,515px,p:g</columnDef>
             <columnDef os="lnx">135px,2px,230px,550px,p:g</columnDef>
             <columnDef os="mac">130px,2px,215px,685px,p:g</columnDef>
             <columnDef os="exp">p,2px,p,p:g</columnDef>
@@ -1295,11 +1313,7 @@
             <rows>
                 <row>
                     <cell type="label" labelfor="1"/>
-                    <cell type="field" id="1" name="permit" uitype="querycbx" initialize="name=Permit"/>
-                </row>
-                <row>
-                    <cell type="label" labelfor="2"/>
-                    <cell type="field" id="2" name="remarks" uitype="textareabrief" rows="2" colspan="2"/>
+                    <cell type="field" id="1" name="permit" uitype="querycbx" initialize="name=Permit" colspan="3"/>
                 </row>
                 <!--<row>
                     <cell type="label" labelfor="9"/>
@@ -1337,7 +1351,7 @@
               <desc><![CDATA[The Collection Object Subform for Accessions.]]></desc>
               <enableRules/>
               
-              <columnDef>105px,2px,120px,5px,100px,2px,95px,5px,102px,2px,95px,5px,97px,2px,95px,p:g</columnDef>
+              <columnDef>120px,2px,120px,5px,100px,2px,95px,5px,102px,2px,95px,5px,97px,2px,95px,p:g</columnDef>
               <columnDef os="lnx">135px,2px,113px,5px,110px,2px,105px,5px,116px,2px,105px,5px,110px,2px,100px,p:g</columnDef>
               <columnDef os="mac">130px,2px,130px,5px,120px,2px,126px,5px,126px,2px,126px,5px,125px,2px,126px,p:g</columnDef>
               <columnDef os="exp">p,2px,min(p;175px),5px:g,p,2px,p:g(2),5px:g,p,2px,p:g(2),5px:g,p,2px,p:g(2)</columnDef>
@@ -1347,12 +1361,12 @@
                 <row>
                     <cell type="label" labelfor="1"/>
                     <cell type="field" id="1" name="catalogNumber" uitype="formattedtext"/>
-                    <cell type="label" labelfor="2"/>
+                    <!--cell type="label" labelfor="2"/>
                     <cell type="field" id="2" name="altCatalogNumber" uitype="text"/>
                     <cell type="label" labelfor="3"/>
                     <cell type="field" id="3" name="collection.collectionName" uitype="dsptextfield"/>
                     <cell type="label" labelfor="4"/>
-                    <cell type="field" id="4" name="projectNumber" uitype="text"/>
+                    <cell type="field" id="4" name="projectNumber" uitype="text"/-->
                 </row>
              </rows>
         </viewdef>
@@ -2991,39 +3005,13 @@
             
             <rows>
                 <row>
+                    <cell type="label" labelfor="catalogNumber"/>
+                    <cell type="field" id="catalogNumber" name="preparation.collectionObject.catalogNumber" uitype="dsptextfield" readonly="true"/>
                     <cell type="label" labelfor="2" label="Preparation Type"/>
                     <cell type="field" id="2" name="preparation.prepType.name" uitype="dsptextfield" readonly="true"/>
                     <cell type="label" labelfor="1"/>
                     <cell type="field" id="1" name="quantity" uitype="spinner" initialize="max=5000"/>
-                    <cell type="label" labelfor="t1"/>
-                    <cell type="field" id="t1" name="text1" uitype="text"/>
                 </row>
-                <row>
-                    <cell type="label" labelfor="3"/>
-                    <cell type="field" id="3" name="descriptionOfMaterial" uitype="text" colspan="11"/>
-                </row>
-                <!--<row>
-                    <cell type="label" labelfor="n1"/>
-                    <cell type="field" id="n1" name="number1" uitype="text"/>
-                    <cell type="label" labelfor="t2"/>
-                    <cell type="field" id="t2" name="text2" uitype="text"/>
-                </row>
-                <row>
-                    <cell type="label" labelfor="comm"/>
-                    <cell type="field" id="comm" name="comments" uitype="textareabrief" rows="2" colspan="12"/>
-                </row>
-                <row>
-                    <cell type="label" labelfor="9"/>
-                    <cell type="field" id="9" name="createdByAgent" uitype="label" readonly="true" uifieldformatter="Agent"/>
-                    <cell type="label" labelfor="10"/>
-                    <cell type="field" id="10" name="modifiedByAgent" uitype="label" readonly="true" uifieldformatter="Agent"/>
-                </row>
-                <row>
-                    <cell type="label" labelfor="11"/>
-                    <cell type="field" id="11" name="timestampModified" uitype="label" readonly="true"/>
-                    <cell type="label" labelfor="12"/>
-                    <cell type="field" id="12" name="timestampCreated" uitype="label" readonly="true"/>
-                </row>-->
             </rows>
         </viewdef>
         
@@ -4692,25 +4680,21 @@
             <rows>
                 <row>
                     <cell type="label" labelfor="1"/>
-                    <cell type="field" id="1" name="permitNumber" uitype="text"/>
-                    <cell type="label" labelfor="2"/>
-                    <cell type="field" id="2" name="type" uitype="combobox"/>
+                    <cell type="field" id="1" name="permitNumber" uitype="text" colspan="3"/>
+                    <cell type="label" labelfor="5"/>
+                    <cell type="field" id="5" name="issuedDate" uitype="formattedtext" uifieldformatter="Date" colspan="3"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="3"/>
-                    <cell type="field" id="3" name="issuedBy" uitype="querycbx" initialize="name=Agent"/>
+                    <cell type="field" id="3" name="issuedBy" uitype="querycbx" initialize="name=Agent" colspan="3"/>
                     <cell type="label" labelfor="4"/>
-                    <cell type="field" id="4" name="issuedTo" uitype="querycbx" initialize="name=Agent"/>
-                    <cell type="label" labelfor="5"/>
-                    <cell type="field" id="5" name="issuedDate" uitype="formattedtext" uifieldformatter="Date"/>
+                    <cell type="field" id="4" name="issuedTo" uitype="querycbx" initialize="name=Agent" colspan="3"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="7"/>
-                    <cell type="field" id="7" name="startDate" uitype="formattedtext" uifieldformatter="Date"/>
+                    <cell type="field" id="7" name="startDate" uitype="formattedtext" uifieldformatter="Date" colspan="3"/>
                     <cell type="label" labelfor="8"/>
-                    <cell type="field" id="8" name="endDate" uitype="formattedtext" uifieldformatter="Date"/>
-                    <cell type="label" labelfor="6"/>
-                    <cell type="field" id="6" name="renewalDate" uitype="formattedtext" uifieldformatter="Date"/>
+                    <cell type="field" id="8" name="endDate" uitype="formattedtext" uifieldformatter="Date" colspan="3"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="9"/>
@@ -4980,7 +4964,7 @@
         <viewdef 
             type="form" 
             name="Project" 
-            class="edu.ku.brc.specify.datamodel.Project" 
+            class="edu.ku.brc.specify.datamodel.Project"
             gettable="edu.ku.brc.af.ui.forms.DataGetterForObj" 
             settable="edu.ku.brc.af.ui.forms.DataSetterForObj">
             <desc><![CDATA[Form For Project]]></desc>
@@ -5114,28 +5098,28 @@
                 <row>
                     <cell type="label" labelfor="1"/>
                     <cell type="field" id="1" name="repositoryAgreementNumber" uitype="text"/> 
-                    <cell type="label" labelfor="2"/>
-                    <cell type="field" id="2" name="status"  uitype="combobox"/>
-                    <cell type="label" labelfor="13"/>
-                    <cell type="field" id="13" name="originator" uitype="querycbx" initialize="name=Agent"/>
-                </row>
-                <row>
-                    <cell type="label" labelfor="5"/>
-                    <cell type="field" id="5" name="startDate" uitype="formattedtext" uifieldformatter="Date"/>
-                    <cell type="label" labelfor="6"/>
-                    <cell type="field" id="6" name="endDate" uitype="formattedtext" uifieldformatter="Date"/>
                     <cell type="label" labelfor="3"/>
                     <cell type="field" id="3" name="dateReceived" uitype="formattedtext" uifieldformatter="Date"/>
+                    <cell type="label" labelfor="13"/>
+                    <cell type="field" id="13" name="originator" uitype="querycbx" initialize="name=Agent" default="MEL -- National Herbarium of Victoria"/>
                 </row>
+				<row>
+                    <cell type="label" labelfor="14"/>
+					<cell type="field" id="14" name="startDate" uitype="formattedtext" uifieldformatter="Date"/>
+					<cell type="label" labelfor="15"/>
+					<cell type="field" id="15" name="text1" uitype="text"/>
+					<cell type="label" labelfor="16"/>
+					<cell type="field" id="16" name="text2" uitype="text"/>
+				</row>	
+				<row>
+                    <cell type="field" id="18" name="yesNo1" uitype="checkbox" colspan="3"/>
+				</row>
                 <row>
                     <cell type="label" labelfor="7"/>
                     <cell type="field" id="7" name="remarks" uitype="textareabrief" rows="2" colspan="10"/>
                 </row>
                 <row>
                     <cell type="subview" id="8" viewname="AgreementAgent" name="repositoryAgreementAgents" colspan="13"/>
-                </row>
-                <row>
-                    <cell type="subview" id="9" viewname="AgreementAuthorization" name="repositoryAgreementAuthorizations" colspan="13"/>
                 </row>
                 <row>
                     <cell type="separator" label="Attachments" colspan="13"/>
@@ -5147,38 +5131,17 @@
                     <cell type="separator" label="" colspan="13"/>
                 </row>
                 <row>
+                    <cell type="label" labelfor="cbAgent"/>
+                    <cell type="field" id="cbAgent" name="createdByAgent" uitype="label" readonly="true"  uifieldformatter="Agent" colspan="3"/>
+                    <cell type="label" labelfor="created"/>
+                    <cell type="field" id="created" name="timestampCreated" uitype="label" readonly="true" colspan="3"/>
+                </row>
+                <row>
                     <cell type="label" labelfor="10"/>
                     <cell type="field" id="10" name="modifiedByAgent" uitype="label" readonly="true"  uifieldformatter="Agent" colspan="3"/>
                     <cell type="label" labelfor="11"/>
-                    <cell type="field" id="11" name="timestampModified" uitype="label" readonly="true"/>
+                    <cell type="field" id="11" name="timestampModified" uitype="label" readonly="true" colspan="3"/>
                 </row>
-                <!--<row>
-                    <cell type="subview" id="6" name="addressOfRecord" viewname="AddressOfRecord" colspan="10"/>
-                </row>
-                <row>
-                    <cell type="label" labelfor="n1"/>
-                    <cell type="field" id="n1" name="number1" uitype="text"/>
-                    <cell type="label" labelfor="n2"/>
-                    <cell type="field" id="n2" name="number2" uitype="text"/>
-                </row>
-                <row>
-                    <cell type="label" labelfor="t1"/>
-                    <cell type="field" id="t1" name="text1" uitype="text"/>
-                    <cell type="label" labelfor="t2"/>
-                    <cell type="field" id="t2" name="text2" uitype="text"/>
-                    <cell type="label" labelfor="t3"/>
-                    <cell type="field" id="t3" name="text3" uitype="text"/>
-                </row>
-                <row>
-                    <cell type="field" id="20" name="yesNo1" uitype="checkbox" initialize="editable=true"/>
-                    <cell type="field" id="20" name="yesNo2" uitype="checkbox" initialize="editable=true"/>
-                </row>
-                <row>
-                    <cell type="label" labelfor="9"/>
-                    <cell type="field" id="9" name="createdByAgent" uitype="label" readonly="true" uifieldformatter="Agent"/>
-                    <cell type="label" labelfor="12"/>
-                    <cell type="field" id="12" name="timestampCreated" uitype="label" readonly="true"/>
-                </row>-->
             </rows>
         </viewdef>
                 
@@ -5204,11 +5167,11 @@
                     <cell type="label" labelfor="2"/>
                     <cell type="field" id="2" name="role" uitype="combobox"/>
                 </row>
-                <row>
+                <!--row>
                     <cell type="label" labelfor="3"/>
                     <cell type="field" id="3" name="remarks" uitype="textareabrief" rows="2" colspan="6"/>
                 </row>
-                <!--<row>
+                <<row>
                     <cell type="label" labelfor="9"/>
                     <cell type="field" id="9" name="createdByAgent" uitype="label" readonly="true"  uifieldformatter="Agent"/>
                     <cell type="label" labelfor="10"/>
@@ -5242,10 +5205,10 @@
                     <cell type="label" labelfor="1"/>
                     <cell type="field" id="1" name="permit" uitype="querycbx" initialize="name=Permit"/>
                 </row>
-                <row>
+                <!--row>
                     <cell type="label" labelfor="2"/>
                     <cell type="field" id="2" name="remarks" uitype="textareabrief" rows="2" colspan="2"/>
-                </row>
+                </row-->
                 <!--<row>
                     <cell type="label" labelfor="9"/>
                     <cell type="field" id="9" name="createdByAgent" uitype="label" readonly="true"  uifieldformatter="Agent"/>

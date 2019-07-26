@@ -20,11 +20,11 @@ FOR EACH ROW
 
     IF isnull(@DISABLE_TRIGGER) THEN
       IF (NEW.Text2 IS NULL OR NEW.Text2='') AND NEW.Latitude1 IS NOT NULL AND NEW.Longitude1 IS NOT NULL THEN
-        IF NEW.LatLongMethod IN ('GEOLocate', 9, 5, 8) THEN
-          SET NEW.Text2=2;
+        IF NEW.LatLongMethod IN ('GEOLocate', 'GA gazetteer', 'Google Earth', 'GeoNames') THEN
+          SET NEW.Text2='Data entry person';
         ELSE
-          IF NEW.LatLongMethod IN (4) THEN
-            SET NEW.Text2=1;
+          IF NEW.LatLongMethod IN ('GPS') THEN
+            SET NEW.Text2='Collector';
           END IF;
         END IF;
 
@@ -35,14 +35,14 @@ FOR EACH ROW
         WHERE c.AgentID=NEW.CreatedByAgentID;
 
         IF var_enteredbycollector>0 THEN
-            SET NEW.Text2=1;
+            SET NEW.Text2='Collector';
         END IF;
       END IF;
 
-      IF NEW.LatLongMethod IN (5, 8, 'GEOLocate') THEN
+      IF NEW.LatLongMethod IN ('GEOLocate', 'Google Earth', 'GeoNames') THEN
         SET NEW.Datum = 'WGS84';
       ELSE
-        IF NEW.LatLongMethod = 9 THEN
+        IF NEW.LatLongMethod = 'GA gazetteer' THEN
           SET NEW.Datum = 'GDA94';
         END IF;
       END IF;

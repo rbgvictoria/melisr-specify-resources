@@ -36,13 +36,18 @@ BEGIN
 	FROM taxon
 	WHERE TaxonID=var_taxonid;
 
-	If var_rankid > 180 THEN
-		SELECT TaxonID, Text3, Text4
-		INTO var_taxonid, var_main_storage, var_type_storage
-		FROM taxon
-		WHERE NodeNumber<var_nodenumber AND HighestChildNodeNumber>=var_nodenumber
-			AND RankID=180
-                LIMIT 1;
+	If var_rankid >= 180 THEN
+            SELECT TaxonID, Text3, Text4
+            INTO var_taxonid, var_main_storage, var_type_storage
+            FROM taxon
+            WHERE NodeNumber<=var_nodenumber AND HighestChildNodeNumber>=var_nodenumber
+                    AND RankID=180
+            LIMIT 1;
+        ELSE
+            SELECT TaxonID, Text3, Text4
+            INTO var_taxonid, var_main_storage, var_type_storage
+            FROM taxon
+            WHERE TaxonID=var_taxonid;
 	END IF;
 
 	IF var_type=1 THEN
