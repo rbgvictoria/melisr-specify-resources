@@ -29,6 +29,11 @@ FOR EACH ROW
       SET NEW.AltCatalogNumber=CAST(SUBSTRING(NEW.CatalogNumber, 1, 7) AS unsigned);
       SET NEW.Name=CONCAT('MEL ', CAST(SUBSTRING(NEW.CatalogNumber, 1, 7) AS unsigned));
       SET NEW.Modifier=UPPER(SUBSTRING(NEW.CatalogNumber, 8));
+    ELSE
+      IF NEW.CollectionID=65536 THEN
+          SET NEW.AltCatalogNumber=CAST(NEW.CatalogNumber AS unsigned);
+          SET NEW.Name=CONCAT('VRS ', NEW.CatalogNumber);
+      END IF;
     END IF;
     IF NEW.CreatedByAgentID!=NEW.CatalogerID THEN
       SET NEW.CreatedByAgentID=NEW.CatalogerID;

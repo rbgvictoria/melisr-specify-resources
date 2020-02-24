@@ -31,6 +31,12 @@ FOR EACH ROW
           -- dwc:typeStatus
           SET NEW.Description = dwc_type_status(NEW.CollectionObjectID);
           SET NEW.YesNo1 = isType(NEW.CollectionObjectID);
+
+        ELSE
+          IF NEW.CollectionID=65536 THEN
+              SET NEW.AltCatalogNumber=CAST(NEW.CatalogNumber AS unsigned);
+              SET NEW.Name=CONCAT('VRS ', CAST(NEW.CatalogNumber AS unsigned));
+          END IF;
         END IF;
 
     END IF;
