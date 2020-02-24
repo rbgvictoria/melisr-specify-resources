@@ -28,9 +28,8 @@ BEGIN
 
     DECLARE CONTINUE HANDLER 
         FOR NOT FOUND SET var_finished = 1;
-
     
-    IF in_update_date='0000-00-00' THEN
+    IF in_update_date='1970-01-01' THEN
         TRUNCATE mel_avh_occurrence_core_test;
     END IF;
 
