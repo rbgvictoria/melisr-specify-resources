@@ -450,6 +450,40 @@
 					<cell type="label" labelfor="38"/>
                     <cell type="field" id="38" name="text2" uitype="textareabrief" rows="1" colspan="21"/>
 				</row>
+				<row>
+					<cell type="separator" label="Display Set specimens" colspan="24"/>
+				</row>
+				<row>
+					<cell type="label" labelfor=""/>
+					<cell type="field" id="47" name="yesNo8" uitype="checkbox" colspan="3"/>
+					<cell type="field" id="48" name="yesNo9" uitype="checkbox" colspan="3"/>
+					<cell type="field" id="49" name="yesNo10" uitype="checkbox" colspan="3"/>
+					<cell type="field" id="50" name="yesNo11" uitype="checkbox" colspan="3"/>
+					<cell type="field" id="51" name="yesNo12" uitype="checkbox" colspan="3"/>
+				</row>
+				<row>
+					<cell type="label" labelfor=""/>
+					<cell type="field" id="52" name="yesNo13" uitype="checkbox" colspan="3"/>
+					<cell type="field" id="53" name="yesNo14" uitype="checkbox" colspan="3"/>
+					<cell type="label" labelfor="54" align="left"/>
+					<cell type="field" id="54" name="text22" uitype="text" colspan="5"/>
+				</row>
+				<row>
+					<cell type="label" labelfor="55"/>
+					<cell type="field" id="55" name="text23" uitype="text" colspan="21"/>	
+				</row>
+				<row>
+					<cell type="label" labelfor="56"/>
+					<cell type="field" id="56" name="text24" uitype="textareabrief" rows="2" colspan="21"/>
+				</row>
+				<row>
+					<cell type="separator" label="Hort. Ref. Set" colspan="24"/>
+				</row>
+				<row>
+					<cell type="label" labelfor=""/>
+					<cell type="field" id="57" name="yesNo15" uitype="checkbox" colspan="3"/>
+				</row>
+                
             </rows>
         </viewdef>
 
