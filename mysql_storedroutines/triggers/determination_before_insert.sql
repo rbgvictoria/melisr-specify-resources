@@ -16,10 +16,6 @@ FOR EACH ROW
             SET NEW.Remarks = TRIM(SUBSTRING(NEW.Remarks, LOCATE('|', NEW.Remarks)+1));
         END IF;
 
-        -- dwc:identificationQualifier
-        IF NEW.Qualifier IS NOT NULL THEN
-            SET NEW.Text2 = dwc_identification_qualifier(NEW.Qualifier, NEW.VarQualifier, NEW.TaxonID);
-        END IF;
     END IF;
   END $$
 

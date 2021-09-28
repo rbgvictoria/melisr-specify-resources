@@ -1,14 +1,20 @@
-DELIMITER $$
+/**
+ * Author:  Niels.Klazenga <Niels.Klazenga at rbg.vic.gov.au>
+ * Created: 12/11/2020
+ */
 
-DROP FUNCTION IF EXISTS `dwc_reproductive_condition` $$
-CREATE FUNCTION `dwc_reproductive_condition`(in_collection_object_id INT) RETURNS varchar(128) CHARSET utf8
+DROP function IF EXISTS `dwc_reproductive_condition`;
+
+DELIMITER $$
+USE `melisr`$$
+CREATE DEFINER=`admin`@`%` FUNCTION `dwc_reproductive_condition`(in_collection_object_id INT) RETURNS varchar(128) CHARSET utf8
 BEGIN
 	declare var_flower varchar(8);
 	declare var_fruit varchar(8);
 	declare var_buds varchar(8);
 	declare var_fertile varchar(8);
 	declare var_sterile varchar(8);
-  declare out_reproductive_condition varchar(128);
+    declare out_reproductive_condition varchar(128);
     
 	SELECT coa.Text13, coa.Text14, coa.Text15, coa.Text17, coa.Text18
     INTO var_flower, var_fruit, var_buds, var_fertile, var_sterile
@@ -23,14 +29,14 @@ BEGIN
         END IF;
         IF var_fruit='1' THEN
 			IF out_reproductive_condition IS NOT NULL THEN
-                SET out_reproductive_condition = CONCAT_WS('|', out_reproductive_condition, 'fruit');
+                SET out_reproductive_condition = CONCAT_WS(' | ', out_reproductive_condition, 'fruit');
 			ELSE 
 				SET out_reproductive_condition = 'fruit';
             END IF;
         END IF;
         IF var_buds='1' THEN
 			IF out_reproductive_condition IS NOT NULL THEN
-                SET out_reproductive_condition = CONCAT_WS('|', out_reproductive_condition, 'buds');
+                SET out_reproductive_condition = CONCAT_WS(' | ', out_reproductive_condition, 'buds');
 			ELSE 
 				SET out_reproductive_condition = 'buds';
             END IF;
@@ -46,4 +52,5 @@ BEGIN
     
 RETURN out_reproductive_condition;
 END$$
+
 DELIMITER ;

@@ -28,17 +28,12 @@ FOR EACH ROW
           SET NEW.Name=CONCAT('MEL ', CAST(SUBSTRING(NEW.CatalogNumber, 1, 7) AS unsigned));
           SET NEW.Modifier=UPPER(SUBSTRING(NEW.CatalogNumber, 8));
 
-          -- dwc:typeStatus
-          SET NEW.Description = dwc_type_status(NEW.CollectionObjectID);
-          SET NEW.YesNo1 = isType(NEW.CollectionObjectID);
-
         ELSE
           IF NEW.CollectionID=65536 THEN
               SET NEW.AltCatalogNumber=CAST(NEW.CatalogNumber AS unsigned);
               SET NEW.Name=CONCAT('VRS ', CAST(NEW.CatalogNumber AS unsigned));
           END IF;
         END IF;
-
     END IF;
   END $$
 

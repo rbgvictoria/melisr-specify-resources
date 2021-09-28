@@ -1,7 +1,8 @@
 /*
   Drop all triggers
 */
-USE specify_development;
+-- USE specify_development;
+
 DROP TRIGGER attachment_before_insert;
 DROP TRIGGER collectionobject_before_insert;
 DROP TRIGGER collectionobject_before_update;

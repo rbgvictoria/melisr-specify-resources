@@ -1,62 +1,148 @@
-/**
- * Author:  Niels.Klazenga <Niels.Klazenga at rbg.vic.gov.au>
- * Created: 18/04/2019
- */
+select 
+  co.CollectionObjectID as id, 
+  co.GUID as occurrenceID,
 
-select
-  mel_avh_occurrence_core.occurrenceID as "occurrenceID",
-  mel_avh_occurrence_core.institutionCode as "institutionCode",
-  mel_avh_occurrence_core.collectionCode as "collectionCode",
-  mel_avh_occurrence_core.catalogNumber as "catalogNumber",
+  -- Record Level Terms
   'PhysicalObject' as "type",
-  'PreservedSpecimen' as "basisOfRecord",
-  replace(mel_avh_occurrence_core.recordedBy, ';', ' |') as "recordedBy",
-  mel_avh_occurrence_core.recordNumber as "recordNumber",
-  'present' as "occurrenceStatus",
-  replace(mel_avh_occurrence_core.eventDate, '-00', '') as "eventDate",
-  mel_avh_occurrence_core.year as "year",
-  mel_avh_occurrence_core.month as "month",
-  mel_avh_occurrence_core.day as "day",
-  mel_avh_occurrence_core.verbatimEventDate as "verbatimEventDate",
-  mel_avh_occurrence_core.habitat as "habitat",
-  mel_avh_occurrence_core.country as "country",
-  mel_avh_occurrence_core.stateProvince as "stateProvince",
-  mel_avh_occurrence_core.waterbody as "waterbody",
-  mel_avh_occurrence_core.islandGroup as "islandGroup",
-  mel_avh_occurrence_core.island as "island",
-  mel_avh_occurrence_core.verbatimLocality as "verbatimLocality",
-  mel_avh_occurrence_core.geodeticDatum as "geodeticDatum",
-  mel_avh_occurrence_core.decimalLatitude as "decimalLatitude",
-  mel_avh_occurrence_core.decimalLongitude as "decimalLongitude",
-  mel_avh_occurrence_core.verbatimLatitude as "verbatimLatitude",
-  mel_avh_occurrence_core.verbatimLongitude as "verbatimLongitude",
-  mel_avh_occurrence_core.georeferenceProtocol as "georeferenceProtocol",
-  mel_avh_occurrence_core.coordinateUncertaintyInMeters as "coordinateUncertaintyInMeters",
-  mel_avh_occurrence_core.minimumElevationInMeters as "minimumElevationInMeters",
-  coalesce(mel_avh_occurrence_core.maximumElevationInMeters, mel_avh_occurrence_core.minimumElevationInMeters) as "maximumElevationInMeters",
-  mel_avh_occurrence_core.verbatimElevation as "verbatimElevation",
-  mel_avh_occurrence_core.minimumDepthInMeters as "minimumDepthInMeters",
-  coalesce(mel_avh_occurrence_core.maximumDepthInMeters, mel_avh_occurrence_core.minimumDepthInMeters) as "maximumDepthInMeters",
-  mel_avh_occurrence_core.georeferencedBy as "georeferencedBy",
-  mel_avh_occurrence_core.georeferencedDate as "georeferencedDate",
-  mel_avh_occurrence_core.georeferenceRemarks as "georeferenceRemarks",
-  mel_avh_occurrence_core.scientificName as "scientificName",
-  mel_avh_occurrence_core.scientificNameAuthorship as "scientificNameAuthorship",
-  'ICBN' as "nomenclaturalCode",
-  mel_avh_occurrence_core.taxonRank as "taxonRank",
-  mel_avh_occurrence_core.kingdom as "kingdom",
-  mel_avh_occurrence_core.phylum as "phylum",
-  mel_avh_occurrence_core.class as "class",
-  mel_avh_occurrence_core.order as "order",
-  mel_avh_occurrence_core.family as "family",
-  mel_avh_occurrence_core.genus as "genus",
-  mel_avh_occurrence_core.specificEpithet as "specificEpithet",
-  mel_avh_occurrence_core.taxonRemarks as "taxonRemarks",
-  mel_avh_occurrence_core.identifiedBy as "identifiedBy",
-  mel_avh_occurrence_core.identificationQualifier as "identificationQualifier",
-  replace(mel_avh_occurrence_core.dateIdentified, '-00', '') as "dateIdentified",
-  mel_avh_occurrence_core.identificationRemarks as "identificationRemarks",
-  mel_avh_occurrence_core.typeStatus as "typeStatus",
-  mel_avh_occurrence_core.associatedSequences as "associatedSequences"
-from mel_avh_occurrence_core;
+  co.TimestampModified as modified,
+  'https://creativecommons.org/licenses/by/4.0/legalcode' AS license,
+  'Royal Botanic Gardens Board' AS rightsHolder,
+  'MEL' as institutionCode,
+  'MEL' as collectionCode,
+  'PreservedSpecimen' as basisOfRecord,
+  -- informationWithheld,
+  -- dataGeneralizations,
+  
+  -- Occurrence
+  concat('MEL ', co.CatalogNumber) as catalogNumber,
+  ce.VerbatimLocality as occurrenceRemarks,
+  ce.StationFieldNumber as recordNumber,
+  collectorstring(ce.CollectingEventID, ' | ', true) as recordedBy,
+  recorded_by_id(ce.CollectingEventID) as recordedByID,
+  dwc_reproductive_condition(co.CollectionObjectID) as reproductiveCondition,
+  dwc_establishment_means(co.CollectionObjectID) as establishmentMeans,
+  'present' as occurrenceStatus,
+  preparations(co.CollectionObjectID) as preparations,
+  seq.associated_sequences as associatedSequences,
+  -- associatedTaxa,
+  
+  -- Organism
+  previous_identifications(co.CollectionObjectID) as previousIdentifications,
+  
+  -- Event
+  ce.GUID as eventID,
+  ctr.CollectingTripName as parentEventID,
+  concat_ws('/', dateWithPrecision(ce.StartDate, ce.StartDatePrecision), dateWithPrecision(ce.EndDate, ce.EndDatePrecision)) as eventDate,
+  if(ce.EndDate is null and ce.StartDatePrecision=1, dayofyear(ce.StartDate), null) as startDayOfYear,
+  if(ce.EndDate is null, year(ce.StartDate), null) as "year",
+  if(ce.EndDate is null and ce.StartDatePrecision in (1, 2), month(ce.StartDate), null) as "month",
+  if(ce.EndDate is null and ce.StartDatePrecision=1, day(ce.StartDate), null) as "day",
+  ce.VerbatimDate as verbatimEventDate,
+  ce.Remarks as habitat,
+  
+  -- Location
+  l.GUID as locationID,
+  hg.higherGeography,
+  ld.WaterBody as waterBody,
+  ld.IslandGroup as islandGroup,
+  ld.Island as island,
+  hg.continent,
+  hg.Country as country,
+  g.Text1 as countryCode,
+  hg.State as stateProvince,
+  hg.County as county,
+  l.LocalityName as verbatimLocality,
+  l.LocalityName as locality,
+  CASE 
+  WHEN l.VerbatimElevation IS NOT NULL THEN l.VerbatimElevation
+  ELSE
+    CASE l.Text1
+    WHEN 'ft' THEN CASE WHEN l.MaxElevation IS NULL THEN CONCAT_WS(' ', l.MinElevation, l.Text1) ELSE CONCAT(l.MinElevation, '–', l.MaxElevation, ' ', l.Text1) END
+    ELSE NULL
+    END
+  END as verbatimElevation,
+  CASE l.Text1 WHEN 'ft' THEN round(l.MinElevation * 0.3048) ELSE l.MinElevation END as minimumElevationInMeters,
+  CASE 
+  WHEN l.MaxElevation Is Null THEN
+    CASE l.Text1 WHEN 'ft' THEN round(l.MinElevation * 0.3048) ELSE l.MinElevation END
+  ELSE 
+    CASE l.Text1 WHEN 'ft' THEN round(l.MaxElevation * 0.3048) ELSE l.MaxElevation END
+  END as maximumElevationInMeters,
+  CASE 
+  WHEN EndDepth IS NULL THEN
+    CASE StartDepthUnit
+    WHEN '2' THEN CONCAT(StartDepth, ' ft')
+    WHEN '3' THEN CONCAT(StartDepth, ' fathoms')
+    ELSE NULL
+    END
+  ELSE
+    CASE StartDepthUnit
+    WHEN '2' THEN CONCAT(StartDepth, '–', EndDepth, ' ft')
+    WHEN '3' THEN CONCAT(StartDepth, '–', ENDDepth, ' fathoms')
+    ELSE NULL
+    END
+  END as verbatimDepth,
+  CASE StartDepthUnit WHEN '1' THEN StartDepth WHEN '2' THEN ROUND(StartDepth * 0.3048) WHEN '3' THEN ROUND(StartDepth * 1.8288) END as minimumDepthInMeters,
+  CASE 
+  WHEN EndDepth IS NULL THEN
+    CASE StartDepthUnit WHEN '1' THEN StartDepth WHEN '2' THEN ROUND(StartDepth * 0.3048) WHEN '3' THEN ROUND(StartDepth * 1.8288) END
+  ELSE
+    CASE StartDepthUnit WHEN '1' THEN EndDepth WHEN '2' THEN ROUND(EndDepth * 0.3048) WHEN '3' THEN ROUND(EndDepth * 1.8288) END
+  END as maximumDepthInMeters,
+  if(l.Latitude1 is not null and l.Longitude1 is not null, l.Lat1Text, null) as verbatimLatitude,
+  if(l.Latitude1 is not null and l.Longitude1 is not null, l.Long1Text, null) as verbatimLongitude,
+  gc.OriginalCoordSystem as verbatimCoordinateSystem,
+  srs_from_datum(l.Datum) as verbatimSRS,
+  l.Latitude1 as decimalLatitude,
+  l.Longitude1 as decimalLongitude,
+  if(l.Latitude1 is not null and l.Longitude1 is not null, if(l.Datum is not null, srs_from_datum(l.Datum), 'epsg:4326'), null) as geodeticDatum,
+  coalesce(ROUND(gc.GeoRefAccuracy), ROUND(gc.MaxUncertaintyEst), coordinate_uncertainty_in_meters(l.OriginalElevationUnit)) as coordinateUncertaintyInMeters,
+  gc.NamedPlaceExtent as coordinatePrecision,
+  concat_ws(', ', gca.LastName, gca.FirstName) as georeferencedBy,
+  gc.GeoRefDetDate as georeferencedDate,
+  l.LatLongMethod as georeferenceProtocol,
+  gc.Text1 as georeferenceSources,
+  replace(gc.GeoRefVerificationStatus, 'Corrected', 'Verified') as georeferenceVerificationStatus,
+  gc.GeoRefRemarks as georeferenceRemarks,
+  
+  -- Identification
+  d.GUID as identificationID,
+  concat_ws(', ', da.LastName, da.FirstName) as identifiedBy,
+  identified_by_id(d.DeterminationID) as identifiedByID,
+  dateWithPrecision(d.DeterminedDate, d.DeterminedDatePrecision) as dateIdentified,
+  d.Remarks as identificationRemarks,
+  dwc_identification_qualifier(d.Qualifier, d.VarQualifier, t.TaxonID) as identificationQualifier,
+  dwc_type_status(co.CollectionObjectID) as typeStatus,
+    
+  -- Taxon
+  if(t.FullName LIKE '% [%' , substring(t.FullName, 1, LOCATE(' [', t.FullName)-1), t.FullName) as scientificName,
+  t.Author as scientificNameAuthorship,
+  hc.higherTaxonomy as higherClassification,
+  hc.kingdom,
+  hc.phylum,
+  hc.`class`,
+  hc.`order`,
+  hc.family,
+  hc.genus,
+  hc.specificEpithet,
+  hc.infraspecificEpithet,
+  hc.taxonRank,
+  t.Remarks as taxonRemarks,
+  'ICN' as nomenclaturalCode,
+  t.EsaStatus as nomenclaturalStatus
 
+from collectionobject co
+join collectingevent ce on co.CollectingEventID=ce.CollectingEventID
+left join collectingtrip ctr ON ce.CollectingTripID=ctr.CollectingTripID
+join locality l on ce.LocalityID=l.LocalityID
+left join geography g on l.GeographyID=g.GeographyID
+left join aux_highergeography_test hg on g.GeographyID=hg.GeographyID
+left join localitydetail ld on l.LocalityID=ld.LocalityID
+left join geocoorddetail gc on l.LocalityID=gc.LocalityID
+left join agent gca on gc.AgentID=gca.AgentID
+left join determination d on co.CollectionObjectID=d.CollectionObjectID and d.IsCurrent=true
+left join agent da on d.DeterminerID=da.AgentID
+left join taxon t on d.TaxonID=t.TaxonID
+left join aux_highertaxonomy_test hc on t.TaxonID=hc.TaxonID
+left join mel_avh_associated_sequences seq on co.CollectionObjectID=seq.CollectionObjectID
+where co.CollectionID=4
