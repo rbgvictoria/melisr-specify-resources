@@ -138,8 +138,8 @@
                 <row>
                     <cell type="label" labelfor="46"/>
                     <cell type="field" id="46" name="restrictions" uitype="text"/>
-                    <cell type="label" labelfor="48" colspan="5"/>
-                    <cell type="field" id="48" name="objectCondition" uitype="text" colspan="3"/>
+                    <cell type="label" labelfor="integer1" colspan="5"/>
+                    <cell type="field" id="integer1" name="objectCondition" uitype="text" colspan="3"/>
                 </row>
                 <!--row>
                     <cell type="panel" id="116" name="outerPanel" coldef="p,6px,p,f:p:g" rowdef="p,4px,p" colspan="5">

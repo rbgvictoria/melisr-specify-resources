@@ -52,7 +52,7 @@
                     <cell type="label" labelfor="3"/>
                     <cell type="field" id="3" name="sampleNumber" uitype="text" colspan="1"/>
                     <cell type="label" labelfor="4"/>
-                    <cell type="field" id="4" name="status" uitype="combobox" colspan="1"/>
+                    <cell type="field" id="4" name="integer1" uitype="combobox" colspan="1"/>
                     <cell type="field" id="isOnLoan" name="isOnLoan" uitype="checkbox" label="On loan" readonly="true" initialize="align=right"/>
                     <cell type="command" id="ShowLoansBtn" name="ShowLoansBtn" label="Loans" ignore="true" colspan="1"/>
                 </row>
@@ -71,14 +71,17 @@
                     <cell type="field" id="MelDups" uitype="text" name="text1" colspan="3"/>
                     <cell type="label" labelfor="OtherDups" colspan="3"/>
                     <cell type="field" id="OtherDups" uitype="text" name="text2" colspan="5"/>
-                    <cell type="label" labelfor="OrigHerb" colspan="1"/>
-                    <cell type="field" id="OrigHerb" uitype="text" name="description" colspan="1"/>
+                    <!--cell type="label" labelfor="OrigHerb" colspan="1"/>
+                    <cell type="field" id="OrigHerb" uitype="text" name="description" colspan="1"/-->
                 </row>
                 <row>
                     <cell type="label" labelfor="5"/>
                     <cell type="field" id="5" name="storage" uitype="text" initialize="name=Storage" readonly="true" colspan="9"/>
                     <cell type="label" label="" colspan="1"/>
                     <cell type="field" id="9" name="yesNo1" uitype="checkbox" colspan="3"/>
+                </row>
+                <row>
+                    <cell type="subview" id="ms" viewname="MaterialSample" name="materialSamples" initialize="align=right;btn=true;icon=MaterialSample" colspan="19"/>
                 </row>
             </rows>
         </viewdef>
