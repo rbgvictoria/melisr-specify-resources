@@ -4,85 +4,85 @@ select
   t0.TaxonID as taxon_id,
   t0.FullName as scientific_name, 
   t0.Author as scientific_name_authorship, 
-  tdi0.Name as taxon_rank,
+  replace(tdi0.Name, 'division', 'phylum') as taxon_rank,
   case 
-    when tdi0.Name='kingdom' then t0.Name 
-    when tdi1.Name='kingdom' then t1.Name 
-    when tdi2.Name='kingdom' then t2.Name 
-    when tdi3.Name='kingdom' then t3.Name 
-    when tdi4.Name='kingdom' then t4.Name 
-    when tdi5.Name='kingdom' then t5.Name 
-    when tdi6.Name='kingdom' then t6.Name 
-    when tdi7.Name='kingdom' then t7.Name 
-    when tdi8.Name='kingdom' then t8.Name 
-    when tdi9.Name='kingdom' then t9.Name 
-    when tdi10.Name='kingdom' then t10.Name 
-    when tdi11.Name='kingdom' then t11.Name 
-    when tdi12.Name='kingdom' then t12.Name 
+    when tdi0.Name='kingdom' and t0.Name!='Incertae sedis' then t0.Name 
+    when tdi1.Name='kingdom' and t1.Name!='Incertae sedis' then t1.Name 
+    when tdi2.Name='kingdom' and t2.Name!='Incertae sedis' then t2.Name 
+    when tdi3.Name='kingdom' and t3.Name!='Incertae sedis' then t3.Name 
+    when tdi4.Name='kingdom' and t4.Name!='Incertae sedis' then t4.Name 
+    when tdi5.Name='kingdom' and t5.Name!='Incertae sedis' then t5.Name 
+    when tdi6.Name='kingdom' and t6.Name!='Incertae sedis' then t6.Name 
+    when tdi7.Name='kingdom' and t7.Name!='Incertae sedis' then t7.Name 
+    when tdi8.Name='kingdom' and t8.Name!='Incertae sedis' then t8.Name 
+    when tdi9.Name='kingdom' and t9.Name!='Incertae sedis' then t9.Name 
+    when tdi10.Name='kingdom' and t10.Name!='Incertae sedis' then t10.Name 
+    when tdi11.Name='kingdom' and t11.Name!='Incertae sedis' then t11.Name 
+    when tdi12.Name='kingdom' and t12.Name!='Incertae sedis' then t12.Name 
     else null 
   end as kingdom,
   case 
-    when tdi0.Name='division' then t0.Name 
-    when tdi1.Name='division' then t1.Name 
-    when tdi2.Name='division' then t2.Name 
-    when tdi3.Name='division' then t3.Name 
-    when tdi4.Name='division' then t4.Name 
-    when tdi5.Name='division' then t5.Name 
-    when tdi6.Name='division' then t6.Name 
-    when tdi7.Name='division' then t7.Name 
-    when tdi8.Name='division' then t8.Name 
-    when tdi9.Name='division' then t9.Name 
-    when tdi10.Name='division' then t10.Name 
-    when tdi11.Name='division' then t11.Name 
-    when tdi12.Name='division' then t12.Name 
+    when tdi0.Name='division' and t0.Name!='Incertae sedis' then t0.Name 
+    when tdi1.Name='division' and t1.Name!='Incertae sedis' then t1.Name 
+    when tdi2.Name='division' and t2.Name!='Incertae sedis' then t2.Name 
+    when tdi3.Name='division' and t3.Name!='Incertae sedis' then t3.Name 
+    when tdi4.Name='division' and t4.Name!='Incertae sedis' then t4.Name 
+    when tdi5.Name='division' and t5.Name!='Incertae sedis' then t5.Name 
+    when tdi6.Name='division' and t6.Name!='Incertae sedis' then t6.Name 
+    when tdi7.Name='division' and t7.Name!='Incertae sedis' then t7.Name 
+    when tdi8.Name='division' and t8.Name!='Incertae sedis' then t8.Name 
+    when tdi9.Name='division' and t9.Name!='Incertae sedis' then t9.Name 
+    when tdi10.Name='division' and t10.Name!='Incertae sedis' then t10.Name 
+    when tdi11.Name='division' and t11.Name!='Incertae sedis' then t11.Name 
+    when tdi12.Name='division' and t12.Name!='Incertae sedis' then t12.Name 
     else null 
   end as phylum,
   case 
-    when tdi0.Name='class' then t0.Name 
-    when tdi1.Name='class' then t1.Name 
-    when tdi2.Name='class' then t2.Name 
-    when tdi3.Name='class' then t3.Name 
-    when tdi4.Name='class' then t4.Name 
-    when tdi5.Name='class' then t5.Name 
-    when tdi6.Name='class' then t6.Name 
-    when tdi7.Name='class' then t7.Name 
-    when tdi8.Name='class' then t8.Name 
-    when tdi9.Name='class' then t9.Name 
-    when tdi10.Name='class' then t10.Name 
-    when tdi11.Name='class' then t11.Name 
-    when tdi12.Name='class' then t12.Name 
+    when tdi0.Name='class' and t0.Name!='Incertae sedis' then t0.Name 
+    when tdi1.Name='class' and t1.Name!='Incertae sedis' then t1.Name 
+    when tdi2.Name='class' and t2.Name!='Incertae sedis' then t2.Name 
+    when tdi3.Name='class' and t3.Name!='Incertae sedis' then t3.Name 
+    when tdi4.Name='class' and t4.Name!='Incertae sedis' then t4.Name 
+    when tdi5.Name='class' and t5.Name!='Incertae sedis' then t5.Name 
+    when tdi6.Name='class' and t6.Name!='Incertae sedis' then t6.Name 
+    when tdi7.Name='class' and t7.Name!='Incertae sedis' then t7.Name 
+    when tdi8.Name='class' and t8.Name!='Incertae sedis' then t8.Name 
+    when tdi9.Name='class' and t9.Name!='Incertae sedis' then t9.Name 
+    when tdi10.Name='class' and t10.Name!='Incertae sedis' then t10.Name 
+    when tdi11.Name='class' and t11.Name!='Incertae sedis' then t11.Name 
+    when tdi12.Name='class' and t12.Name!='Incertae sedis' then t12.Name 
     else null 
   end as `class`,
   case 
-    when tdi0.Name='order' then t0.Name 
-    when tdi1.Name='order' then t1.Name 
-    when tdi2.Name='order' then t2.Name 
-    when tdi3.Name='order' then t3.Name 
-    when tdi4.Name='order' then t4.Name 
-    when tdi5.Name='order' then t5.Name 
-    when tdi6.Name='order' then t6.Name 
-    when tdi7.Name='order' then t7.Name 
-    when tdi8.Name='order' then t8.Name 
-    when tdi9.Name='order' then t9.Name 
-    when tdi10.Name='order' then t10.Name 
-    when tdi11.Name='order' then t11.Name 
-    when tdi12.Name='order' then t12.Name 
+    when tdi0.Name='order' and t0.Name!='Incertae sedis' then t0.Name 
+    when tdi1.Name='order' and t1.Name!='Incertae sedis' then t1.Name 
+    when tdi2.Name='order' and t2.Name!='Incertae sedis' then t2.Name 
+    when tdi3.Name='order' and t3.Name!='Incertae sedis' then t3.Name 
+    when tdi4.Name='order' and t4.Name!='Incertae sedis' then t4.Name 
+    when tdi5.Name='order' and t5.Name!='Incertae sedis' then t5.Name 
+    when tdi6.Name='order' and t6.Name!='Incertae sedis' then t6.Name 
+    when tdi7.Name='order' and t7.Name!='Incertae sedis' then t7.Name 
+    when tdi8.Name='order' and t8.Name!='Incertae sedis' then t8.Name 
+    when tdi9.Name='order' and t9.Name!='Incertae sedis' then t9.Name 
+    when tdi10.Name='order' and t10.Name!='Incertae sedis' then t10.Name 
+    when tdi11.Name='order' and t11.Name!='Incertae sedis' then t11.Name 
+    when tdi12.Name='order' and t12.Name!='Incertae sedis' then t12.Name 
     else null 
   end as `order`,
   case 
-    when tdi0.Name='family' then t0.Name 
-    when tdi1.Name='family' then t1.Name 
-    when tdi2.Name='family' then t2.Name 
-    when tdi3.Name='family' then t3.Name 
-    when tdi4.Name='family' then t4.Name 
-    when tdi5.Name='family' then t5.Name 
-    when tdi6.Name='family' then t6.Name 
-    when tdi7.Name='family' then t7.Name 
-    when tdi8.Name='family' then t8.Name 
-    when tdi9.Name='family' then t9.Name 
-    when tdi10.Name='family' then t10.Name 
-    when tdi11.Name='family' then t11.Name 
-    when tdi12.Name='family' then t12.Name 
+    when tdi0.Name='family' and t0.Name!='Incertae sedis' then t0.Name 
+    when tdi1.Name='family' and t1.Name!='Incertae sedis' then t1.Name 
+    when tdi2.Name='family' and t2.Name!='Incertae sedis' then t2.Name 
+    when tdi3.Name='family' and t3.Name!='Incertae sedis' then t3.Name 
+    when tdi4.Name='family' and t4.Name!='Incertae sedis' then t4.Name 
+    when tdi5.Name='family' and t5.Name!='Incertae sedis' then t5.Name 
+    when tdi6.Name='family' and t6.Name!='Incertae sedis' then t6.Name 
+    when tdi7.Name='family' and t7.Name!='Incertae sedis' then t7.Name 
+    when tdi8.Name='family' and t8.Name!='Incertae sedis' then t8.Name 
+    when tdi9.Name='family' and t9.Name!='Incertae sedis' then t9.Name 
+    when tdi10.Name='family' and t10.Name!='Incertae sedis' then t10.Name 
+    when tdi11.Name='family' and t11.Name!='Incertae sedis' then t11.Name 
+    when tdi12.Name='family' and t12.Name!='Incertae sedis' then t12.Name 
     else null 
   end as family,
   case 
@@ -109,37 +109,106 @@ select
   end as specific_epithet,
   if (tdi0.RankID>220, t0.Name, null) as infraspecific_epithet,
   case
-    when t12.TaxonID is not null and tdi12.Name!='life'
-      then concat_ws(' | ', t12.Name, t11.Name, t10.Name, t9.Name, t8.Name, 
-        t7.Name, t6.Name, t5.Name, t4.Name, t3.Name, t2.Name, t1.Name)
-    when t11.TaxonID is not null and tdi11.Name!='life'
-      then concat_ws(' | ', t11.Name, t10.Name, t9.Name, t8.Name, t7.Name, 
-        t6.Name, t5.Name, t4.Name, t3.Name, t2.Name, t1.Name)
-    when t10.TaxonID is not null and tdi10.Name!='life'
-      then concat_ws(' | ', t10.Name, t9.Name, t8.Name, t7.Name, t6.Name, 
-        t5.Name, t4.Name, t3.Name, t2.Name, t1.Name)
-    when t9.TaxonID is not null and tdi9.Name!='life'
-      then concat_ws(' | ', t9.Name, t8.Name, t7.Name, t6.Name, t5.Name, 
-        t4.Name, t3.Name, t2.Name, t1.Name)
-    when t8.TaxonID is not null and tdi8.Name!='life'
-      then concat_ws(' | ', t8.Name, t7.Name, t6.Name, t5.Name, t4.Name, 
-        t3.Name, t2.Name, t1.Name)
-    when t7.TaxonID is not null and tdi7.Name!='life'
-      then concat_ws(' | ', t7.Name, t6.Name, t5.Name, t4.Name, t3.Name, 
-        t2.Name, t1.Name)
-    when t6.TaxonID is not null and tdi6.Name!='life'
-      then concat_ws(' | ', t6.Name, t5.Name, t4.Name, t3.Name, t2.Name, 
-        t1.Name)
-    when t5.TaxonID is not null and tdi5.Name!='life'
-      then concat_ws(' | ', t4.Name, t3.Name, t2.Name, t1.Name)
-    when t4.TaxonID is not null and tdi4.Name!='life'
-      then concat_ws(' | ', t4.Name, t3.Name, t2.Name, t1.Name)
-    when t3.TaxonID is not null and tdi3.Name!='life'
-      then concat_ws(' | ', t3.Name, t2.Name, t1.Name)
-    when t2.TaxonID is not null and tdi2.Name!='life'
-      then concat_ws(' | ', t2.Name, t1.Name)
-    when t1.TaxonID is not null and tdi1.Name!='life'
-      then t1.Name
+    when t12.TaxonID is not null and tdi12.Name!='life' then concat_ws(' | ', 
+        if(t12.Name!='Incertae sedis', t12.Name, null), 
+        if(t11.Name!='Incertae sedis', t11.Name, null), 
+        if(t10.Name!='Incertae sedis', t10.Name, null), 
+        if(t9.Name!='Incertae sedis', t9.Name, null), 
+        if(t8.Name!='Incertae sedis', t8.Name, null), 
+        if(t7.Name!='Incertae sedis', t7.Name, null), 
+        if(t6.Name!='Incertae sedis', t6.Name, null), 
+        if(t5.Name!='Incertae sedis', t5.Name, null), 
+        if(t4.Name!='Incertae sedis', t4.Name, null), 
+        if(t3.Name!='Incertae sedis', t3.Name, null), 
+        if(t2.Name!='Incertae sedis', t2.Name, null), 
+        if(t1.Name!='Incertae sedis', t1.Name, null)
+      )
+    when t11.TaxonID is not null and tdi11.Name!='life' then concat_ws(' | ', 
+        if(t11.Name!='Incertae sedis', t11.Name, null), 
+        if(t10.Name!='Incertae sedis', t10.Name, null), 
+        if(t9.Name!='Incertae sedis', t9.Name, null), 
+        if(t8.Name!='Incertae sedis', t8.Name, null), 
+        if(t7.Name!='Incertae sedis', t7.Name, null), 
+        if(t6.Name!='Incertae sedis', t6.Name, null), 
+        if(t5.Name!='Incertae sedis', t5.Name, null), 
+        if(t4.Name!='Incertae sedis', t4.Name, null), 
+        if(t3.Name!='Incertae sedis', t3.Name, null), 
+        if(t2.Name!='Incertae sedis', t2.Name, null), 
+        if(t1.Name!='Incertae sedis', t1.Name, null)
+      )
+    when t10.TaxonID is not null and tdi10.Name!='life' then concat_ws(' | ', 
+        if(t10.Name!='Incertae sedis', t10.Name, null), 
+        if(t9.Name!='Incertae sedis', t9.Name, null), 
+        if(t8.Name!='Incertae sedis', t8.Name, null), 
+        if(t7.Name!='Incertae sedis', t7.Name, null), 
+        if(t6.Name!='Incertae sedis', t6.Name, null), 
+        if(t5.Name!='Incertae sedis', t5.Name, null), 
+        if(t4.Name!='Incertae sedis', t4.Name, null), 
+        if(t3.Name!='Incertae sedis', t3.Name, null), 
+        if(t2.Name!='Incertae sedis', t2.Name, null), 
+        if(t1.Name!='Incertae sedis', t1.Name, null)
+      )
+    when t9.TaxonID is not null and tdi9.Name!='life' then concat_ws(' | ', 
+        if(t9.Name!='Incertae sedis', t9.Name, null), 
+        if(t8.Name!='Incertae sedis', t8.Name, null), 
+        if(t7.Name!='Incertae sedis', t7.Name, null), 
+        if(t6.Name!='Incertae sedis', t6.Name, null), 
+        if(t5.Name!='Incertae sedis', t5.Name, null), 
+        if(t4.Name!='Incertae sedis', t4.Name, null), 
+        if(t3.Name!='Incertae sedis', t3.Name, null), 
+        if(t2.Name!='Incertae sedis', t2.Name, null), 
+        if(t1.Name!='Incertae sedis', t1.Name, null)
+      )
+    when t8.TaxonID is not null and tdi8.Name!='life' then concat_ws(' | ', 
+        if(t8.Name!='Incertae sedis', t8.Name, null), 
+        if(t7.Name!='Incertae sedis', t7.Name, null), 
+        if(t6.Name!='Incertae sedis', t6.Name, null), 
+        if(t5.Name!='Incertae sedis', t5.Name, null), 
+        if(t4.Name!='Incertae sedis', t4.Name, null), 
+        if(t3.Name!='Incertae sedis', t3.Name, null), 
+        if(t2.Name!='Incertae sedis', t2.Name, null), 
+        if(t1.Name!='Incertae sedis', t1.Name, null)
+      )
+    when t7.TaxonID is not null and tdi7.Name!='life' then concat_ws(' | ', 
+        if(t7.Name!='Incertae sedis', t7.Name, null), 
+        if(t6.Name!='Incertae sedis', t6.Name, null), 
+        if(t5.Name!='Incertae sedis', t5.Name, null), 
+        if(t4.Name!='Incertae sedis', t4.Name, null), 
+        if(t3.Name!='Incertae sedis', t3.Name, null), 
+        if(t2.Name!='Incertae sedis', t2.Name, null), 
+    		if(t1.Name!='Incertae sedis', t1.Name, null)
+      )
+    when t6.TaxonID is not null and tdi6.Name!='life' then concat_ws(' | ', 
+        if(t6.Name!='Incertae sedis', t6.Name, null), 
+        if(t5.Name!='Incertae sedis', t5.Name, null), 
+        if(t4.Name!='Incertae sedis', t4.Name, null), 
+        if(t3.Name!='Incertae sedis', t3.Name, null), 
+        if(t2.Name!='Incertae sedis', t2.Name, null), 
+        if(t1.Name!='Incertae sedis', t1.Name, null)
+      )
+    when t5.TaxonID is not null and tdi5.Name!='life' then concat_ws(' | ', 
+        if(t4.Name!='Incertae sedis', t4.Name, null), 
+        if(t3.Name!='Incertae sedis', t3.Name, null), 
+        if(t2.Name!='Incertae sedis', t2.Name, null), 
+        if(t1.Name!='Incertae sedis', t1.Name, null)
+      )
+    when t4.TaxonID is not null and tdi4.Name!='life' then concat_ws(' | ', 
+        if(t4.Name!='Incertae sedis', t4.Name, null), 
+        if(t3.Name!='Incertae sedis', t3.Name, null), 
+        if(t2.Name!='Incertae sedis', t2.Name, null), 
+        if(t1.Name!='Incertae sedis', t1.Name, null)
+      )
+    when t3.TaxonID is not null and tdi3.Name!='life' then concat_ws(' | ', 
+        if(t3.Name!='Incertae sedis', t3.Name, null), 
+        if(t2.Name!='Incertae sedis', t2.Name, null), 
+        if(t1.Name!='Incertae sedis', t1.Name, null)
+      )
+    when t2.TaxonID is not null and tdi2.Name!='life' then concat_ws(' | ', 
+        if(t2.Name!='Incertae sedis', t2.Name, null), 
+        if(t1.Name!='Incertae sedis', t1.Name, null)
+      )
+    when t1.TaxonID is not null and tdi1.Name!='life' then 
+        if(t1.Name!='Incertae sedis', t1.Name, null)
     else null
   end as higher_classification
   
