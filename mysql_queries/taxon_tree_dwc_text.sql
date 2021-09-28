@@ -4,7 +4,7 @@ select
   t0.TaxonID as taxon_id,
   t0.FullName as scientific_name, 
   t0.Author as scientific_name_authorship, 
-  tdi0.Name as taxonRank,
+  tdi0.Name as taxon_rank,
   case 
     when tdi0.Name='kingdom' then t0.Name 
     when tdi1.Name='kingdom' then t1.Name 
