@@ -177,7 +177,7 @@ select
         if(t4.Name!='Incertae sedis', t4.Name, null), 
         if(t3.Name!='Incertae sedis', t3.Name, null), 
         if(t2.Name!='Incertae sedis', t2.Name, null), 
-    		if(t1.Name!='Incertae sedis', t1.Name, null)
+        if(t1.Name!='Incertae sedis', t1.Name, null)
       )
     when t6.TaxonID is not null and tdi6.Name!='life' then concat_ws(' | ', 
         if(t6.Name!='Incertae sedis', t6.Name, null), 
