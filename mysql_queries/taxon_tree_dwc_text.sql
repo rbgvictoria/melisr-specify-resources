@@ -2,7 +2,8 @@ drop view if exists taxon_tree_dwc_text;
 create view taxon_tree_dwc_text as
 select 
   t0.TaxonID as taxon_id,
-  t0.FullName as scientific_name, 
+  if(t0.FullName like '%[%', substring(t0.FullName, 1, locate(' [', t0.FullName)), 
+      t0.FullName) as scientific_name, 
   t0.Author as scientific_name_authorship, 
   replace(tdi0.Name, 'division', 'phylum') as taxon_rank,
   case 
