@@ -12,7 +12,7 @@ SELECT
   d.Text1 as "identificationQualifier",
   d.Remarks as "identificationRemarks"
 FROM mel_avh_occurrence_core co
-JOIn determination d ON co.mel_avh_occurrence_coreid=d.CollectionObjectID
+JOIN determination d ON co.id=d.CollectionObjectID
 JOIN taxon t ON d.TaxonID=t.TaxonID
 LEFT JOIN agent a ON d.DeterminerID=a.AgentID
 WHERE d.FeatureOrBasis NOT IN ('Type status') OR d.FeatureOrBasis IS NULL

@@ -1,9 +1,6 @@
 select 
   co.CollectionObjectID as id, 
 
-  -- occurrenceID
-  co.GUID as occurrenceID,
-
   /*
   * Record Level Terms
   */
@@ -38,6 +35,9 @@ select
   /* 
   *  Occurrence
   */
+
+  -- occurrenceID
+  co.GUID as occurrenceID,
 
   -- catalogNumber
   concat('MEL ', co.CatalogNumber) as catalogNumber,
@@ -374,9 +374,6 @@ select
       t0.FullName
   ) as scientificName,
 
-  -- scientificNameAuthorship
-  t0.Author as scientificNameAuthorship,
-
   -- higherClassification
   case
     when t12.TaxonID is not null and tdi12.Name!='life' then concat_ws(' | ', 
@@ -604,14 +601,17 @@ select
   -- taxonRank
   replace(tdi0.Name, 'division', 'phylum') as taxonRank,
 
-  -- taxonRemarks
-  t0.Remarks as taxonRemarks,
+  -- scientificNameAuthorship
+  t0.Author as scientificNameAuthorship,
 
   -- nomenclaturalCode
   'ICN' as nomenclaturalCode,
 
   -- nomenclaturalStatus
-  t0.EsaStatus as nomenclaturalStatus
+  t0.EsaStatus as nomenclaturalStatus,
+
+  -- taxonRemarks
+  t0.Remarks as taxonRemarks
 
 from collectionobject co
 left join collectionobjectattribute coa 
