@@ -1,7 +1,11 @@
-﻿SET @startdate='2012-12-31';
-SET @enddate='2013-07-01';
+﻿SET @startdate='2021-07-01';
+SET @enddate='2021-12-31';
 
 USE melisr;
+
+SELECT NodeNumber, HighestChildNodeNumber
+INTO @node_number, @highest_child_node_number
+FROM geography WHERE Name='Australia';
 
 -- Number of specimens databased
 SELECT 'Number of specimens databased' AS `query`, COUNT(*) as `value` FROM collectionobject co
@@ -14,7 +18,7 @@ LEFT JOIN collectingevent ce ON co.CollectingEventID=ce.CollectingEventID
 LEFT JOIN locality l ON ce.LocalityID=l.LocalityID
 LEFT JOIN geography g ON l.GeographyID=g.GeographyID
 WHERE (DATE(co.TimestampCreated) BETWEEN @startdate AND @enddate)
-AND g.FullName LIKE '%Australia%'
+AND g.NodeNumber>=@node_number AND g.NodeNumber<=@highest_child_node_number
 
 -- Number of foreign specimens databased
 UNION ALL
@@ -23,12 +27,12 @@ LEFT JOIN collectingevent ce ON co.CollectingEventID=ce.CollectingEventID
 LEFT JOIN locality l ON ce.LocalityID=l.LocalityID
 LEFT JOIN geography g ON l.GeographyID=g.GeographyID
 WHERE (DATE(co.TimestampCreated) BETWEEN @startdate AND @enddate)
-AND (g.FullName NOT LIKE '%Australia%' OR l.GeographyID IS NULL)
+AND (!(g.NodeNumber>=@node_number AND g.NodeNumber<=@highest_child_node_number) OR l.GeographyID IS NULL)
 
 -- Total number of specimens edited
 UNION ALL
 SELECT 'Total number of specimen records edited', COUNT(*) FROM collectionobject co
-WHERE DATE(co.TimestampCreated) < '2012-01-01' AND (DATE(co.TimestampModified) BETWEEN @startdate AND @enddate)
+WHERE DATE(co.TimestampCreated) < @startDate AND (DATE(co.TimestampModified) BETWEEN @startdate AND @enddate)
 
 -- Number of Australian specimens edited
 UNION ALL
@@ -36,7 +40,7 @@ SELECT 'Number of records of Australian specimens edited', COUNT(*) FROM collect
 LEFT JOIN collectingevent ce ON co.CollectingEventID=ce.CollectingEventID
 LEFT JOIN locality l ON ce.LocalityID=l.LocalityID
 LEFT JOIN geography g ON l.GeographyID=g.GeographyID
-WHERE DATE(co.TimestampCreated) < '2012-01-01' AND (DATE(co.TimestampModified) BETWEEN @startdate AND @enddate)
+WHERE DATE(co.TimestampCreated) < @starDate AND (DATE(co.TimestampModified) BETWEEN @startdate AND @enddate)
 AND g.FullName LIKE '%Australia%'
 
 -- Number of foreign specimens edited
@@ -45,7 +49,7 @@ SELECT 'Number of foreign specimens edited', COUNT(*) FROM collectionobject co
 LEFT JOIN collectingevent ce ON co.CollectingEventID=ce.CollectingEventID
 LEFT JOIN locality l ON ce.LocalityID=l.LocalityID
 LEFT JOIN geography g ON l.GeographyID=g.GeographyID
-WHERE DATE(co.TimestampCreated) < '2012-01-01' AND (DATE(co.TimestampModified) BETWEEN @startdate AND @enddate)
+WHERE DATE(co.TimestampCreated) < @startDate AND (DATE(co.TimestampModified) BETWEEN @startdate AND @enddate)
 AND (g.FullName NOT LIKE '%Australia%' OR l.GeographyID IS NULL)
 
 -- Number of specimens databased by CIO
@@ -59,7 +63,7 @@ AND co.Text2 IS NULL
 -- Total number of specimens edited by CIO
 UNION ALL
 SELECT 'Total number of specimen records edited by CIO', COUNT(*) FROM collectionobject co
-WHERE DATE(co.TimestampCreated) < '2013-01-01' AND (DATE(co.TimestampModified) BETWEEN @startdate AND @enddate)
+WHERE DATE(co.TimestampCreated) < @startDate AND (DATE(co.TimestampModified) BETWEEN @startdate AND @enddate)
 AND co.ModifiedByAgentID=2
 
 -- Number of specimens uploaded via the Workbench by CIO
