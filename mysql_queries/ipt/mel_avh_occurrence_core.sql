@@ -1,6 +1,9 @@
 select 
   co.CollectionObjectID as id, 
 
+  -- occurrenceID
+  co.GUID as occurrenceID,
+
   /*
   * Record Level Terms
   */
@@ -36,9 +39,6 @@ select
   *  Occurrence
   */
 
-  -- occurrenceID
-  co.GUID as occurrenceID,
-
   -- catalogNumber
   concat('MEL ', co.CatalogNumber) as catalogNumber,
 
@@ -49,7 +49,7 @@ select
   ce.StationFieldNumber as recordNumber,
 
   -- recordedBy
-  collectorstring(ce.CollectingEventID, ' | ', true) as recordedBy,
+  collectorstring(ce.CollectingEventID, ' | ', null) as recordedBy,
 
   -- recordedByID
   recorded_by_id(ce.CollectingEventID) as recordedByID,
@@ -59,6 +59,9 @@ select
 
   -- establishmentMeans
   dwc_establishment_means(co.CollectionObjectID) as establishmentMeans,
+  
+  -- degreeOfEstablishment
+  dwc_degree_of_establishment(co.CollectionObjectID) as degreeOfEstablishment,
 
   -- occurrenceStatus
   'present' as occurrenceStatus,
@@ -374,6 +377,9 @@ select
       t0.FullName
   ) as scientificName,
 
+  -- scientificNameAuthorship
+  t0.Author as scientificNameAuthorship,
+
   -- higherClassification
   case
     when t12.TaxonID is not null and tdi12.Name!='life' then concat_ws(' | ', 
@@ -601,17 +607,14 @@ select
   -- taxonRank
   replace(tdi0.Name, 'division', 'phylum') as taxonRank,
 
-  -- scientificNameAuthorship
-  t0.Author as scientificNameAuthorship,
+  -- taxonRemarks
+  t0.Remarks as taxonRemarks,
 
   -- nomenclaturalCode
   'ICN' as nomenclaturalCode,
 
   -- nomenclaturalStatus
-  t0.EsaStatus as nomenclaturalStatus,
-
-  -- taxonRemarks
-  t0.Remarks as taxonRemarks
+  t0.EsaStatus as nomenclaturalStatus
 
 from collectionobject co
 left join collectionobjectattribute coa 
