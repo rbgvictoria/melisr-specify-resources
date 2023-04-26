@@ -402,6 +402,13 @@
                     <cell type="field" id="text11" name="text11" uitype="text" colspan="5"/>
                 </row>
                 <row>
+                    <cell type="separator" label="iNaturalist" colspan="24" />
+                </row>
+                <row>
+                    <cell type="label" labelfor="inat" label="URL"/>
+                    <cell type="field" id="inat" name="text29" uitype="plugin" initialize="name=WebLinkButton;" colspan="5"/>
+                </row>
+                <row>
                     <cell type="separator" label="Other" colspan="24"/>
                 </row>
                 <row>
