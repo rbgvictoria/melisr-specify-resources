@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="Duplicate label - 4 per page"
+		 columnCount="2"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="269"
+		 columnSpacing="28"
+		 leftMargin="14"
+		 rightMargin="14"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 scriptletClass="edu.ku.brc.specify.config.Scriptlet"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+	<field name="1.collectionobject.catalogNumber" class="java.lang.String"/>
+	<field name="1,9-determinations.determination.determinedDateNumericYear" class="java.lang.Integer"/>
+	<field name="1,9-determinations,4.taxon.author" class="java.lang.String"/>
+	<field name="1,10,2.locality.maxElevation" class="java.math.BigDecimal"/>
+	<field name="1,10,2.locality.lat1text" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.startDateNumericYear" class="java.lang.Integer"/>
+	<field name="1,9-determinations,4.taxon.fullName" class="java.lang.String"/>
+	<field name="1,63-preparations.preparation.countAmt" class="java.lang.Integer"/>
+	<field name="1,9-determinations.determination.determinedDateNumericMonth" class="java.lang.Integer"/>
+	<field name="1,10,87.collectingtrip.endDateNumericYear" class="java.lang.Integer"/>
+	<field name="1,10.collectingevent.startDateNumericMonth" class="java.lang.Integer"/>
+	<field name="1,10,2.locality.latitude1" class="java.math.BigDecimal"/>
+	<field name="1,10,2.locality.minElevation" class="java.math.BigDecimal"/>
+	<field name="1,9-determinations,5-determiner.agent.determiner" class="java.lang.String"/>
+	<field name="1,9-determinations.determination.featureOrBasis" class="java.lang.String"/>
+	<field name="1,10,2,3.geography.Continent" class="java.lang.String"/>
+	<field name="1,10.collectingevent.remarks" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.endDateNumericMonth" class="java.lang.Integer"/>
+	<field name="1,63-preparations.preparation.text4" class="java.lang.String"/>
+	<field name="1,10,2.locality.originalLatLongUnit" class="java.lang.Integer"/>
+	<field name="1,63-preparations,58.storage.fullName" class="java.lang.String"/>
+	<field name="1,10.collectingevent.verbatimLocality" class="java.lang.String"/>
+	<field name="1,10,2,124-localityDetails.localitydetail.startDepth" class="java.math.BigDecimal"/>
+	<field name="1,10,92.collectingeventattribute.text2" class="java.lang.String"/>
+	<field name="1,63-preparations.preparation.text3" class="java.lang.String"/>
+	<field name="1,10,2,3.geography.County" class="java.lang.String"/>
+	<field name="1,10,2.locality.localityName" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.startDateNumericDay" class="java.lang.Integer"/>
+	<field name="1.collectionobject.altCatalogNumber" class="java.lang.String"/>
+	<field name="1,10.collectingevent.startDate" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.startDate" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.endDateNumericDay" class="java.lang.Integer"/>
+	<field name="1,9-determinations.determination.nameUsage" class="java.lang.String"/>
+	<field name="1,10.collectingevent.startDateNumericDay" class="java.lang.Integer"/>
+	<field name="1,9-determinations,4.taxon.family" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.startDateNumericMonth" class="java.lang.Integer"/>
+	<field name="1,10,2.locality.long1text" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.collectingTripName" class="java.lang.String"/>
+	<field name="1,10.collectingevent.stationFieldNumber" class="java.lang.String"/>
+	<field name="1,10,2.locality.longitude1" class="java.math.BigDecimal"/>
+	<field name="1,10,2,124-localityDetails.localitydetail.endDepth" class="java.math.BigDecimal"/>
+	<field name="1,10,87.collectingtrip.endDate" class="java.lang.String"/>
+	<field name="1,10,2,3.geography.Country" class="java.lang.String"/>
+	<field name="1,63-preparations.preparation.remarks" class="java.lang.String"/>
+	<field name="1,10,2,124-localityDetails.localitydetail.startDepthUnit" class="java.lang.String"/>
+	<field name="1,10,30-collectors.collector.collectors" class="java.lang.String"/>
+	<field name="1,10,2.locality.text1" class="java.lang.String"/>
+	<field name="1,10,2,3.geography.State" class="java.lang.String"/>
+	<field name="1,9-determinations.determination.determinedDate" class="java.lang.String"/>
+	<field name="1,63-preparations,65.preptype.name" class="java.lang.String"/>
+	<field name="1,9-determinations.determination.determinedDateNumericDay" class="java.lang.Integer"/>
+	<field name="1,9-determinations.determination.text1" class="java.lang.String"/>
+	<field name="1,10.collectingevent.startDateNumericYear" class="java.lang.Integer"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="resultsetsize" class="java.lang.String"/>
+	<variable name="CurrentDate" class="java.lang.String" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[new SimpleDateFormat("dd MMM. yyyy").format(new Date())]]></variableExpression>
+		<initialValueExpression><![CDATA[""]]></initialValueExpression>
+	</variable>
+	<variable name="TaxonNameWithAuthor" class="java.lang.String" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[($F{1,9-determinations.determination.text1} == null ?
+"<style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">" + $F{1,9-determinations,4.taxon.fullName}
+.replace(" subsp. ", "</style> subsp. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" var. ", "</style> var. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" f. ", "</style> f. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">") + "</style>" : 
+"<style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">" + $F{1,9-determinations.determination.text1}
+.replace(" ?subsp. ", "</style> ?subsp. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" ?var. ", "</style> ?var. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" ?f. ", "</style> ?f. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" aff. subsp. ", "</style> aff. subsp. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" aff. var. ", "</style> aff. var. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" aff. f. ", "</style> aff. f. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" cf. subsp. ", "</style> cf. subsp. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" cf. var. ", "</style> cf. var. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" cf. f. ", "</style> cf. f. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" subsp. ", "</style> subsp. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" var. ", "</style> var. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" f. ", "</style> f. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" ?", "</style> ?<style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" cf. ", "</style> cf. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
+.replace(" aff. ", "</style> aff. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")+ "</style>")
++ ($F{1,9-determinations,4.taxon.author} == null ? "" : " " + ((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,9-determinations,4.taxon.author}))]]></variableExpression>
+		<initialValueExpression><![CDATA[""]]></initialValueExpression>
+	</variable>
+	<variable name="CollectingDate" class="java.lang.String" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[($F{1,10.collectingevent.startDateNumericDay} == null ? "" : $F{1,10.collectingevent.startDateNumericDay} + " ").toString() + 
+($F{1,10.collectingevent.startDateNumericMonth} == null ? "" : ($F{1,10.collectingevent.startDateNumericMonth} + " ").toString().replace("10","Oct.").replace("11","Nov.").replace("12","Dec.").replace("1","Jan.").replace("2","Feb.").replace("3","Mar.").replace("4","Apr.").replace("5","May").replace("6","Jun.").replace("7","Jul.").replace("8","Aug.").replace("9","Sep.")) +
+($F{1,10.collectingevent.startDateNumericYear} == null ? "" : $F{1,10.collectingevent.startDateNumericYear}).toString()]]></variableExpression>
+		<initialValueExpression><![CDATA[""]]></initialValueExpression>
+	</variable>
+	<variable name="DeterminationDate" class="java.lang.String" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[($F{1,9-determinations.determination.determinedDateNumericDay} == null ? "" : $F{1,9-determinations.determination.determinedDateNumericDay} + " ").toString() + 
+($F{1,9-determinations.determination.determinedDateNumericMonth} == null ? "" : ($F{1,9-determinations.determination.determinedDateNumericMonth} + " ").toString().replace("10","Oct.").replace("11","Nov.").replace("12","Dec.").replace("1","Jan.").replace("2","Feb.").replace("3","Mar.").replace("4","Apr.").replace("5","May").replace("6","Jun.").replace("7","Jul.").replace("8","Aug.").replace("9","Sep.")) +
+($F{1,9-determinations.determination.determinedDateNumericYear} == null ? "" : $F{1,9-determinations.determination.determinedDateNumericYear}).toString()]]></variableExpression>
+		<initialValueExpression><![CDATA[""]]></initialValueExpression>
+	</variable>
+	<variable name="TypeStatusString" class="java.lang.String" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,63-preparations.preparation.text4}.replace( "<b>", "<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">" ).replace( "</b>", "</style>" )
+.replace( "<i>", "<style isItalic=\"true\" pdfFontName=\"Helvetica-Oblique\">" ).replace( "</i>", "</style>" ))]]></variableExpression>
+		<initialValueExpression><![CDATA[""]]></initialValueExpression>
+	</variable>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="420"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="58"
+						width="269"
+						height="300"
+						key="textField-1"/>
+					<box></box>
+					<textElement isStyledText="true" markup="html">
+						<font fontName="SansSerif" size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[( $V{TaxonNameWithAuthor}
++ ($F{1,9-determinations.determination.nameUsage} == null || $F{1,9-determinations.determination.nameUsage}.equals( "" ) ? "" : "\n" + $F{1,9-determinations.determination.nameUsage})
++ ( $F{1,9-determinations,5-determiner.agent.determiner} == null || $F{1,9-determinations.determination.determinedDate} == null  
+|| $F{1,9-determinations.determination.featureOrBasis}.equals( "Annot." ) || $F{1,9-determinations.determination.featureOrBasis}.equals( "AVH annot." ) 
+|| $F{1,9-determinations.determination.featureOrBasis}.equals( "Acc. name change" ) ? "" :
+"\n\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Det.: </style>" + $F{1,9-determinations,5-determiner.agent.determiner} + ", " 
++ $V{DeterminationDate})
++ ($F{1,63-preparations.preparation.text4} == null ? "" : "\n\n" + $V{TypeStatusString}) ).trim()
++ "\n"
++ ($F{1,10,87.collectingtrip.collectingTripName} == null ? "" : "\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Collecting trip: </style>" + $F{1,10,87.collectingtrip.collectingTripName})
++ "\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Coll.: </style>" + $F{1,10,30-collectors.collector.collectors} + " " + $F{1,10.collectingevent.stationFieldNumber}
++ "\t<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Date: </style>" + $V{CollectingDate}
++ "\n\n"
++ ($F{1,10,2,3.geography.Country} == null ? "" : "<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">" + $F{1,10,2,3.geography.Country} + ($F{1,10,2,3.geography.State} == null ? "" : ": " + $F{1,10,2,3.geography.State}) + "</style>")
++ "\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Loc.:</style> " + ((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,10,2.locality.localityName})
++ ($F{1,10,2.locality.latitude1} != null && $F{1,10,2.locality.longitude1} != null ? "\n" + $F{1,10,2.locality.lat1text} + " " + $F{1,10,2.locality.long1text} : "")
++ ($F{1,10.collectingevent.remarks} == null ? "" : "\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Habitat:</style> " + ((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,10.collectingevent.remarks}))
++ ($F{1,10,92.collectingeventattribute.text2} == null ? "" : " Associated taxa: " + ((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,10,92.collectingeventattribute.text2}))
++ ($F{1,10.collectingevent.verbatimLocality} == null ? "" : "\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Notes:</style> " + ((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,10.collectingevent.verbatimLocality}))
++ "\n\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">This specimen is a duplicate of MEL " + $F{1.collectionobject.altCatalogNumber} + "</style>"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="11"
+						width="268"
+						height="17"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Ex NATIONAL HERBARIUM OF VICTORIA (MEL)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="26"
+						width="268"
+						height="16"
+						key="staticText-2"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[MELBOURNE, AUSTRALIA]]></text>
+				</staticText>
+				<image  scaleImage="RetainShape" vAlign="Top" hAlign="Left" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="173"
+						y="378"
+						width="96"
+						height="26"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="barcode-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch" fill="Solid" />
+					<imageExpression class="java.awt.Image"><![CDATA[it.businesslogic.ireport.barcode.BcImage.getBarcodeImage(9,"MEL " + $F{1.collectionobject.altCatalogNumber},false,false,null,0,0)]]></imageExpression>
+				</image>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="173"
+						y="393"
+						width="96"
+						height="14"
+						key="textField-2"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["MEL " + $F{1.collectionobject.altCatalogNumber}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="378"
+						width="172"
+						height="33"
+						key="textField-3"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["MEL specimen stored under: " + $F{1,63-preparations,58.storage.fullName} + ($F{1,10,2,3.geography.Continent} == null ? "": " (" + $F{1,10,2,3.geography.Continent} + ")")
++ "\nPrinted from MELISR, " + $V{CurrentDate}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<lastPageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</lastPageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>
