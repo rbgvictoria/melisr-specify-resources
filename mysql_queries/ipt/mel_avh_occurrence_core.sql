@@ -35,6 +35,11 @@ select
   -- dataGeneralizations
   coa.Text25 as dataGeneralizations,
 
+  -- dynamicProperties
+  if(ddt.DuplicatesDistributedTo is null, null, 
+      concat('{"duplicatesDistributedTo": "', ddt.DuplicatesDistributedTo, '"}')
+      ) as dynamicProperties,
+
   /* 
   *  Occurrence
   */
@@ -681,4 +686,7 @@ left join taxontreedefitem tdi12
 
 left join mel_avh_associated_sequences seq 
   on co.CollectionObjectID=seq.CollectionObjectID
+left join duplicates_distributed_to_view ddt 
+  on co.CollectionObjectID=ddt.CollectionObjectID
+
 where co.CollectionID=4
