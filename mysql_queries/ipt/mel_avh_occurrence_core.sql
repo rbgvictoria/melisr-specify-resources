@@ -115,6 +115,9 @@ select
 
   -- habitat
   ce.Remarks as habitat,
+
+  -- fieldNotes
+  if(co.Text1='', null, replace(co.Text1, '\n', '¶')) as fieldNotes,
   
   /*
   * Location
