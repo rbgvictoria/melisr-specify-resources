@@ -1,87 +1,71 @@
-<?xml version="1.0" encoding="UTF-8"  ?>
-<!-- Created with iReport - A designer for JasperReports -->
-<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-<jasperReport
-		 name="Bryophyte packet - 14 cm"
-		 columnCount="1"
-		 printOrder="Vertical"
-		 orientation="Portrait"
-		 pageWidth="595"
-		 pageHeight="842"
-		 columnWidth="595"
-		 columnSpacing="28"
-		 leftMargin="0"
-		 rightMargin="0"
-		 topMargin="0"
-		 bottomMargin="0"
-		 whenNoDataType="NoPages"
-		 scriptletClass="edu.ku.brc.specify.config.Scriptlet"
-		 isTitleNewPage="false"
-		 isSummaryNewPage="false">
-	<import value="java.util.*" />
-	<import value="net.sf.jasperreports.engine.*" />
-	<import value="net.sf.jasperreports.engine.data.*" />
-	<field name="1,10,87.collectingtrip.startDate" class="java.lang.String"/>
-	<field name="1,9-determinations.determination.determinedDate" class="java.lang.String"/>
-	<field name="1,9-determinations,5-determiner.agent.determiner" class="java.lang.String"/>
-	<field name="1,10,87.collectingtrip.collectingTripName" class="java.lang.String"/>
-	<field name="1,10,87.collectingtrip.endDateNumericDay" class="java.lang.Integer"/>
-	<field name="1,10.collectingevent.startDate" class="java.lang.String"/>
-	<field name="1,10,2.locality.maxElevation" class="java.math.BigDecimal"/>
-	<field name="1,10,87.collectingtrip.endDate" class="java.lang.String"/>
-	<field name="1,10,2.locality.text1" class="java.lang.String"/>
-	<field name="1,10,2.locality.lat1text" class="java.lang.String"/>
-	<field name="1,63-preparations,58.storage.fullName" class="java.lang.String"/>
-	<field name="1,10,2,3.geography.Country" class="java.lang.String"/>
-	<field name="1,10,87.collectingtrip.startDateNumericMonth" class="java.lang.Integer"/>
-	<field name="1,9-determinations.determination.determinedDateNumericYear" class="java.lang.Integer"/>
-	<field name="1,9-determinations,4.taxon.author" class="java.lang.String"/>
-	<field name="1,10,2.locality.minElevation" class="java.math.BigDecimal"/>
-	<field name="1,10.collectingevent.verbatimLocality" class="java.lang.String"/>
-	<field name="1,10,2.locality.localityName" class="java.lang.String"/>
-	<field name="1,10,87.collectingtrip.endDateNumericYear" class="java.lang.Integer"/>
-	<field name="1,10.collectingevent.stationFieldNumber" class="java.lang.String"/>
-	<field name="1,9-determinations.determination.determinedDateNumericMonth" class="java.lang.Integer"/>
-	<field name="1,10,2.locality.long1text" class="java.lang.String"/>
-	<field name="1,10,2,3.geography.County" class="java.lang.String"/>
-	<field name="1,10,2,124-localityDetails.localitydetail.endDepth" class="java.math.BigDecimal"/>
-	<field name="1,9-determinations,4.taxon.fullName" class="java.lang.String"/>
-	<field name="1,63-preparations,65.preptype.name" class="java.lang.String"/>
-	<field name="1,10,30-collectors.collector.collectors" class="java.lang.String"/>
-	<field name="1,10,87.collectingtrip.endDateNumericMonth" class="java.lang.Integer"/>
-	<field name="1,10.collectingevent.remarks" class="java.lang.String"/>
-	<field name="1,10,2,124-localityDetails.localitydetail.startDepth" class="java.math.BigDecimal"/>
-	<field name="1,10,87.collectingtrip.startDateNumericYear" class="java.lang.Integer"/>
-	<field name="1,10,2,3.geography.State" class="java.lang.String"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Bryophyte packet NEW" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" scriptletClass="edu.ku.brc.specify.config.Scriptlet" uuid="af786726-aa3f-4ad2-869a-9dcdfdd4cfc7">
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
 	<field name="1.collectionobject.catalogNumber" class="java.lang.String"/>
-	<field name="1,63-preparations.preparation.remarks" class="java.lang.String"/>
-	<field name="1,10,2,124-localityDetails.localitydetail.startDepthUnit" class="java.lang.String"/>
-	<field name="1,9-determinations,4.taxon.family" class="java.lang.String"/>
-	<field name="1,9-determinations.determination.determinedDateNumericDay" class="java.lang.Integer"/>
-	<field name="1,10,87.collectingtrip.startDateNumericDay" class="java.lang.Integer"/>
-	<field name="id" class="java.lang.Integer"/>
-	<field name="resultsetsize" class="java.lang.String"/>
 	<field name="1.collectionobject.altCatalogNumber" class="java.lang.String"/>
-	<field name="1,10.collectingevent.startDateNumericMonth" class="java.lang.Integer"/>
-	<field name="1,10.collectingevent.startDateNumericYear" class="java.lang.Integer"/>
-	<field name="1,10.collectingevent.startDateNumericDay" class="java.lang.Integer"/>
-	<field name="1,10,2.locality.longitude1" class="java.math.BigDecimal"/>
-	<field name="1,10,2.locality.latitude1" class="java.math.BigDecimal"/>
-	<field name="1,10,2.locality.originalLatLongUnit" class="java.lang.Integer"/>
+	<field name="1,10,30-collectors.collector.collectors" class="java.lang.String"/>
+	<field name="1,10.collectingevent.stationFieldNumber" class="java.lang.String"/>
+	<field name="1,10.collectingevent.startDate" class="java.lang.String"/>
+	<field name="1,10.collectingevent.startDateNumericYear" class="java.lang.String"/>
+	<field name="1,10.collectingevent.startDateNumericMonth" class="java.lang.String"/>
+	<field name="1,10.collectingevent.startDateNumericDay" class="java.lang.String"/>
 	<field name="1,10,2,3.geography.Continent" class="java.lang.String"/>
+	<field name="1,10,2,3.geography.Country" class="java.lang.String"/>
+	<field name="1,10,2,3.geography.State" class="java.lang.String"/>
+	<field name="1,10,2,3.geography.County" class="java.lang.String"/>
+	<field name="1,10,2.locality.localityName" class="java.lang.String"/>
+	<field name="1,10,2.locality.latitude1" class="java.math.BigDecimal"/>
+	<field name="1,10,2.locality.longitude1" class="java.math.BigDecimal"/>
+	<field name="1,10,2.locality.originalLatLongUnit" class="java.lang.Integer"/>
+	<field name="1,10,2.locality.lat1text" class="java.lang.String"/>
+	<field name="1,10,2.locality.long1text" class="java.lang.String"/>
+	<field name="1,10,2.locality.minElevation" class="java.math.BigDecimal"/>
+	<field name="1,10,2.locality.maxElevation" class="java.math.BigDecimal"/>
+	<field name="1,10,2.locality.text1" class="java.lang.String"/>
+	<field name="1,10,2,124-localityDetails.localitydetail.startDepth" class="java.math.BigDecimal"/>
+	<field name="1,10,2,124-localityDetails.localitydetail.endDepth" class="java.math.BigDecimal"/>
+	<field name="1,10,2,124-localityDetails.localitydetail.startDepthUnit" class="java.lang.String"/>
+	<field name="1,10.collectingevent.remarks" class="java.lang.String"/>
 	<field name="1,10,92.collectingeventattribute.text2" class="java.lang.String"/>
+	<field name="1,10.collectingevent.verbatimLocality" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.collectingTripName" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.startDate" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.startDateNumericDay" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.startDateNumericMonth" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.startDateNumericYear" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.endDate" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.endDateNumericDay" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.endDateNumericMonth" class="java.lang.String"/>
+	<field name="1,10,87.collectingtrip.endDateNumericYear" class="java.lang.String"/>
+	<field name="1,9-determinations.determination.featureOrBasis" class="java.lang.String"/>
+	<field name="1,9-determinations,5-determiner.agent.determiner" class="java.lang.String"/>
+	<field name="1,9-determinations.determination.determinedDate" class="java.lang.String"/>
+	<field name="1,9-determinations.determination.determinedDateNumericDay" class="java.lang.String"/>
+	<field name="1,9-determinations.determination.determinedDateNumericMonth" class="java.lang.String"/>
+	<field name="1,9-determinations.determination.determinedDateNumericYear" class="java.lang.String"/>
+	<field name="1,9-determinations,4.taxon.fullName" class="java.lang.String"/>
+	<field name="1,9-determinations.determination.text1" class="java.lang.String"/>
+	<field name="1,9-determinations.determination.nameUsage" class="java.lang.String"/>
+	<field name="1,9-determinations,4.taxon.author" class="java.lang.String"/>
+	<field name="1,9-determinations,4.taxon.family" class="java.lang.String"/>
+	<field name="1,63-preparations,65.preptype.name" class="java.lang.String"/>
+	<field name="1,63-preparations.preparation.remarks" class="java.lang.String"/>
 	<field name="1,63-preparations.preparation.text3" class="java.lang.String"/>
 	<field name="1,63-preparations.preparation.text4" class="java.lang.String"/>
-	<field name="1,9-determinations.determination.nameUsage" class="java.lang.String"/>
-	<field name="1,9-determinations.determination.text1" class="java.lang.String"/>
-	<field name="1,9-determinations.determination.featureOrBasis" class="java.lang.String"/>
-	<variable name="CollectingDate" class="java.lang.String" resetType="Report" calculation="Nothing">
+	<field name="1,63-preparations.preparation.text5" class="java.lang.String"/>
+	<field name="1,63-preparations,58.storage.fullName" class="java.lang.String"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="resultsetsize" class="java.lang.String"/>
+	<variable name="CollectingDate" class="java.lang.String">
 		<variableExpression><![CDATA[($F{1,10.collectingevent.startDateNumericDay} == null ? "" : $F{1,10.collectingevent.startDateNumericDay} + " ").toString() + 
 ($F{1,10.collectingevent.startDateNumericMonth} == null ? "" : ($F{1,10.collectingevent.startDateNumericMonth} + " ").toString().replace("10","Oct.").replace("11","Nov.").replace("12","Dec.").replace("1","Jan.").replace("2","Feb.").replace("3","Mar.").replace("4","Apr.").replace("5","May").replace("6","Jun.").replace("7","Jul.").replace("8","Aug.").replace("9","Sep.")) +
 ($F{1,10.collectingevent.startDateNumericYear} == null ? "" : $F{1,10.collectingevent.startDateNumericYear}).toString()]]></variableExpression>
 		<initialValueExpression><![CDATA[""]]></initialValueExpression>
 	</variable>
-	<variable name="TaxonNameWithAuthor" class="java.lang.String" resetType="Report" calculation="Nothing">
+	<variable name="TaxonNameWithAuthor" class="java.lang.String">
 		<variableExpression><![CDATA[($F{1,9-determinations.determination.text1} == null ?
 "<style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">" + $F{1,9-determinations,4.taxon.fullName}
 .replace(" subsp. ", "</style> subsp. <style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">")
@@ -106,61 +90,135 @@
 + ($F{1,9-determinations,4.taxon.author} == null ? "" : " " + ((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,9-determinations,4.taxon.author}))]]></variableExpression>
 		<initialValueExpression><![CDATA[""]]></initialValueExpression>
 	</variable>
-	<variable name="DeterminationDate" class="java.lang.String" resetType="Report" calculation="Nothing">
+	<variable name="DeterminationDate" class="java.lang.String">
 		<variableExpression><![CDATA[($F{1,9-determinations.determination.determinedDateNumericDay} == null ? "" : $F{1,9-determinations.determination.determinedDateNumericDay} + " ").toString() + 
 ($F{1,9-determinations.determination.determinedDateNumericMonth} == null ? "" : ($F{1,9-determinations.determination.determinedDateNumericMonth} + " ").toString().replace("10","Oct.").replace("11","Nov.").replace("12","Dec.").replace("1","Jan.").replace("2","Feb.").replace("3","Mar.").replace("4","Apr.").replace("5","May").replace("6","Jun.").replace("7","Jul.").replace("8","Aug.").replace("9","Sep.")) +
 ($F{1,9-determinations.determination.determinedDateNumericYear} == null ? "" : $F{1,9-determinations.determination.determinedDateNumericYear}).toString()]]></variableExpression>
 		<initialValueExpression><![CDATA[""]]></initialValueExpression>
 	</variable>
-	<variable name="MixedCollectionString" class="java.lang.String" resetType="Report" calculation="Nothing">
+	<variable name="MixedCollectionString" class="java.lang.String">
 		<variableExpression><![CDATA["<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">This is a mixed collection. The components are:</style>\n"
 + ((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,63-preparations.preparation.text3}).replace(" | ", "\n").replace("<i>", "<style isItalic=\"true\" pdfFontName=\"Helvetica-Oblique\">").replace("</i>", "</style>")]]></variableExpression>
 		<initialValueExpression><![CDATA[""]]></initialValueExpression>
 	</variable>
-	<variable name="TypeStatusString" class="java.lang.String" resetType="Report" calculation="Nothing">
-		<variableExpression><![CDATA[((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,63-preparations.preparation.text4}.replace( "<b>", "<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">" ).replace( "</b>", "</style>" )
-.replace( "<i>", "<style isItalic=\"true\" pdfFontName=\"Helvetica-Oblique\">" ).replace( "</i>", "</style>" ))]]></variableExpression>
+	<variable name="TypeStatusString" class="java.lang.String">
+		<variableExpression><![CDATA[((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,63-preparations.preparation.text4}.replace( "<b>", "<style size=\"12\" isBold=\"true\" pdfFontName=\"Helvetica-Bold\">" ).replace( "</b>", "</style>" )
+.replace( "<i>", "<style size=\"12\" isBold=\"true\" isItalic=\"true\" pdfFontName=\"Helvetica-Oblique\">" ).replace( "</i>", "</style>" )  + ($F{1,63-preparations.preparation.text5} != null ? "\n" + $F{1,63-preparations.preparation.text5} : ""))]]></variableExpression>
 	</variable>
-	<variable name="CurrentDate" class="java.lang.String" resetType="Report" calculation="Nothing">
+	<variable name="CurrentDate" class="java.lang.String">
 		<variableExpression><![CDATA[new SimpleDateFormat("dd MMM. yyyy").format(new Date())]]></variableExpression>
 	</variable>
-		<background>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</background>
-		<title>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</title>
-		<pageHeader>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</pageHeader>
-		<columnHeader>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</columnHeader>
-		<detail>
-			<band height="841"  isSplitAllowed="false" >
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="114"
-						y="640"
-						width="362"
-						height="156"
-						key="textField-3"/>
-					<box></box>
-					<textElement isStyledText="true" markup="html">
-						<font fontName="SansSerif" size="9"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[( $V{TaxonNameWithAuthor}
-+ ($F{1,9-determinations.determination.nameUsage} == null || $F{1,9-determinations.determination.nameUsage}.equals( "" ) ? "" : "\n" + $F{1,9-determinations.determination.nameUsage})
-+ ( $F{1,9-determinations,5-determiner.agent.determiner} == null || $F{1,9-determinations.determination.determinedDate} == null  
-|| $F{1,9-determinations.determination.featureOrBasis}.equals( "Annot." ) || $F{1,9-determinations.determination.featureOrBasis}.equals( "AVH annot." ) 
-|| $F{1,9-determinations.determination.featureOrBasis}.equals( "Acc. name change" ) ? "" :
-"\n\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Det.: </style>" + $F{1,9-determinations,5-determiner.agent.determiner} + ", " 
-+ $V{DeterminationDate})
-+ ($F{1,63-preparations.preparation.text4} == null ? "" : "\n\n" + $V{TypeStatusString}) ).trim()
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="841" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-5" mode="Opaque" x="75" y="561" width="445" height="21" backcolor="#84B7E4" uuid="100f3e00-1ab3-41b3-a62a-7bc4804d0ac2">
+					<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Victoria" )
+&& $F{1,63-preparations.preparation.text4} == null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-6" mode="Opaque" x="75" y="561" width="445" height="21" backcolor="#F47B22" uuid="c72c9357-4253-4368-9001-c66aefed5be5">
+					<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Western Australia" )
+&& $F{1,63-preparations.preparation.text4} == null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-7" mode="Opaque" x="75" y="561" width="445" height="21" backcolor="#F5B2D1" uuid="47573ff7-6072-434c-a35c-2f3dbb46841c">
+					<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Northern Territory" )
+&& $F{1,63-preparations.preparation.text4} == null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-8" mode="Opaque" x="75" y="561" width="445" height="21" backcolor="#FED602" uuid="08b54fbb-a8c2-4682-8656-7084a26589a8">
+					<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "South Australia" )
+&& $F{1,63-preparations.preparation.text4} == null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-9" mode="Opaque" x="75" y="561" width="445" height="21" backcolor="#A8CF38" uuid="831348ef-5a00-4013-91e9-6e61622d215e">
+					<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Queensland" )
+&& $F{1,63-preparations.preparation.text4} == null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-10" mode="Opaque" x="75" y="561" width="445" height="21" backcolor="#A4A49A" uuid="7be48f35-bb08-4500-a859-df6b93b9e202">
+					<printWhenExpression><![CDATA[(($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "New South Wales" ))
+|| ($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Australian Capital Territory" )))
+&& $F{1,63-preparations.preparation.text4} == null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-11" mode="Opaque" x="75" y="561" width="445" height="21" backcolor="#E32726" uuid="6db4abcd-5bab-4697-869e-6df35736f877">
+					<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Tasmania" )
+&& $F{1,63-preparations.preparation.text4} == null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-12" mode="Opaque" x="75" y="561" width="445" height="21" backcolor="#884A9D" uuid="645ce82c-d828-4fe4-8862-20486dae1e65">
+					<printWhenExpression><![CDATA[(($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Ashmore and Cartier Islands" )) ||
+($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Christmas Island" )) ||
+($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Cocos (Keeling) Islands" )) ||
+($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Coral Sea Island Territory" )) ||
+($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Heard Island and McDonald Islands" )) ||
+($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Macquarie Island" )) ||
+($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Norfolk Island" )))
+&& $F{1,63-preparations.preparation.text4} == null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-13" mode="Opaque" x="75" y="561" width="445" height="21" backcolor="#D5F9FB" uuid="e808fa24-db48-4b22-9533-c7ae95c01134">
+					<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State} == null
+&& $F{1,63-preparations.preparation.text4} == null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-12" mode="Opaque" x="75" y="570" width="445" height="4" backcolor="#FF0000" uuid="8b1b0074-f380-4b05-8f88-f32ad862eeb5">
+					<printWhenExpression><![CDATA[$F{1,63-preparations.preparation.text4} != null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-3" x="114" y="640" width="362" height="156" uuid="83b2509d-bec9-48ab-ae60-6cb544a58191"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{1,63-preparations.preparation.text4} != null ? $V{TypeStatusString} : 
+( $V{TaxonNameWithAuthor} 
++ ($F{1,9-determinations.determination.nameUsage} == null || $F{1,9-determinations.determination.nameUsage}.equals( "" ) 
+    ? "" : "\n" + $F{1,9-determinations.determination.nameUsage}) 
++ ($F{1,9-determinations,5-determiner.agent.determiner} == null || $F{1,9-determinations.determination.determinedDate} == null 
+    ? "" : "\n\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Det.: </style>" + $F{1,9-determinations,5-determiner.agent.determiner}  + ", " 
+    + $V{DeterminationDate})
++ ($F{1,63-preparations.preparation.text4} == null ? "" : "\n\n" + $V{TypeStatusString})           
+).trim())
 + "\n"
 + ($F{1,10,87.collectingtrip.collectingTripName} == null ? "" : "\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Collecting trip: </style>" + $F{1,10,87.collectingtrip.collectingTripName})
 + ($F{1,10,30-collectors.collector.collectors} != null ? "\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Coll.: </style>" + $F{1,10,30-collectors.collector.collectors} + " " + $F{1,10.collectingevent.stationFieldNumber}
@@ -171,246 +229,74 @@
 + "\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Loc.:</style> " + ((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,10,2.locality.localityName})
 + ($F{1,63-preparations.preparation.remarks} == null ? "" : "\n\n" + $F{1,63-preparations.preparation.remarks})
 + ($F{1,63-preparations.preparation.text3} == null ? "" : "\n\n" + $V{MixedCollectionString})]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement
-						x="115"
-						y="593"
-						width="264"
-						height="17"
-						key="staticText-1"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-1" x="115" y="593" width="264" height="17" uuid="88593db7-a646-463b-826f-c177d1c8813e"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
 				<text><![CDATA[NATIONAL HERBARIUM OF VICTORIA (MEL)]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="166"
-						y="610"
-						width="163"
-						height="16"
-						key="staticText-2"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
-					</textElement>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-2" x="166" y="610" width="163" height="16" uuid="88d3582a-1283-4b57-a8d0-c6faf52fe8ff"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
 				<text><![CDATA[MELBOURNE, AUSTRALIA]]></text>
-				</staticText>
-				<image  scaleImage="RetainShape" vAlign="Top" hAlign="Left" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						mode="Opaque"
-						x="379"
-						y="593"
-						width="97"
-						height="26"
-						forecolor="#000000"
-						backcolor="#FFFFFF"
-						key="barcode-1"/>
-					<box></box>
-					<graphicElement stretchType="NoStretch" fill="Solid" />
-					<imageExpression class="java.awt.Image"><![CDATA[it.businesslogic.ireport.barcode.BcImage.getBarcodeImage(9,"MEL " + $F{1.collectionobject.altCatalogNumber},false,false,null,0,0)]]></imageExpression>
-				</image>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="379"
-						y="610"
-						width="97"
-						height="12"
-						key="textField-4"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA["MEL " + $F{1.collectionobject.altCatalogNumber}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						mode="Opaque"
-						x="75"
-						y="561"
-						width="445"
-						height="21"
-						backcolor="#84B7E4"
-						key="textField-5">
-							<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Victoria" )]]></printWhenExpression>
-						</reportElement>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[" "]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						mode="Opaque"
-						x="75"
-						y="561"
-						width="445"
-						height="21"
-						backcolor="#F47B22"
-						key="textField-6">
-							<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Western Australia" )]]></printWhenExpression>
-						</reportElement>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[" "]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						mode="Opaque"
-						x="75"
-						y="561"
-						width="445"
-						height="21"
-						backcolor="#F5B2D1"
-						key="textField-7">
-							<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Northern Territory" )]]></printWhenExpression>
-						</reportElement>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[" "]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						mode="Opaque"
-						x="75"
-						y="561"
-						width="445"
-						height="21"
-						backcolor="#FED602"
-						key="textField-8">
-							<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "South Australia" )]]></printWhenExpression>
-						</reportElement>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[" "]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						mode="Opaque"
-						x="75"
-						y="561"
-						width="445"
-						height="21"
-						backcolor="#A8CF38"
-						key="textField-9">
-							<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Queensland" )]]></printWhenExpression>
-						</reportElement>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[" "]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						mode="Opaque"
-						x="75"
-						y="561"
-						width="445"
-						height="21"
-						backcolor="#A4A49A"
-						key="textField-10">
-							<printWhenExpression><![CDATA[($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "New South Wales" ))
-|| ($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Australian Capital Territory" ))]]></printWhenExpression>
-						</reportElement>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[" "]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						mode="Opaque"
-						x="75"
-						y="561"
-						width="445"
-						height="21"
-						backcolor="#E32726"
-						key="textField-11">
-							<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Tasmania" )]]></printWhenExpression>
-						</reportElement>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[" "]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						mode="Opaque"
-						x="75"
-						y="561"
-						width="445"
-						height="21"
-						backcolor="#884A9D"
-						key="textField-12">
-							<printWhenExpression><![CDATA[($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Ashmore and Cartier Islands" )) ||
-($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Christmas Island" )) ||
-($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Cocos (Keeling) Islands" )) ||
-($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Coral Sea Island Territory" )) ||
-($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Heard Island and McDonald Islands" )) ||
-($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Macquarie Island" )) ||
-($F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State}.equals( "Norfolk Island" ))]]></printWhenExpression>
-						</reportElement>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[" "]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						mode="Opaque"
-						x="75"
-						y="561"
-						width="445"
-						height="21"
-						backcolor="#D5F9FB"
-						key="textField-13">
-							<printWhenExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) && $F{1,10,2,3.geography.State} == null]]></printWhenExpression>
-						</reportElement>
-					<box></box>
-					<textElement>
-						<font/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[" "]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="114"
-						y="808"
-						width="362"
-						height="20"
-						key="textField-14"/>
-					<box></box>
-					<textElement>
-						<font fontName="SansSerif" size="8"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{1,63-preparations,58.storage.fullName} + ($F{1,10,2,3.geography.Continent} == null ? "": " (" + $F{1,10,2,3.geography.Continent} + ")") + 
+			</staticText>
+			<image scaleImage="RetainShape" hAlign="Left" vAlign="Top">
+				<reportElement key="barcode-1" mode="Opaque" x="379" y="593" width="97" height="26" forecolor="#000000" backcolor="#FFFFFF" uuid="cfcf9549-612d-42d9-87a9-7ccf1b4a5673"/>
+				<graphicElement fill="Solid"/>
+				<imageExpression><![CDATA[it.businesslogic.ireport.barcode.BcImage.getBarcodeImage(9,"MEL " + $F{1.collectionobject.altCatalogNumber},false,false,null,0,0)]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-4" x="379" y="610" width="97" height="12" uuid="a6084447-c7db-4be4-a47b-e8078748fe70"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MEL " + $F{1.collectionobject.altCatalogNumber}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-14" x="114" y="808" width="362" height="20" uuid="20a249ad-8790-4c8b-8a95-de14d23e1b45"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{1,63-preparations,58.storage.fullName} + ($F{1,10,2,3.geography.Continent} == null ? "": " (" + $F{1,10,2,3.geography.Continent} + ")") + 
 "\nPrinted from MELISR, " + $V{CurrentDate}]]></textFieldExpression>
-				</textField>
-			</band>
-		</detail>
-		<columnFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</columnFooter>
-		<pageFooter>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</pageFooter>
-		<summary>
-			<band height="0"  isSplitAllowed="true" >
-			</band>
-		</summary>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-1" mode="Opaque" x="273" y="566" width="48" height="20" forecolor="#FF0000" uuid="a3acd772-9226-4533-8b21-78ec70706eaf">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[$F{1,63-preparations.preparation.text4} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[TYPE]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</summary>
 </jasperReport>

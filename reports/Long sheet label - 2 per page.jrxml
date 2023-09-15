@@ -155,9 +155,7 @@
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA[( $V{TaxonNameWithAuthor}
 + ($F{1,9-determinations.determination.nameUsage} == null || $F{1,9-determinations.determination.nameUsage}.equals( "" ) ? "" : "\n" + $F{1,9-determinations.determination.nameUsage})
-+ ( $F{1,9-determinations,5-determiner.agent.determiner} == null || $F{1,9-determinations.determination.determinedDate} == null  
-|| $F{1,9-determinations.determination.featureOrBasis}.equals( "Annot." ) || $F{1,9-determinations.determination.featureOrBasis}.equals( "AVH annot." ) 
-|| $F{1,9-determinations.determination.featureOrBasis}.equals( "Acc. name change" ) ? "" :
++ ( $F{1,9-determinations,5-determiner.agent.determiner} == null || $F{1,9-determinations.determination.determinedDate} == null ? "" :
 "\n\n<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Det.: </style>" + $F{1,9-determinations,5-determiner.agent.determiner} + ", " 
 + $V{DeterminationDate})
 + ($F{1,63-preparations.preparation.text4} == null ? "" : "\n\n" + $V{TypeStatusString}) ).trim()

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Vic. Ref. Set label – 4 per page" columnCount="2" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="269" columnSpacing="28" leftMargin="14" rightMargin="14" topMargin="0" bottomMargin="0" scriptletClass="edu.ku.brc.specify.config.Scriptlet" uuid="78a1aac7-b4d5-441c-ba4b-fb349fac9e4e">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Vic. Ref. Set long label – 4 per page" columnCount="2" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="269" columnSpacing="28" leftMargin="14" rightMargin="14" topMargin="0" bottomMargin="0" scriptletClass="edu.ku.brc.specify.config.Scriptlet" uuid="78a1aac7-b4d5-441c-ba4b-fb349fac9e4e">
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -131,10 +131,10 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="417" splitType="Stretch">
+		<band height="842" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-3" x="0" y="72" width="269" height="334" uuid="5ff65bca-a3e4-4763-b833-b7531a29a96f">
+				<reportElement key="textField-3" x="0" y="72" width="269" height="748" uuid="5ff65bca-a3e4-4763-b833-b7531a29a96f">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
