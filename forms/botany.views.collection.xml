@@ -173,6 +173,16 @@
                         <cell type="subview" viewname="Preparation" id="14" name="preparations" colspan="21" rows="3"/>
                 </row>
                 <row>
+                    <cell type="label" label="" />
+                    <cell type="panel" id="ContainerPanel" name="ContainerPanel" coldef="p" rowdef="p" colspan="11">
+                        <rows>
+                            <row>
+                                <cell type="field" id="ContainerPlugin" uitype="plugin" name="this" initialize="name=ContainerPlugin"/>
+                            </row>
+                        </rows> 
+                    </cell>
+                </row>
+                <row>
                         <cell type="subview" viewname="CollectingEventSub" id="4" label="Collecting information" name="collectingEvent" colspan="21"/>
                 </row>
                 <row>
@@ -199,7 +209,7 @@
                     </cell>
                 </row>
                 <row>
-                        <cell type="separator" label="Label printing information" colspan="21"/>
+                        <cell type="separator" label="Label printing and curation information" colspan="21"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="46"/>
@@ -217,6 +227,24 @@
                         </rows>
                     </cell>
                 </row-->
+		<row>
+                    <cell type="label" labelfor="22"/>
+                    <cell type="field" id="22" name="text2" uitype="text" colspan="3"/>
+                    <cell type="label" label="" colspan="3"/>
+                    <cell type="field" id="20" name="yesNo3" uitype="checkbox" initialize="align=right" colspan="5"/>
+                    <cell type="field" id="23" name="yesNo6" uitype="checkbox" initialize="align=right" colspan="3"/>
+				</row>
+				<row>
+                    <cell type="label" labelfor="24"/>
+                    <cell type="field" id="24" name="reservedText2" uitype="text" initialize="align=right" colspan="5"/>
+                    <cell type="label" label=""/>
+					<cell type="label" labelfor="26" colspan="3"/>	
+                    <cell type="field" id="26" name="integer1" uitype="text" initialize="align=right"/>	
+				</row>
+				<row>
+                    <cell type="label" labelfor="25"/>
+                    <cell type="field" id="25" name="reservedText3" uitype="text" initialize="align=right" colspan="17"/>
+		</row>			
                 <row>
                     <cell type="separator" label="" colspan="21"/>
                 </row>
@@ -226,18 +254,14 @@
                     <cell type="label" label="" colspan="3"/>
                     <cell type="label" labelfor="17"/>
                     <cell type="field" id="17" name="timestampCreated" uitype="label" readonly="true" colspan="3"/>
-                    <cell type="label" label=""/>
-                    <cell type="field" id="20" name="yesNo3" uitype="checkbox" initialize="align=right" colspan="3"/>
-				</row>
+		</row>
                 <row>
                     <cell type="label" labelfor="18"/>
                     <cell type="field" id="18" name="modifiedByAgent" uitype="label" readonly="true" uifieldformatter="Agent"/>
                     <cell type="label" label="" colspan="1"/>
                     <cell type="label" labelfor="19" colspan="3"/>
                     <cell type="field" id="19" name="timestampModified" uitype="label" readonly="true" colspan="3"/>
-                    <cell type="label" labelfor="22"/>
-                    <cell type="field" id="22" name="text2" uitype="text" colspan="3"/>
-				</row>
+		</row>
             </rows>
         </viewdef>
 
@@ -391,11 +415,15 @@
                 <row>
                     <cell type="label" labelfor="44"/>
                     <cell type="field" id="44" name="number30" uitype="combobox" colspan="7"/>
-                    <cell type="label" labelfor="45" colspan="3"/>
-                    <cell type="field" id="45" name="text10" uitype="text" colspan="9"/>
-                </row>
+                    <cell type="label" labelfor="45" label="Translated by" colspan="3"/>
+                    <cell type="field" id="45" name="agent1" uitype="querycbx" initialize="name=Agent;title=Agent" colspan="9"/>
+			   </row>
                 <row>
-                    <cell type="separator" label="RBG" colspan="24" />
+		    <cell type="label" labelfor="58"/>
+		    <cell type="field" id="58" uitype="plugin" name="this" initialize="name=PartialDateUI;df=date1;tp=date1Precision" uifieldformatter="Date" colspan="7"/>
+		</row>
+		<row>
+		    <cell type="separator" label="RBG" colspan="24" />
                 </row>
                 <row>
                     <cell type="label" labelfor="text11" label="RBG Accession No."/>
@@ -406,7 +434,7 @@
                 </row>
                 <row>
                     <cell type="label" labelfor="inat" label="URL"/>
-                    <cell type="field" id="inat" name="text29" uitype="plugin" initialize="name=WebLinkButton;" colspan="5"/>
+                    <cell type="field" id="inat" name="text29" uitype="plugin" initialize="name=WebLinkButton;" colspan="19"/>
                 </row>
                 <row>
                     <cell type="separator" label="Other" colspan="24"/>

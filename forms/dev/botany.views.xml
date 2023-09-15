@@ -1685,7 +1685,7 @@
             useresourcelabels="true">
             <desc><![CDATA[Preparation for Collection Object form.]]></desc>
             <enableRules/>
-            <columnDef>100px,2px,95px,5px,65px,2px,95px,5px,60px,2px,75px,5px,60px,2px,35px,5px,70px,2px,137px,p:g</columnDef>
+            <columnDef>100px,2px,160px,5px,65px,2px,30px,5px,60px,2px,75px,5px,60px,2px,35px,5px,70px,2px,137px,p:g</columnDef>
             <!--columnDef>100px,2px,160px,5px,100px,2px,160px,5px,p:g</columnDef-->
             <!--columnDef>100px,2px,160px,5px,95px,2px,223px,5px,65px,2px,156px,2px,p:g</columnDef-->
             <columnDef os="lnx">115px,2px,150px,5px,120px,2px,223px,5px,90px,2px,126px,2px,75px,p:g</columnDef>
@@ -1696,16 +1696,14 @@
                 <row>
                     <cell type="label" labelfor="1"/>
                     <cell type="field" id="1" name="prepType" uitype="combobox" picklist="PrepType" default="Sheet" colspan="1"/>
-                    <cell type="label" labelfor="4"/>
-                    <cell type="field" id="4" name="barCode" uitype="text" colspan="1"/>
                     <cell type="label" labelfor="2"/>
                     <cell type="field" id="2" name="countAmt" uitype="text" default="1"/>
                     <cell type="label" labelfor="3"/>
                     <cell type="field" id="3" name="sampleNumber" uitype="text" colspan="1"/>
-                    <cell type="label" labelfor="text5"/>
-                    <cell type="field" id="text5" name="text5" uitype="text" colspan="1"/>
-                    <!-- <cell type="field" id="isOnLoan" name="isOnLoan" uitype="checkbox" label="On loan" readonly="true" initialize="align=right"/>
-                    <cell type="command" id="ShowLoansBtn" name="ShowLoansBtn" label="Loans" ignore="true" colspan="1"/> -->
+                    <cell type="label" labelfor="4"/>
+                    <cell type="field" id="4" name="integer1" uitype="combobox" colspan="1"/>
+                    <cell type="field" id="isOnLoan" name="isOnLoan" uitype="checkbox" label="On loan" readonly="true" initialize="align=right"/>
+                    <cell type="command" id="ShowLoansBtn" name="ShowLoansBtn" label="Loans" ignore="true" colspan="1"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="f2"/>
@@ -1723,7 +1721,7 @@
                     <cell type="label" labelfor="OtherDups" colspan="3"/>
                     <cell type="field" id="OtherDups" uitype="text" name="text2" colspan="5"/>
                     <!--cell type="label" labelfor="OrigHerb" colspan="1"/>
-                    <cell type="field" id="OrigHerb" uitype="text" name="description" colspan="1"/> -->
+                    <cell type="field" id="OrigHerb" uitype="text" name="description" colspan="1"/-->
                 </row>
                 <row>
                     <cell type="label" labelfor="5"/>
@@ -1757,14 +1755,10 @@
                 <row>
                     <cell type="label" labelfor="1"/>
                     <cell type="field" id="1" name="prepType" uitype="combobox" picklist="PrepType" default="Packet" colspan="1"/>
-                    <cell type="label" labelfor="4"/>
-                    <cell type="field" id="4" name="barCode" uitype="text" colspan="1"/>
                     <cell type="label" labelfor="2"/>
                     <cell type="field" id="2" name="countAmt" uitype="text" default="1"/>
                     <cell type="label" labelfor="3"/>
                     <cell type="field" id="3" name="sampleNumber" uitype="text" colspan="1"/>
-                    <cell type="label" labelfor="text5"/>
-                    <cell type="field" id="text5" name="text5" uitype="text" colspan="1"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="5"/>
@@ -1772,6 +1766,14 @@
                 </row>
                 <row>
                     <cell type="field" id="isOnLoan" name="isOnLoan" uitype="checkbox" label="On loan" readonly="true" initialize="align=right"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="8"/>
+                    <cell type="field" id="8" name="remarks" uitype="textareabrief" rows="1" colspan="17"/>
+                </row>
+                <row>
+                    <cell type="label" labelfor="MelDups"/>
+                    <cell type="field" id="MelDups" uitype="text" name="text1" colspan="3"/>
                 </row>
             </rows>
         </viewdef>
