@@ -2,24 +2,23 @@
  * Author:  Niels.Klazenga <Niels.Klazenga at rbg.vic.gov.au>
  * Created: 12/11/2020
  */
-DROP function IF EXISTS `recorded_by_id`;
+DROP FUNCTION IF EXISTS melisr.recorded_by_id;
 
 DELIMITER $$
-USE `melisr`$$
-CREATE DEFINER=`admin`@`%` FUNCTION `recorded_by_id`(in_collecting_event_id int) RETURNS varchar(256) CHARSET utf8
+$$
+CREATE DEFINER=`admin`@`%` FUNCTION `melisr`.`recorded_by_id`(in_collecting_event_id int) RETURNS varchar(256) CHARSET utf8 COLLATE utf8_general_ci
 BEGIN
 	DECLARE out_recorded_by_id varchar(256);
-    SELECT GROUP_CONCAT(DISTINCT COALESCE(av1.Name, av2.Name) ORDER BY c.OrderNumber SEPARATOR ' | ')
-    INTO out_recorded_by_id
-    FROM collector c
-    JOIN agent a ON c.AgentID=a.agentID
-    LEFT JOIN agentvariant av1 ON a.AgentID=av1.AgentID AND av1.VarType=11
-    LEFT JOIN agentvariant av2 ON a.AgentID=av2.AgentID AND av2.VarType=9
-    WHERE c.CollectingEventID=in_collecting_event_id AND (av1.AgentVariantID IS NOT NULL OR av2.AgentVariantID IS NOT NULL)
-    GROUP BY c.CollectingEventID;
-RETURN out_recorded_by_id;
-END$$
-
+	select group_concat(distinct coalesce(ai1.Identifier, ai2.Identifier) order by c.OrderNumber separator ' | ')
+	into out_recorded_by_id
+	from collector c
+	join agent a on c.AgentID=a.AgentID 
+	left join agentidentifier ai1 on a.AgentID=ai1.AgentID and ai1.IdentifierType = 1
+	left join agentidentifier ai2 on a.AgentID = ai2.AgentID and ai2.IdentifierType = 2
+	where c.CollectingEventID=in_collecting_event_id and (ai1.AgentIdentifierID is not null or ai2.AgentIdentifierID is not null)
+	group by c.CollectingEventID ;
+	RETURN out_recorded_by_id;
+END  $$
 DELIMITER ;
 
 
