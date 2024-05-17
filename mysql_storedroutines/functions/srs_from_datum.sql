@@ -15,9 +15,9 @@ BEGIN
       WHEN 'AGD84' THEN 'epsg:4203'
       WHEN 'AGD66' THEN 'epsg:4202'
       WHEN 'Minna' THEN 'epsg:4263'
-      ELSE 'epsg:4326'
+      ELSE NULL
     END;
-RETURN 1;
+RETURN out_srs;
 END$$
 
 DELIMITER ;
