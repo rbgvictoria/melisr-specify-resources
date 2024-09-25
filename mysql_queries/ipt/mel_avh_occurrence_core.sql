@@ -1,6 +1,4 @@
 select 
-  co.CollectionObjectID as id, 
-
   -- occurrenceID
   co.GUID as occurrenceID,
 
@@ -71,13 +69,11 @@ select
   -- occurrenceStatus
   'present' as occurrenceStatus,
 
-  -- preparations
-  preparations(co.CollectionObjectID) as preparations,
-
   -- associatedSequences
   seq.associated_sequences as associatedSequences,
 
   -- associatedTaxa
+  if(cea.Text5 is not null, concat('"host": "', cea.Text5, '"'), null) as associatedTaxa,
   
   /*
   * Organism
@@ -85,6 +81,19 @@ select
 
   -- previousIdentifications
   previous_identifications(co.CollectionObjectID) as previousIdentifications,
+  
+  /*
+   * MaterialEntity
+   */
+  
+  -- materialEntityID
+  co.GUID as materialEntityID,
+  
+  -- preparations
+  preparations(co.CollectionObjectID) as preparations,
+
+  -- associatedSequences
+  seq.associated_sequences as associatedSequences,
   
   /*
   * Event
@@ -628,6 +637,7 @@ from collectionobject co
 left join collectionobjectattribute coa 
   on co.CollectionObjectAttributeID=coa.CollectionObjectAttributeID
 join collectingevent ce on co.CollectingEventID=ce.CollectingEventID
+join collectingeventattribute cea on ce.CollectingEventAttributeID=cea.CollectingEventAttributeID 
 left join collectingtrip ctr ON ce.CollectingTripID=ctr.CollectingTripID
 join locality l on ce.LocalityID=l.LocalityID
 
