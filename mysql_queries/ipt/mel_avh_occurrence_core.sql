@@ -310,10 +310,13 @@ select
       as verbatimLongitude,
 
   -- verbatimCoordinateSystem
-  gc.OriginalCoordSystem as verbatimCoordinateSystem,
+  dwc_verbatim_coordinate_system(l.Lat1Text, l.Long1Text) as verbatimCoordinateSystem,
 
   -- verbatimSRS
-  srs_from_datum(l.Datum) as verbatimSRS,
+  if(l.Latitude1 is not null and l.Longitude1 is not null, 
+      if(l.Datum is not null, 
+      srs_from_datum(l.Datum), 'epsg:4326'), null
+    ) as verbatimSRS,
 
   -- decimalLatitude
   l.Latitude1 as decimalLatitude,
@@ -333,7 +336,7 @@ select
       as coordinateUncertaintyInMeters,
 
   -- coordinatePrecision
-  gc.NamedPlaceExtent as coordinatePrecision,
+  dwc_coordinate_precision(l.Lat1Text, l.Long1Text) as coordinatePrecision,
 
   -- georeferencedBy
   concat_ws(', ', gca.LastName, gca.FirstName) as georeferencedBy,
