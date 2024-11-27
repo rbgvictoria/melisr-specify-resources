@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <viewset name="Botany Views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
     <views>
-
         <view name="CollectionObject" 
             class="edu.ku.brc.specify.datamodel.CollectionObject" 
             busrules="edu.ku.brc.specify.datamodel.busrules.CollectionObjectBusRules" 
@@ -13,7 +11,6 @@
                     <altview name="Collection Object Edit" viewdef="Collection Object" mode="edit" default="true"/>
                 </altviews>
         </view>
-
         <view name="CollectionObjectAttachmentMEL"
             class="edu.ku.brc.specify.datamodel.CollectionObjectAttachment"
             busrules="edu.ku.brc.specify.datamodel.busrules.AttachmentBusRules"
@@ -28,7 +25,6 @@
                 <altview name="CollectionObjectAttachmentMEL Form Edit"  viewdef="CollectionObjectAttachmentMEL Form" 	label="Form" mode="edit"/>
             </altviews>
         </view>
-
         <view name="CollectionObjectAttribute"
             class="edu.ku.brc.specify.datamodel.CollectionObjectAttribute"
             resourcelabels="false">
@@ -38,7 +34,6 @@
                 <altview name="CollectionObjectAttribute Edit" viewdef="CollectionObjectAttribute" mode="edit" default="true"/>
             </altviews>
         </view>
-
         <view name="ConservDescription"
             class="edu.ku.brc.specify.datamodel.ConservDescription"
             busrules="edu.ku.brc.specify.datamodel.busrules.ConservDescriptionBusRules"
@@ -61,7 +56,6 @@
                 <altview name="Conservation Event Edit" viewdef="ConservEvent" mode="edit" default="true"/>
             </altviews>
         </view>
-
         <view name="ConservEventAttachmentMEL"
             class="edu.ku.brc.specify.datamodel.ConservEventAttachment"
             busrules="edu.ku.brc.specify.datamodel.busrules.AttachmentBusRules"
@@ -76,7 +70,6 @@
                 <altview name="ConservEventAttachmentMEL Form Edit"  viewdef="ConservEventAttachmentMEL Form" 	label="Form" mode="edit"/>
             </altviews>
         </view>
-
         <view name="ConservDescriptionSub" class="edu.ku.brc.specify.datamodel.ConservDescription" busrules="edu.ku.brc.specify.datamodel.busrules.ConservDescriptionBusRules">
             <desc><![CDATA[Conservation Description.]]></desc>
             <altviews>
@@ -84,7 +77,6 @@
                 <altview name="ConservDescriptionSub Edit" viewdef="ConservDescriptionSub" mode="edit"/>
             </altviews>
         </view>
-
         <view name="Exsiccata"
             class="edu.ku.brc.specify.datamodel.Exsiccata"
             resourcelabels="false">
@@ -104,7 +96,6 @@
                 <altview name="ExsiccataItem Edit" viewdef="ExsiccataItem" mode="edit" default="true"/>
             </altviews>
         </view>
-
         <view name="OtherIdentifiersSub"
             class="edu.ku.brc.specify.datamodel.OtherIdentifier"
             >
@@ -126,7 +117,6 @@
             </altviews>
         </view>
     </views>
-
     <viewdefs>
         <viewdef name="Collection Object" 
             type="form" 
@@ -144,43 +134,15 @@
             <rows>
                 <row>
                     <cell type="label" labelfor="1"/>
-                    <cell type="field" id="1" name="catalogNumber" uitype="formattedtext" isrequired="true" colspan="5"/>
-                    <cell type="field" id="avh" name="this" uitype="plugin" initialize="name=WebLinkButton;weblink=AVHLink"/>
-					<cell type="panel" id="2" name="CollBranchInfoPanel" coldef="55px,2px,70px,2px,45px,5px,80px,5px,40px,2px,20px,2px,99px" rowdef="p,2px" colspan="11" initialize="align=right;">
-                        <rows>
-                            <row>
-                                <cell type="field" id="types" name="yesNo1" uitype="checkbox" readonly="true"/>
-                                <cell type="field" id="imaged" name="yesNo4" uitype="checkbox" readonly="true"/>
-                                <cell type="field" id="gpi" name="yesNo5" uitype="checkbox" readonly="true"/>
-                                <cell type="field" id="multisheets" name="yesNo2" uitype="checkbox" readonly="true"/>
-                                <cell type="label" labelfor="parts"/>
-                                <cell type="field" id="parts" name="notifications" uitype="text" readonly="true"/>
-                                <cell type="subview" id="otheridentifiers" viewname="OtherIdentifiersSub" name="otherIdentifiers" initialize="align=right;btn=true"/>
-                            </row>
-                        </rows>
-                    </cell>
-                </row>
-                <row>
-                    <cell type="label" labelfor="accession"/>
-                    <cell type="field" id="accession" name="accession" uitype="querycbx" initialize="name=AccessionCO;title=Accession" isrequired="false" colspan="5"/>
-                    <cell type="label" label=""/>
-                    <cell type="field" id="deaccessioned" name="deaccessioned" uitype="checkbox" readonly="false" colspan="3"/>
+                    <cell type="field" id="1" name="altCatalogNumber" uitype="formattedtext" colspan="5"/>
+                    <cell type="label" label="" colspan="9"/>
+                    <cell type="subview" id="otheridentifiers" viewname="OtherIdentifiersSub" name="otherIdentifiers" initialize="align=right;btn=true"/>
                 </row>
                 <row>
                         <cell type="subview" viewname="Determination" id="3" name="determinations" colspan="21" rows="5"/>
                 </row>
                 <row>
                         <cell type="subview" viewname="Preparation" id="14" name="preparations" colspan="21" rows="3"/>
-                </row>
-                <row>
-                    <cell type="label" label="" />
-                    <cell type="panel" id="ContainerPanel" name="ContainerPanel" coldef="p" rowdef="p" colspan="11">
-                        <rows>
-                            <row>
-                                <cell type="field" id="ContainerPlugin" uitype="plugin" name="this" initialize="name=ContainerPlugin"/>
-                            </row>
-                        </rows> 
-                    </cell>
                 </row>
                 <row>
                         <cell type="subview" viewname="CollectingEventSub" id="4" label="Collecting information" name="collectingEvent" colspan="21"/>
@@ -209,7 +171,7 @@
                     </cell>
                 </row>
                 <row>
-                        <cell type="separator" label="Label printing and curation information" colspan="21"/>
+                        <cell type="separator" label="Label printing information" colspan="21"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="46"/>
@@ -227,24 +189,6 @@
                         </rows>
                     </cell>
                 </row-->
-		<row>
-                    <cell type="label" labelfor="22"/>
-                    <cell type="field" id="22" name="text2" uitype="text" colspan="3"/>
-                    <cell type="label" label="" colspan="3"/>
-                    <cell type="field" id="20" name="yesNo3" uitype="checkbox" initialize="align=right" colspan="5"/>
-                    <cell type="field" id="23" name="yesNo6" uitype="checkbox" initialize="align=right" colspan="3"/>
-				</row>
-				<row>
-                    <cell type="label" labelfor="24"/>
-                    <cell type="field" id="24" name="reservedText2" uitype="text" initialize="align=right" colspan="5"/>
-                    <cell type="label" label=""/>
-					<cell type="label" labelfor="26" colspan="3"/>	
-                    <cell type="field" id="26" name="integer1" uitype="text" initialize="align=right"/>	
-				</row>
-				<row>
-                    <cell type="label" labelfor="25"/>
-                    <cell type="field" id="25" name="reservedText3" uitype="text" initialize="align=right" colspan="17"/>
-		</row>			
                 <row>
                     <cell type="separator" label="" colspan="21"/>
                 </row>
@@ -253,18 +197,21 @@
                     <cell type="field" id="16" name="createdByAgent" uitype="label" readonly="true" uifieldformatter="Agent"/>
                     <cell type="label" label="" colspan="3"/>
                     <cell type="label" labelfor="17"/>
-                    <cell type="field" id="17" name="timestampCreated" uitype="label" readonly="true" colspan="3"/>
-		</row>
+                    <cell type="field" id="17" name="timestampCreated" uitype="label" readonly="true" colspan="1"/>
+                    <cell type="label" label=""/>
+                    <!--cell type="field" id="20" name="yesNo3" uitype="checkbox" initialize="align=right" colspan="3"/-->
+				</row>
                 <row>
                     <cell type="label" labelfor="18"/>
                     <cell type="field" id="18" name="modifiedByAgent" uitype="label" readonly="true" uifieldformatter="Agent"/>
                     <cell type="label" label="" colspan="1"/>
                     <cell type="label" labelfor="19" colspan="3"/>
                     <cell type="field" id="19" name="timestampModified" uitype="label" readonly="true" colspan="3"/>
-		</row>
+                    <cell type="label" labelfor="22"/>
+                    <cell type="field" id="22" name="text2" uitype="text" colspan="3"/>
+				</row>
             </rows>
         </viewdef>
-
         <viewdef
             name="CollectionObjectAttachmentMEL IconView"
             type="iconview"
@@ -273,7 +220,6 @@
             settable="edu.ku.brc.af.ui.forms.DataSetterForObj">
             <desc><![CDATA[The CollectionObjectAttachment Icon Viewer]]></desc>
         </viewdef>
-
         <viewdef
             name="CollectionObjectAttachmentMEL Table"
             type="formtable"
@@ -398,6 +344,10 @@
                     <cell type="label" labelfor="14"/>
                     <cell type="field" id="14" name="remarks" uitype="textareabrief" rows="2" colspan="21"/>
                 </row>
+                <!--row>
+                    <cell type="label" labelfor="16"/>
+                    <cell type="field" id="16" name="text2" uitype="textareabrief" rows="2" colspan="21"/>
+                </row-->
                 <row>
                     <cell type="label" labelfor="17"/>
                     <cell type="field" id="17" name="text3" uitype="textareabrief" rows="2" colspan="21"/>
@@ -415,26 +365,19 @@
                 <row>
                     <cell type="label" labelfor="44"/>
                     <cell type="field" id="44" name="number30" uitype="combobox" colspan="7"/>
-                    <cell type="label" labelfor="45" label="Translated by" colspan="3"/>
-                    <cell type="field" id="45" name="agent1" uitype="querycbx" initialize="name=Agent;title=Agent" colspan="9"/>
-			   </row>
-                <row>
-		    <cell type="label" labelfor="58"/>
-		    <cell type="field" id="58" uitype="plugin" name="this" initialize="name=PartialDateUI;df=date1;tp=date1Precision" uifieldformatter="Date" colspan="7"/>
-		</row>
-		<row>
-		    <cell type="separator" label="RBG" colspan="24" />
+                    <cell type="label" labelfor="45" colspan="3"/>
+                    <cell type="field" id="45" name="text10" uitype="text" colspan="9"/>
                 </row>
                 <row>
-                    <cell type="label" labelfor="text11" label="RBG Accession No."/>
-                    <cell type="field" id="text11" name="text11" uitype="text" colspan="5"/>
+                    <cell type="separator" label="Data entry notes" colspan="24"/>
                 </row>
                 <row>
-                    <cell type="separator" label="iNaturalist" colspan="24" />
+                    <cell type="label" labelfor="15"/>
+                    <cell type="field" id="15" name="text1" uitype="textareabrief" rows="2" colspan="21"/>
                 </row>
                 <row>
-                    <cell type="label" labelfor="inat" label="URL"/>
-                    <cell type="field" id="inat" name="text29" uitype="plugin" initialize="name=WebLinkButton;" colspan="19"/>
+                    <cell type="label" labelfor="36"/>
+                    <cell type="field" id="36" name="text4" uitype="text" colspan="15"/>
                 </row>
                 <row>
                     <cell type="separator" label="Other" colspan="24"/>
@@ -461,67 +404,8 @@
                     <cell type="label" label=""/>
                     <cell type="field" id="28" name="yesNo7" uitype="checkbox" colspan="3"/>
                 </row>		
-                <row>
-                    <cell type="separator" label="Data entry notes" colspan="24"/>
-                </row>
-                <row>
-                    <cell type="label" labelfor="15"/>
-                    <cell type="field" id="15" name="text1" uitype="textareabrief" rows="2" colspan="21"/>
-                </row>           
-				<row>
-                    <cell type="label" labelfor="36"/>
-                    <cell type="field" id="36" name="text4" uitype="text" colspan="15"/>
-                </row>
-                <row>
-                    <cell type="separator" label="Missing specimen" colspan="24"/>
-                </row>
-                <row>
-					<cell type="label" labelfor=""/>
-					<cell type="field" id="39" name="yesNo4" uitype="checkbox" colspan="5"/>
-					<cell type="label" labelfor="46" colspan="5"/>
-					<cell type="field" id="46" name="text21" uitype="text" colspan="3"/>
-				</row> 
-				<row>
-					<cell type="label" labelfor="38"/>
-                    <cell type="field" id="38" name="text2" uitype="textareabrief" rows="1" colspan="21"/>
-				</row>
-				<row>
-					<cell type="separator" label="Display Set specimens" colspan="24"/>
-				</row>
-				<row>
-					<cell type="label" labelfor=""/>
-					<cell type="field" id="47" name="yesNo8" uitype="checkbox" colspan="3"/>
-					<cell type="field" id="48" name="yesNo9" uitype="checkbox" colspan="3"/>
-					<cell type="field" id="49" name="yesNo10" uitype="checkbox" colspan="3"/>
-					<cell type="field" id="50" name="yesNo11" uitype="checkbox" colspan="3"/>
-					<cell type="field" id="51" name="yesNo12" uitype="checkbox" colspan="3"/>
-				</row>
-				<row>
-					<cell type="label" labelfor=""/>
-					<cell type="field" id="52" name="yesNo13" uitype="checkbox" colspan="3"/>
-					<cell type="field" id="53" name="yesNo14" uitype="checkbox" colspan="3"/>
-					<cell type="label" labelfor="54" align="left"/>
-					<cell type="field" id="54" name="text22" uitype="text" colspan="5"/>
-				</row>
-				<row>
-					<cell type="label" labelfor="55"/>
-					<cell type="field" id="55" name="text23" uitype="text" colspan="21"/>	
-				</row>
-				<row>
-					<cell type="label" labelfor="56"/>
-					<cell type="field" id="56" name="text24" uitype="textareabrief" rows="2" colspan="21"/>
-				</row>
-				<row>
-					<cell type="separator" label="Hort. Ref. Set" colspan="24"/>
-				</row>
-				<row>
-					<cell type="label" labelfor=""/>
-					<cell type="field" id="57" name="yesNo15" uitype="checkbox" colspan="3"/>
-				</row>
-                
             </rows>
         </viewdef>
-
         <viewdef
             name="ConservDescription"
             type="form"
@@ -548,7 +432,6 @@
                 </row>
             </rows>
         </viewdef>            
-
         <viewdef 
             name="ConservDescriptionSub" 
             type="form" 
@@ -592,7 +475,7 @@
             <desc><![CDATA[Conservation Event]]></desc>
             <enableRules/>
             
-            <columnDef>130px,2px,185px,5px,60px,2px,115px,p:g</columnDef>
+            <columnDef>130px,2px,150px,5px,95px,2px,115px,p:g</columnDef>
             <!--columnDef>100px,2px,205px,5px,135px,2px,115px,5px,130px,2px,126px,0px,p:g</columnDef-->
             <!--columnDef os="lnx">115px,2px,210px,5px,150px,2px,138px,5px,150px,2px,138px,0px,p:g</columnDef>
             <columnDef os="mac">130px,2px,250px,5px,163px,2px,145px,5px,183px,2px,145px,0px,p:g</columnDef>
@@ -608,10 +491,9 @@
 				</row>
 				<row>
                     <cell type="label" labelfor="2"/>
-					<cell type="field" id="2" uitype="plugin" name="this" initialize="name=PartialDateUI;df=completedDate;tp=completedDatePrecision" uifieldformatter="Date"/>
-                    <!--cell type="field" id="2" name="completedDate" uitype="formattedtext" uifieldformatter="Date" colspan="1"/>
+                    <cell type="field" id="2" name="completedDate" uitype="formattedtext" uifieldformatter="Date" colspan="1"/>
 					<cell type="label" labelfor="22"/>
-                    <cell type="field" id="22" name="number2" uitype="combobox" picklist="Date precision" colspan="1"/-->	
+                    <cell type="field" id="22" name="number2" uitype="combobox" picklist="Date precision" colspan="1"/>	
                 </row>                
                 <row>
                     <!--<cell type="label" labelfor="17"/>
@@ -644,10 +526,9 @@
 				</row>
 				<row>
 					<cell type="label" labelfor="21"/>
-                    <cell type="field" id="21" uitype="plugin" name="this" initialize="name=PartialDateUI;df=examDate;tp=examDatePrecision" uifieldformatter="Date"/>
-                    <!--cell type="field" id="21" name="examDate" uitype="formattedtext" uifieldformatter="Date" colspan="1"/>
+                    <cell type="field" id="21" name="examDate" uitype="formattedtext" uifieldformatter="Date" colspan="1"/>
 					<cell type="label" labelfor="23"/>
-                    <cell type="field" id="23" name="number1" uitype="combobox" picklist="Date precision" colspan="1"/-->
+                    <cell type="field" id="23" name="number1" uitype="combobox" picklist="Date precision" colspan="1"/>
 				</row>	
 				<row>
 					<cell type="label" labelfor="5"/>
@@ -655,8 +536,7 @@
 				</row>
 				<row>
                     <cell type="label" labelfor="14"/>
-                    <cell type="field" id="14" uitype="plugin" name="this" initialize="name=PartialDateUI;df=treatmentCompDate;tp=treatmentCompDatePrecision" uifieldformatter="Date"/>
-					<!--cell type="field" id="14" name="treatmentCompDate" uitype="formattedtext" uifieldformatter="Date" colspan="1"/-->
+                    <cell type="field" id="14" name="treatmentCompDate" uitype="formattedtext" uifieldformatter="Date" colspan="1"/>
                 </row>
                 <row>
                     <cell type="label" labelfor="7"/>
@@ -686,7 +566,6 @@
                 </row>
             </rows>
         </viewdef>
-
         <viewdef
             name="ConservEventAttachmentMEL IconView"
             type="iconview"
@@ -695,7 +574,6 @@
             settable="edu.ku.brc.af.ui.forms.DataSetterForObj">
             <desc><![CDATA[The ConservEventAttachment Icon Viewer]]></desc>
         </viewdef>
-
         <viewdef
             name="ConservEventAttachmentMEL Table"
             type="formtable"
@@ -773,18 +651,15 @@
                 </row>
             </rows>
         </viewdef>
-
         <viewdef 
             name="Exsiccata" 
             type="form" 
             class="edu.ku.brc.specify.datamodel.Exsiccata" 
             gettable="edu.ku.brc.af.ui.forms.DataGetterForObj" 
             settable="edu.ku.brc.af.ui.forms.DataSetterForObj">
-
             <desc><![CDATA[Form for Exsiccata]]></desc>
            <columnDef>p,2px,400px,2px,p,p:g</columnDef>
             <rowDef auto="true" sep="2px" cell="p"/>
-
             <rows>
                 <row>
                      <cell type="label" labelfor="1"/>
@@ -796,19 +671,16 @@
                	</row>
             </rows>
         </viewdef>
-
         <viewdef 
             name="ExsiccataItem" 
             type="form" 
             class="edu.ku.brc.specify.datamodel.ExsiccataItem" 
             gettable="edu.ku.brc.af.ui.forms.DataGetterForObj" 
             settable="edu.ku.brc.af.ui.forms.DataSetterForObj">
-
             <desc><![CDATA[Form for ExsiccataItem]]></desc>
             <!--columnDef>p,2px,p,2px,100px,2px,p,2px,100px,2px,100px,p:g</columnDef-->
             <columnDef>p,2px,100px,5px,150px,2px,100px,2px,p,p:g</columnDef>
             <rowDef auto="true" sep="2px" cell="p"/>
-
             <rows>
                  <row>
                      <cell type="label" labelfor="exsiccata"/>
@@ -822,7 +694,6 @@
                  </row>
             </rows>
         </viewdef>
-
         <viewdef
             name="OtherIdentifiersSub"
             type="form"
@@ -832,13 +703,11 @@
             useresourcelabels="true">
             <desc><![CDATA[subform on the Collection Object form.]]></desc>
             <enableRules/>
-
             <columnDef>100px,2px,150px,5px,100px,2px,150px,0px,15px,p:g</columnDef>
             <!--columnDef os="lnx">115px,2px,510px,5px,85px,2px,198px,0px,15px,p:g</columnDef>
             <columnDef os="mac">130px,2px,530px,5px,105px,2px,218px,0px,15px,p:g</columnDef>
             <columnDef os="exp">p,2px,473px,5px:g,p,2px,125px,0px,15px,p:g</columnDef-->
             <rowDef auto="true" cell="p" sep="2dlu"/>
-
             <rows>
                 <row>
                     <cell type="label" labelfor="7"/>
@@ -852,7 +721,6 @@
                 </row>
             </rows>
         </viewdef>
-
         <viewdef
             type="form"
             name="MorphBankView"
