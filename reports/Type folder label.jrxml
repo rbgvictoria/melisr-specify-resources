@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Type folder label" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" scriptletClass="edu.ku.brc.specify.config.Scriptlet" uuid="bc871239-797d-4353-ae6d-234d8420167b">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="1.collectionobject.catalogNumber" class="java.lang.String"/>
+	<field name="1.collectionobject.name" class="java.lang.String"/>
+	<field name="1.collectionobject.modifier" class="java.lang.String"/>
+	<field name="1,63-preparations.preparation.text4" class="java.lang.String"/>
+	<field name="1,63-preparations.preparation.text5" class="java.lang.String"/>
+	<field name="1,63-preparations,58.storage.name" class="java.lang.String"/>
+	<field name="1,10,2,3.geography.Country" class="java.lang.String"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="resultsetsize" class="java.lang.String"/>
+	<variable name="TypeStatusString" class="java.lang.String">
+		<variableExpression><![CDATA[((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,63-preparations.preparation.text4}).replace( "<b>", "<style pdfFontName=\"Helvetica-Bold\">").replace("</b>", "</style>").replace("<i>", "<style pdfFontName=\"Helvetica-Oblique\">").replace("</i>", "</style>") + ($F{1,63-preparations.preparation.text5} == null ? "" : ", " + ((edu.ku.brc.specify.config.Scriptlet)$P{REPORT_SCRIPTLET}).escapeForHtml($F{1,63-preparations.preparation.text5}))]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-3" x="10" y="10" width="520" height="36" uuid="83b2509d-bec9-48ab-ae60-6cb544a58191">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TypeStatusString}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="40" width="169" height="20" uuid="ca360305-e36a-4383-ba08-14acaefc83f0">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{1.collectionobject.name}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RetainShape" hAlign="Left" vAlign="Top">
+				<reportElement key="barcode-1" mode="Opaque" x="190" y="40" width="160" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="34e723c0-7eba-4427-b285-0a8839229f12">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement fill="Solid"/>
+				<imageExpression><![CDATA[it.businesslogic.ireport.barcode.BcImage.getBarcodeImage(9,$F{1.collectionobject.name},false,false,null,0,0)]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="350" y="40" width="180" height="20" uuid="83279f8e-5bdd-4b26-938d-8f4e297a19a2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{1,63-preparations,58.storage.name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="530" y="10" width="56" height="50" uuid="35c9dd10-6320-4241-a060-fb8e828920e2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="36" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) ? "A" : "F"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</summary>
+</jasperReport>
