@@ -47,7 +47,7 @@
 		<band height="67" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-3" x="10" y="10" width="520" height="36" uuid="83b2509d-bec9-48ab-ae60-6cb544a58191">
+				<reportElement key="textField-3" x="20" y="10" width="510" height="36" uuid="83b2509d-bec9-48ab-ae60-6cb544a58191">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -59,18 +59,18 @@
 				<textFieldExpression><![CDATA[$V{TypeStatusString}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="10" y="40" width="169" height="20" uuid="ca360305-e36a-4383-ba08-14acaefc83f0">
+				<reportElement x="20" y="40" width="159" height="20" uuid="ca360305-e36a-4383-ba08-14acaefc83f0">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement verticalAlignment="Middle">
+				<textElement verticalAlignment="Bottom">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{1.collectionobject.name}]]></textFieldExpression>
 			</textField>
 			<image scaleImage="RetainShape" hAlign="Left" vAlign="Top">
-				<reportElement key="barcode-1" mode="Opaque" x="190" y="40" width="160" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="34e723c0-7eba-4427-b285-0a8839229f12">
+				<reportElement key="barcode-1" mode="Opaque" x="190" y="42" width="160" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="34e723c0-7eba-4427-b285-0a8839229f12">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -82,16 +82,16 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{1,63-preparations,58.storage.name}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="530" y="10" width="56" height="50" uuid="35c9dd10-6320-4241-a060-fb8e828920e2">
+				<reportElement x="530" y="15" width="56" height="50" uuid="35c9dd10-6320-4241-a060-fb8e828920e2">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font size="36" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{1,10,2,3.geography.Country}.equals( "Australia" ) ? "A" : "F"]]></textFieldExpression>
