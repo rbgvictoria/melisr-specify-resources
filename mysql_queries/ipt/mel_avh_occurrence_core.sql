@@ -316,7 +316,7 @@ select
   if(l.Latitude1 is not null and l.Longitude1 is not null, 
       if(l.Datum is not null, 
       srs_from_datum(l.Datum), 'epsg:4326'), null
-    ) as verbatimSRS,
+  ) as verbatimSRS,
 
   -- decimalLatitude
   l.Latitude1 as decimalLatitude,
@@ -328,7 +328,7 @@ select
   if(l.Latitude1 is not null and l.Longitude1 is not null, 
       if(l.Datum is not null, 
       srs_from_datum(l.Datum), 'epsg:4326'), null
-    ) as geodeticDatum,
+  ) as geodeticDatum,
 
   -- coordinateUncertaintyInMeters
   coalesce(ROUND(gc.GeoRefAccuracy), ROUND(gc.MaxUncertaintyEst), 
@@ -640,7 +640,7 @@ from collectionobject co
 left join collectionobjectattribute coa 
   on co.CollectionObjectAttributeID=coa.CollectionObjectAttributeID
 join collectingevent ce on co.CollectingEventID=ce.CollectingEventID
-join collectingeventattribute cea on ce.CollectingEventAttributeID=cea.CollectingEventAttributeID 
+left join collectingeventattribute cea on ce.CollectingEventAttributeID=cea.CollectingEventAttributeID 
 left join collectingtrip ctr ON ce.CollectingTripID=ctr.CollectingTripID
 join locality l on ce.LocalityID=l.LocalityID
 
